@@ -1,0 +1,183 @@
+#root {
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
+}
+
+#out {
+  /* padding: 5rem 1rem 5rem 1rem; */
+  border: 0px solid rgb(30 186 237);
+  /* margin-top: 2rem;
+  margin-bottom: 2rem; */
+}
+
+.row {
+  text-align: center;
+}
+
+/*로그인 메시지*/
+#intro {
+  height: 8rem;
+  margin-bottom: 20px;
+  border: 1px solid rgb(15 81 101);
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgb(8 30 49);
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
+/*좌측 하단 카메라, 맵 화면*/
+#cam {
+  height: 15rem;
+  margin-top: 20px;
+  border: 1px solid rgb(15 81 101);
+  border-radius: 7px;
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgb(8 30 49);
+}
+
+/*첫번째 열*/
+#first {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*두번째 열*/
+#second {
+  border: 1px solid rgb(15 81 101);
+  border-radius: 7px;
+  box-shadow: 0px 0px 10px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgb(8 30 49);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#button_div {
+  /* border: 2px solid black; */
+  width: 12rem;
+  height: 10rem;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#button {
+  width: 12rem;
+  height: 10rem;
+  font-size: 3rem;
+  border: 1px solid rgb(15 81 101);
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgb(8 30 49);
+  color: white;
+}
+
+#button:hover {
+  background-color: #0dbfca;
+  transition: 0.4s;
+  color: rgb(15 81 101);
+  box-shadow: 0 0 5px #0dbfca, 0 0 25px #0dbfca, 0 0 50px #0dbfca,
+    0 0 200px #0dbfca;
+  border: 0px;
+}
+
+/*네번째 버튼 첫번째 칸*/
+#battery {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+/*네번째 버튼 두번째 칸*/
+#buzzer {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+/*네번째 버튼 세번째 칸*/
+#headlight_onoff {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+/*네번째 버튼 네번째 칸*/
+#headlight_color {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+/*네번째 버튼 다섯번째 칸*/
+#rpm_l {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+/*네번째 버튼 여섯번째 칸*/
+#rpm_r {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  color: white;
+}
+
+#order {
+  width: 12rem;
+  height: 10rem;
+  margin: 40px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  color: white;
+}
+
+#table {
+  justify-content: center;
+}
+
+#monitor {
+  width: 95%;
+  height: 44rem;
+  margin: 20px;
+  padding: 10px;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(10 37 60);
+  color: black;
+  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+}
