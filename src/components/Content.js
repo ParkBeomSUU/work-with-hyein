@@ -10,10 +10,10 @@ const Title = styled.div`
 `;
 
 const Content = ({title, children}) => (
-    <div>
+    <form onSubmit={() => console.log("!")}>
         <Title>{title}</Title>
         {children}
-    </div>
+    </form>
 );
 
 export default Content;

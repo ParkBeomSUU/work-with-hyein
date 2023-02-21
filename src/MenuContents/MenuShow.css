@@ -1,0 +1,79 @@
+#root {
+  /* padding-top: 5rem;
+  padding-bottom: 5rem; */
+}
+
+#out {
+  /* padding: 5rem 1rem 5rem 1rem; */
+  border: 0px solid rgb(30 186 237);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.row {
+  text-align: center;
+}
+
+#intro {
+  height: 8rem;
+  margin-bottom: 20px;
+  border: 0px solid gray;
+  border-radius: 7px;
+  background-color: rgb(35 37 47);
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+
+#cam {
+  height: 15rem;
+  margin-top: 20px;
+  border: 0px solid gray;
+  border-radius: 7px;
+  background-color: rgb(35 37 47);
+}
+
+#first {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#second {
+  border: 0px solid gray;
+  border-radius: 7px;
+  background-color: rgb(35 37 47);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#button_div {
+  /* border: 2px solid black; */
+  width: 12rem;
+  height: 10rem;
+  padding: 0px;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+#button {
+  width: 12rem;
+  height: 10rem;
+  margin: 5px;
+  font-size: 3rem;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(35 37 47);
+  color: white;
+}
+
+
+#show {
+  height: 8rem;
+  margin-bottom: 20px;
+  border: 0px solid gray;
+  border-radius: 7px;
+  background-color: rgb(35 37 47);
+  text-align: center;
+  justify-content: center;
+  color: white;
+}

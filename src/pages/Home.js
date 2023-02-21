@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { shadow } from '../lib/styleUtil';
 import { Link } from 'react-router-dom';
 import "./Home.css";
 
