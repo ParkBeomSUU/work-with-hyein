@@ -31,20 +31,20 @@ const handleClickButton = (e, number) =>{
     <>
       <Container>
         <Row>
-          <Col id="intro">{}번 테이블</Col>
+          <Col id="intro_2">{}번 테이블</Col>
         </Row>
       
 
         <Row>
-          <Col id="button_div">
-              <Button variant="outline-info" onClick={(e) => handleClickButton(e, 0)} id="button">
+          <Col id="button_div_2">
+              <Button  variant="outline-info" onClick={(e) => handleClickButton(e, 0)} id="button_2">
               <img src={Liq}  style={{width : '75px'}}/><br/>
               <a style={{fontSize: '1.5rem'}}> &#8213; Liquor  &#8213; </a>
 
               </Button>
           </Col>
-          <Col id="button_div">
-            <Button variant="outline-info" onClick={(e) => handleClickButton(e, 1)} id="button">
+          <Col id="button_div_2">
+            <Button variant="outline-info" onClick={(e) => handleClickButton(e, 1)} id="button_2">
               <img src={cock}  style={{width : '75px'}}/><br/>
               <a style={{fontSize: '1.5rem'}}>&#8213; Cocktail  &#8213; </a>
 
@@ -52,15 +52,15 @@ const handleClickButton = (e, number) =>{
           </Col>
         </Row>
         <Row>
-          <Col id="button_div">
-            <Button variant="outline-info" onClick={(e) => handleClickButton(e, 2)} id="button">
+          <Col id="button_div_2">
+            <Button  variant="outline-info" onClick={(e) => handleClickButton(e, 2)} id="button_2">
               <img src={Korea}  style={{width : '75px'}}/><br/>
               <a style={{fontSize: '1.4rem'}}> &#8213; Traditional  &#8213; </a>
 
             </Button> 
           </Col>
-          <Col id="button_div">
-            <Button variant="outline-info" onClick={(e) => handleClickButton(e, 3)} id="button">
+          <Col id="button_div_2">
+            <Button variant="outline-info" onClick={(e) => handleClickButton(e, 3)} id="button_2">
             <img src={foodd}  style={{width : '75px'}}/><br/>
             <a style={{fontSize: '1.5rem'}}>&#8213; Food  &#8213; </a>
             </Button>
@@ -70,10 +70,10 @@ const handleClickButton = (e, number) =>{
         </Row>
         
         <Row>
-          <Col id="cam">
+          <Col id="cam_2">
             <Col id="cam_monitor">
               {volume.founder > 0 && `파운더 : ${volume.founder}`} <br/>
-              
+
               {volume.GlenDower > 0 && `글랜다워 : ${volume.GlenDower}`}
             </Col>
           </Col>

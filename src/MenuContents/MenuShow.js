@@ -21,13 +21,13 @@ const MenuShow = () => {
 
   return (
     <>
-      <Container id="out">
-        <Row>
-          <Col id="first" sm={{ span: 4 }} xs={{ span: 4 }}>
+      <Container id="out_2">
+        <Row id="row_2">
+          <Col id="first_2" sm={{ span: 4 }} xs={{ span: 4 }}>
             <Menu setContent={setContent} volume={volume} />
           </Col>
           
-          <Col id="second" sm={{ span: 8 }} xs={{ span: 8 }}>
+          <Col id="second_2" sm={{ span: 8 }} xs={{ span: 8 }}>
            
             <List content={content} volume={volume} setVolume={setVolume} />
           
