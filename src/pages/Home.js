@@ -16,11 +16,6 @@ const Positioner = styled.div`
     transform: translate(-50%, -50%);
 `;
 
-// 너비, 그림자 설정
-// const ShadowedBox = styled.div`
-//     width: 200px;
-//     ${shadow(2)}
-// `;
 
 // 로고
 const LogoWrapper = styled.div`

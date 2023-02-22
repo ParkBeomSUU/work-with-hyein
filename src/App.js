@@ -9,8 +9,8 @@ class App extends Component {
         return (
             <div>
               
-                <Route path="/Auth" component={Auth}/>
-                <Route path="/Menu" component={MenuShow} />
+                <Route path="/auth" component={Auth}/>
+                <Route path="/menu" component={MenuShow} />
                 <Route exact path="/" component={Home}/>
             </div>
         );

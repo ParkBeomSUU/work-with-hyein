@@ -24,13 +24,6 @@ body{
   font-family: Arial;
 }
 
-.container {
-  display: flex;
-/*   border:1px solid red; */
-  height: 100%;
-  align-items: center;
-  margin-top: 8%;
-}
 
 svg {
     display: block;

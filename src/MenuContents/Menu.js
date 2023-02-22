@@ -33,6 +33,7 @@ const handleClickButton = (e, number) =>{
         <Row>
           <Col id="intro">{}번 테이블</Col>
         </Row>
+      
 
         <Row>
           <Col id="button_div">
@@ -67,6 +68,7 @@ const handleClickButton = (e, number) =>{
 
           </Col>
         </Row>
+        
         <Row>
           <Col id="cam">
             <Col id="cam_monitor">
@@ -74,8 +76,8 @@ const handleClickButton = (e, number) =>{
             </Col>
           </Col>
         </Row>
+        </Container>
    
-      </Container>
     </>
   );
 };

@@ -5,7 +5,6 @@ import Menu from "./Menu";
 import "./MenuShow.css";
 import List from "./List";
 
-import "./index.css";
 
 const MenuShow = () => {
 
@@ -19,8 +18,11 @@ const MenuShow = () => {
           <Col id="first" sm={{ span: 4 }} xs={{ span: 4 }}>
             <Menu setContent={setContent} />
           </Col>
+          
           <Col id="second" sm={{ span: 8 }} xs={{ span: 8 }}>
+           
             <List content={content} />
+          
           </Col>
         </Row>
       </Container>

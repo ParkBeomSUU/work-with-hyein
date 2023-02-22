@@ -6,6 +6,7 @@ import Food from "./Button/Food";
 import Korean from "./Button/Korean";
 import Liquor from "./Button/liquor";
 
+
 const List =({content}) => {
 
   return (
