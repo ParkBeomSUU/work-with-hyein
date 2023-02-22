@@ -13,7 +13,7 @@ import cock from "./Image/Cocktail.png";
 import Liq from "./Image/Liquor.png";
 import foodd from './Image/Food.png';
 
-const Menu = ({ setContent }) => {
+const Menu = ({ setContent, volume }) => {
 
 const handleClickButton = (e, number) =>{
   setContent(number)
@@ -72,7 +72,9 @@ const handleClickButton = (e, number) =>{
         <Row>
           <Col id="cam">
             <Col id="cam_monitor">
-            
+              {volume.founder > 0 && `파운더 : ${volume.founder}`} <br/>
+              
+              {volume.GlenDower > 0 && `글랜다워 : ${volume.GlenDower}`}
             </Col>
           </Col>
         </Row>
