@@ -9,6 +9,14 @@ import List from "./List";
 const MenuShow = () => {
 
   const [content, setContent] = useState(0); //state 선언
+
+  const [ volume, setVolume ] = useState({
+    founder: 0,
+    GlenDower: 0,
+  })
+
+
+
   console.log(content);
 
   return (
@@ -16,12 +24,12 @@ const MenuShow = () => {
       <Container id="out">
         <Row>
           <Col id="first" sm={{ span: 4 }} xs={{ span: 4 }}>
-            <Menu setContent={setContent} />
+            <Menu setContent={setContent} volume={volume} />
           </Col>
           
           <Col id="second" sm={{ span: 8 }} xs={{ span: 8 }}>
            
-            <List content={content} />
+            <List content={content} volume={volume} setVolume={setVolume} />
           
           </Col>
         </Row>

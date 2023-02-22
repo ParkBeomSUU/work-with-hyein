@@ -2,51 +2,45 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import  './Button.css';
 import React,{useState} from "react";
 
-const Liquor = () =>{
-    const [glass, setGalss] = useState(1);
-
-    const onClickMinusHandler = (e) =>{
-        // e.proventDefault();
-        setGalss(glass+1)
-
-    }
-    const onClickPlusHandeler = (e) =>{
-        // e.proventDefault();
-        setGalss(glass-1)
-    }
+const Liquor = ({ setVolume, volume }) =>{
     return(
 <>
     <Container>
         <Row id="Menus1">
             
-        <Row id ="Menus">
-        
-            <Col >
-            
+        <Row id ="Menus">       
+            <Col >           
             <img src=  {process.env.PUBLIC_URL +"/Liquor/Founder.png" }  style={{width : '120px'}}/>
             <hr size="4"  />
             파운더
-
             <div id="PlusMa">
-            <Button  id="Plus" onClick={ onClickMinusHandler} >+ </Button>
-            <div id="Count"> {glass} </div>
-            <Button  id="Minus" onClick={onClickPlusHandeler}  >- </Button>
+            <Button  id="Plus" onClick={() => setVolume({
+                ...volume, founder: volume.founder === 10 ? 10 : volume.founder + 1
+            })}>+ </Button>
+            <div id="Count"> {volume.founder} </div>
+            <Button  id="Minus"  onClick={() => setVolume({
+                ...volume, founder: volume.founder === 0 ? 0 : volume.founder - 1
+            })}>- </Button>
             </div>
-
-
-
-            </Col>
-           
-    
+            </Col>   
         </Row>
 
     <Row id ="Menus">
     <Col >
     <img src={process.env.PUBLIC_URL +"/Liquor/GlenDower.png"}  style={{width : '120px'}}/>
     <hr size="4"  />
-
-
-    글랜다워</Col>
+    글랜다워
+    <div id="PlusMa">
+            <Button  id="Plus" onClick={() => setVolume({
+                ...volume, GlenDower: volume.GlenDower === 10 ? 10 : volume.GlenDower + 1
+            })}>+ </Button>
+            <div id="Count"> {volume.GlenDower} </div>
+            <Button  id="Minus"  onClick={() => setVolume({
+                ...volume, GlenDower: volume.GlenDower === 0 ? 0 : volume.GlenDower - 1
+            })}>- </Button>
+            </div>
+    
+    </Col>
     
     </Row>
 
