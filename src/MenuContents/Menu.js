@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./MenuShow.css";
 
 import Liquor from "./Button/liquor";
-import Cocktail from "./Button/cocktail";
+import Cocktail from "./Button/Cocktail";
 import Korean from './Button/Korean';
 import Food from './Button/Food';
 
@@ -12,6 +12,7 @@ import Korea from './Image/Korea.png';
 import cock from "./Image/Cocktail.png";
 import Liq from "./Image/Liquor.png";
 import foodd from './Image/Food.png';
+import axios from "axios";
 
 const Menu = ({ setContent, volume }) => {
 
@@ -21,12 +22,39 @@ const handleClickButton = (e, number) =>{
 
   const selectComponent = { // 객체 생성 // 객체의 key를 버튼의 name값과 동일하게 해줘야한다.
     liquor: <liquor />,
-    cocktail: <cocktail />,
+    Cocktail: <Cocktail />,
     Korean: <Korean />,
     Food: <Food />,
   };
+
+
+  // axios.post("url", {
+  //   params:{
+  //     volume
+  //   }
+  //   .then(function (response){
+
+  //   }).catch(function (error){
+
+  //   }).then(function(){
+
+  //   })
+  // })
   
-  
+
+  // const url ="http://localhost:3000/admin";
+  // if(volume.length > 0){
+  //   return(
+  //     axios.post(url).then(function(response){
+  //       setContent(response.data);
+  //       console.log("성공")
+  //     })
+  //   )
+  // }
+
+
+
+
   return (
     <>
       <Container>
@@ -64,17 +92,47 @@ const handleClickButton = (e, number) =>{
             <img src={foodd}  style={{width : '75px'}}/><br/>
             <a style={{fontSize: '1.5rem'}}>&#8213; Food  &#8213; </a>
             </Button>
-      
-
           </Col>
         </Row>
         
+
+
         <Row>
           <Col id="cam_2">
             <Col id="cam_monitor">
-              {volume.founder > 0 && `파운더 : ${volume.founder}`} <br/>
+              <form action="http://localhost:3000/admin" method="post">
+                
+              {volume.founder > 0 && <p>{`파운더 : ${volume.founder}`}</p>} 
 
-              {volume.GlenDower > 0 && `글랜다워 : ${volume.GlenDower}`}
+              {volume.GlenDower > 0 && <p>{`글랜다워 : ${volume.GlenDower}`}</p>}
+
+              {volume.Jagermeilter > 0 && <p>{`예거마이스터 : ${volume.Jagermeilter}`}</p>} 
+              {volume.JimBeam > 0 &&<p> {`짐빔 : ${volume.JimBeam}`}</p>} 
+              {volume.Tina > 0 && <p> {`티나 : ${volume.Tina}`}</p>}
+              {volume.TheClass33 > 0 && <p>{`더클라스33 : ${volume.TheClass33}`}</p>}
+              {volume.Macallan12 > 0 && <p>{`맥캘란12 : ${volume.Macallan12}`}</p>} 
+              {volume.TellinfSingleMalt > 0 && <p>{`티링 : ${volume.TellinfSingleMalt}`}</p>} 
+
+
+              {volume.Gambas > 0 && <p>{`감바스 : ${volume.Gambas}`}</p>} 
+              {volume.FridOjiCheese > 0 && <p>{`오지치즈후라이 : ${volume.FridOjiCheese}`}</p>}
+              {volume.cheeseBall > 0 && <p>{`치즈볼 : ${volume.cheeseBall}`}</p>} 
+              {volume.Gorgonzola > 0 && <p>{`고르곤졸라 : ${volume.Gorgonzola}`}</p>} 
+              {volume.Mellon > 0 && <p>{`멜론 : ${volume.Mellon}`}</p>}
+              {volume.Pepperoni > 0 && <p>{`페페로니 : ${volume.Pepperoni}`}</p>} 
+              {volume.pineapple > 0 && <p>{`파인애플 : ${volume.pineapple}`}</p>} 
+
+
+
+
+
+
+              <button id="send" type="submit" >주문</button>
+              </form>
+
+
+
+
             </Col>
           </Col>
         </Row>
