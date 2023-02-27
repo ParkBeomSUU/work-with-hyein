@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./Menu";
 import "./Admin.css";
 import AdminList from "./AdminList";
+import { isBrowser } from "react-device-detect";
 
 const AdminPage = () => {
   const [content, setContent] = useState(0); //state 선언

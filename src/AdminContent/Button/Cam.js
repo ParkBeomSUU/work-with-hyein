@@ -8,9 +8,7 @@ const Cam = () => {
     <>
       <Container>
         <Row>
-          <div className="bg-light border" id="monitor">
-            카메라 화면 나오는 곳
-          </div>
+          <Col id="monitor">카메라 화면 나오는 곳</Col>
         </Row>
       </Container>
     </>

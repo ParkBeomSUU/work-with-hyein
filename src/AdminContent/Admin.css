@@ -1,13 +1,15 @@
 #root {
   /* padding-top: 5rem;
   padding-bottom: 5rem; */
+  /* min-height: 100vh; */
 }
 
 #out {
   /* padding: 5rem 1rem 5rem 1rem; */
-  border: 0px solid rgb(30 186 237);
-  /* margin-top: 2rem;
-  margin-bottom: 2rem; */
+  /* border: 2px solid rgb(30 186 237);
+  box-shadow: 0px 0px 30px 15px rgb(30 186 237);
+  margin-top: 2rem; */
+  /* margin-bottom: 2rem; */
 }
 
 .row {
@@ -16,25 +18,38 @@
 
 /*로그인 메시지*/
 #intro {
-  height: 8rem;
-  margin-bottom: 20px;
-  border: 1px solid rgb(15 81 101);
+  width: 15rem;
+  height: 9rem;
+  margin-bottom: 3px;
+  border: 0px solid gray;
   border-radius: 7px;
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
-  background-color: rgb(8 30 49);
+  background-color: rgb(35 37 47);
   text-align: center;
   justify-content: center;
   color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
+}
+#IntroText {
+  font-size: 30px;
+  color: rgb(216 216 216);
+}
+#UserIcon {
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  color: rgb(216 216 216);
 }
 
 /*좌측 하단 카메라, 맵 화면*/
 #cam {
-  height: 15rem;
+  height: 22rem;
   margin-top: 20px;
-  border: 1px solid rgb(15 81 101);
+  border: 0px solid gray;
   border-radius: 7px;
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
-  background-color: rgb(8 30 49);
+  /* box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2); */
+  background-color: rgb(35 37 47);
 }
 
 /*첫번째 열*/
@@ -45,12 +60,13 @@
 
 /*두번째 열*/
 #second {
-  border: 1px solid rgb(15 81 101);
+  border: 0px solid gray;
   border-radius: 7px;
-  box-shadow: 0px 0px 10px 5px rgba(102, 186, 255, 0.2);
-  background-color: rgb(8 30 49);
+  background-color: rgb(35 37 47);
   margin-top: 20px;
   margin-bottom: 20px;
+  overflow: auto;
+  overflow-y: auto;
 }
 
 #button_div {
@@ -63,121 +79,332 @@
 }
 
 #button {
-  width: 12rem;
+  width: 12.5rem;
   height: 10rem;
+  margin: 5px;
   font-size: 3rem;
-  border: 1px solid rgb(15 81 101);
+  border: 0px solid rgb(35 37 47);
   border-radius: 7px;
-  box-shadow: 0px 0px 5px 5px rgba(102, 186, 255, 0.2);
-  background-color: rgb(8 30 49);
-  color: white;
+  background-color: rgb(35 37 47);
+  color: rgb(216 216 216);
+}
+
+.ButtonIcon {
+  filter: drop-shadow(10px 0px 8px rgb(0 0 0));
+}
+
+.ButtonName {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0px 0px 20px rgb(0 0 0);
 }
 
 #button:hover {
-  background-color: #0dbfca;
-  transition: 0.4s;
-  color: rgb(15 81 101);
-  box-shadow: 0 0 5px #0dbfca, 0 0 25px #0dbfca, 0 0 50px #0dbfca,
-    0 0 200px #0dbfca;
-  border: 0px;
+  /* background-color: #0dbfca; */
+  transition: 0.3s;
+  color: rgb(38 155 185);
+  /* box-shadow: 0 0 5px #0dbfca, 0 0 25px #0dbfca, 0 0 50px #0dbfca,
+    0 0 200px #0dbfca; */
+  border: 0px solid rgb(35 37 47);
 }
 
-/*네번째 버튼 첫번째 칸*/
+.FirstDiv {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  /* margin: 0 auto; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+  color: rgb(216 216 216);
+  font-weight: bold;
+
+  animation: FirstDiv 3s linear infinite;
+}
+
+.SecondDiv {
+  display: inline-block;
+  float: center;
+  font-size: 25px;
+  margin-top: 50px;
+  color: rgb(216 216 216);
+  font-weight: bold;
+}
+.FirstPtag {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.SecondPtag {
+  font-size: 25px;
+}
+
+.FirstDiv:hover {
+  animation: shake 0.3s /* 마우스 오버시 아이콘 .3s 동안 흔듦 */ linear 0s
+    infinite alternate;
+}
+
+@keyframes shake {
+  /* @keyframes를 이용해 shake의 각도를 좌우 15deg로 조정 */
+  30% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  70% {
+    transform: rotate(15deg);
+  }
+  90% {
+    transform: rotate(-15deg);
+  }
+}
+
+/*Info 버튼들 커지는 호버 효과*/
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*Info 1번 버튼: 배터리*/
 #battery {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin-top: 55px;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
 }
-/*네번째 버튼 두번째 칸*/
+
+#battery:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
+}
+
+/*Info 2번 버튼: 버저*/
 #buzzer {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin-top: 55px;
+  margin-bottom: 35px;
+  margin-left: 35px;
+  margin-right: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
 }
-/*네번째 버튼 세번째 칸*/
+
+#buzzer:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
+}
+
+/* Info 2번 버튼: 헤드라이트 on/off */
 #headlight_onoff {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
 }
-/*네번째 버튼 네번째 칸*/
+#headlight_onoff:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
+}
+
+/* Info 4번 버튼: 헤드라이트 색상 */
 #headlight_color {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
 }
-/*네번째 버튼 다섯번째 칸*/
+#headlight_color:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
+}
+
+/* Info 5번 버튼: 왼쪽 RPM */
 #rpm_l {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  /* animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
 }
-/*네번째 버튼 여섯번째 칸*/
+#rpm_r:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
+}
+
+/* Info 6번 버튼: 오른쪽 RPM */
 #rpm_r {
-  width: 12rem;
-  height: 10rem;
-  margin: 40px;
+  width: 13rem;
+  height: 13rem;
+  margin: 35px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+  background-color: rgba(3, 11, 18, 0.2);
   color: white;
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  /* 
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff; */
+}
+#rpm_r:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease-out;
 }
 
 #order {
-  width: 12rem;
-  height: 10rem;
+  width: 9rem;
+  height: 22rem;
   margin: 40px;
   font-size: 3rem;
-  border: 0px solid;
+  border: 0px solid rgb(15 81 101);
   border-radius: 7px;
-  background-color: rgb(10 37 60);
-  color: white;
+  background-color: rgb(216 216 216);
+
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+
+  overflow-y: auto;
+  color: black;
+}
+
+#TableName {
+  font-size: 1.5rem;
+  margin-top: 13px;
+  font-weight: bold;
+  /* text-shadow: 0px 0px 10px rgb(40 180 199); */
+}
+
+.OrderIcon {
+  filter: drop-shadow(10px 0px 8px rgb(0 0 0));
+  display: flex;
+  align-items: center;
 }
 
 #table {
   justify-content: center;
 }
 
+/* OrderList 주문목록 X 아이콘 */
+.Xmark {
+  float: right;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
 #monitor {
   width: 95%;
-  height: 44rem;
+  height: 52rem;
   margin: 20px;
   padding: 10px;
   border: 0px solid;
   border-radius: 7px;
-  background-color: rgb(10 37 60);
+  background-color: rgb(28 32 41);
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+// Table.js 주문목록 모달
+#GoButton {
+  width: 100px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 5px 5px rgba(83, 81, 82, 0.2);
+  background-color: rgb(216 216 216);
+  font-size: 50px;
+}
+
+#GoButton:hover {
+  background-color: white;
+  transition: 0.3s;
+
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
+}
+
+.GoModal {
   color: black;
-  box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2);
+}
+
+#cam_monitor_inner {
+  width: 100%;
+  height: 20rem;
+  margin-top: 13px;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(28 32 41);
+  color: white;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+#BatteryBar {
+  margin-top: 90px;
+  color: red;
 }
