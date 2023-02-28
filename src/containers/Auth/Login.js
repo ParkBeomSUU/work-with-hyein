@@ -85,34 +85,36 @@ class  Login extends Component  {
          const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
         const Logout_Redirect_URL ='http://localhost:3000'
 
-        const [kperson, setkperson] = this.useState('')
-        console.log(window.location)
-        const parmas = new URLSearchParams(window.location.serach);
-        console.log(parmas.get("code"))
-        const code = parmas.get("code")
-        console.log(code)
+        const kakaoLogin = () => {
+            window.location.href = KAKAO_AUTH_URL;
+          }
 
-
-        this.useEffect(() =>{
-            axios.get('/klogin',
-            {params: {code:code}}
-            ).then(response => {
-                console.log(response)
-                setkperson(response.data)
-            }).then(() =>{
-                window.history.pushState(kperson,null ,"http://localhost:3000/auth/login")
-            })
-            .catch(error => console.log(error))
-        },[])
-
-        console.log(kperson.profile)
-        console.log(kperson.id)
-
-        console.log(kperson.nickName)
+        // const [kperson, setkperson] = this.useState('')
+        // console.log(window.location)
+        // const parmas = new URLSearchParams(window.location.serach);
+        // console.log(parmas.get("code"))
+        // const code = parmas.get("code")
+        // console.log(code)
+        // this.useEffect(() =>{
+        //     axios.get('/klogin',
+        //     {params: {code:code}}
+        //     ).then(response => {
+        //         console.log(response)
+        //         setkperson(response.data)
+        //     }).then(() =>{
+        //         window.history.pushState(kperson,null ,"http://localhost:3000/auth/login")
+        //     })
+        //     .catch(error => console.log(error))
+        // },[])
+        // console.log(kperson.profile)
+        // console.log(kperson.id)
+        // console.log(kperson.nickName)
 
 
         
 
+
+        
 
 //자체 서버에서 받아오는 부분
         console.log('userData', userData)
@@ -125,9 +127,9 @@ class  Login extends Component  {
                 <InputWithLabel label="이메일" id ="email" name="email" placeholder="이메일"/>
                 <InputWithLabel label="비밀번호" name="password" placeholder="비밀번호" type="password"/>
                 <LoginBtn type="submit">로그인</LoginBtn>
-                <a href={ KAKAO_AUTH_URL }> 
+                <button onClick={kakaoLogin}>     {/* href={ KAKAO_AUTH_URL } */}
                 <img src={process.env.PUBLIC_URL +"/kakao_login.png"} />
-                </a>
+                </button>
 
                 <RegisterLink to="/auth/register">회원가입</RegisterLink>
             </form>

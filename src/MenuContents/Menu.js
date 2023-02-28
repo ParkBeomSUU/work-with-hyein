@@ -150,8 +150,8 @@ const handleClickButton = (e, number) =>{
 
 
 
+              <OrderButton />
 
-            <OrderButton/>
               </form>
 
 
@@ -159,7 +159,9 @@ const handleClickButton = (e, number) =>{
 
             </Col>
           </Col>
+
         </Row>
+
         </Container>
    
     </>
