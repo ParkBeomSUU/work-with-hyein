@@ -13,6 +13,11 @@ import cock from "./Image/Cocktail.png";
 import Liq from "./Image/Liquor.png";
 import foodd from './Image/Food.png';
 import axios from "axios";
+import OrderButton from "./Button/OrderButton";
+
+
+
+
 
 const Menu = ({ setContent, volume }) => {
 
@@ -100,12 +105,10 @@ const handleClickButton = (e, number) =>{
         <Row>
           <Col id="cam_2">
             <Col id="cam_monitor">
-              <form action="http://localhost:3000/admin" method="post">
+              <form>
                 
               {volume.founder > 0 && <p>{`파운더 : ${volume.founder}`}</p>} 
-
               {volume.GlenDower > 0 && <p>{`글랜다워 : ${volume.GlenDower}`}</p>}
-
               {volume.Jagermeilter > 0 && <p>{`예거마이스터 : ${volume.Jagermeilter}`}</p>} 
               {volume.JimBeam > 0 &&<p> {`짐빔 : ${volume.JimBeam}`}</p>} 
               {volume.Tina > 0 && <p> {`티나 : ${volume.Tina}`}</p>}
@@ -115,7 +118,7 @@ const handleClickButton = (e, number) =>{
 
 
               {volume.Gambas > 0 && <p>{`감바스 : ${volume.Gambas}`}</p>} 
-              {volume.FridOjiCheese > 0 && <p>{`오지치즈후라이 : ${volume.FridOjiCheese}`}</p>}
+              {volume.FriedOjiCheese > 0 && <p>{`오지치즈후라이 : ${volume.FriedOjiCheese}`}</p>}
               {volume.cheeseBall > 0 && <p>{`치즈볼 : ${volume.cheeseBall}`}</p>} 
               {volume.Gorgonzola > 0 && <p>{`고르곤졸라 : ${volume.Gorgonzola}`}</p>} 
               {volume.Mellon > 0 && <p>{`멜론 : ${volume.Mellon}`}</p>}
@@ -125,9 +128,30 @@ const handleClickButton = (e, number) =>{
 
 
 
+              {volume.Dowon > 0 && <p>{`도원결의 : ${volume.Dowon}`}</p>}
+              {volume.Hwang > 0 && <p>{`황진이 : ${volume.Hwang}`}</p>}
+              {volume.Lee > 0 && <p>{`이강주 : ${volume.Lee}`}</p>}
+              {volume.mak > 0 && <p>{`떠먹는 막걸리 : ${volume.mak}`}</p>}
+              {volume.Monkey > 0 && <p>{`원숭이 막걸리 : ${volume.Monkey}`}</p>}
+              {volume.Naru > 0 && <p>{`나루 막걸리 : ${volume.Naru}`}</p>}
+              {volume.nimome > 0 && <p>{`제주 니모메 : ${volume.nimome}`}</p>}
+              {volume.Omiza > 0 && <p>{`장수 오미자 : ${volume.Omiza}`}</p>}
+              {volume.OneSoju > 0 && <p>{`원소주 : ${volume.OneSoju}`}</p>}
+              {volume.OdiRang > 0 && <p>{`오디랑 : ${volume.OdiRang}`}</p>}
+              {volume.Peach > 0 && <p>{`복숭아와인 : ${volume.Peach}`}</p>}
+              {volume.purpleJin > 0 && <p>{`퍼플 진: ${volume.purpleJin}`}</p>}
+              {volume.Rye > 0 && <p>{`퍼플진 : ${volume.Rye}`}</p>}
+              {volume.SuloCity > 0 && <p>{`술로시티: ${volume.SuloCity}`}</p>}
 
 
-              <button id="send" type="submit" >주문</button>
+
+
+
+
+
+
+
+            <OrderButton/>
               </form>
 
 

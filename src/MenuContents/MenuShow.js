@@ -31,6 +31,21 @@ const MenuShow = () => {
     Pineapple:0,
 
     //전통주
+    Dowon:0,
+    Hwang:0,
+    Lee:0,
+    mak:0,
+    Monkey:0,
+    Naru:0,
+    nimome:0,
+    OdiRang:0,
+    Omiza:0,
+    OneSoju:0,
+    Peach:0,
+    perpleJin:0,
+    Rye:0,
+    SuloCity:0,
+
 
 
 
