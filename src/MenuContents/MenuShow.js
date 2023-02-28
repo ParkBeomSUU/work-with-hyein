@@ -11,8 +11,30 @@ const MenuShow = () => {
   const [content, setContent] = useState(0); //state 선언
 
   const [ volume, setVolume ] = useState({
+    //양주
     founder: 0,
     GlenDower: 0,
+    Jagermeilter:0,
+    JimBeam:0,
+    Tina:0,
+    TheClass33:0,
+    Macallan12:0,
+    TellinfSingleMalt:0,
+
+    //음식
+    cheeseBall:0,
+    FriedOjiCheese:0,
+    Gambas:0,
+    Gorgonzola:0,
+    Mellon:0,
+    Pepperoni:0,
+    Pineapple:0,
+
+    //전통주
+
+
+
+    //칵테일
   })
 
 

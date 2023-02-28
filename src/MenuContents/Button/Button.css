@@ -22,7 +22,7 @@
     
     
     width: 350px;
-    height: 18rem;
+    height: 19rem;
     font-size: 20px;
     margin: 0%;
     margin-right: 61px;
@@ -49,16 +49,21 @@
 
 #PlusMa{
     width: 90%;
-    margin: 10px auto;
+    margin: 0px auto;
     display: flex;
 
 }
 
 #Plus {
-    flex:1;
-    width:30%;
-    box-sizing: border-box;
-    background-color: purple;
+    width: 50px;
+    height: 50px;
+    border: 2px solid ;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 20px;
+   
 }
 
 #Count{
@@ -69,9 +74,45 @@
 }
 
 #Minus{
-    flex:1;
-    width:30%;
-    box-sizing: border-box;
-    background-color: purple;
+    width: 50px;
+    height: 50px;
+    border: 2px solid ;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 20px;
 
+}
+
+.box {
+	position: relative;
+	width: 300px; height: 200px;
+	border: 0px solid;
+}
+
+.box .introduce {
+	color: #fff;
+	position: absolute; left: 0; bottom: 0;
+	background: rgba(85, 84, 84, 0.692);
+	width: 100%;
+    height: 100%;
+	box-sizing: border-box;
+	opacity: 0;
+	transition: opacity 0.35s ease-in-out;
+    
+}
+.box:hover .introduce {
+	opacity: 1;
+}
+.box .introduce h3 {
+	font-size: 23px;
+	padding-bottom: 0.4em;
+	overflow:hidden;
+}
+.box .introduce p {
+	font-size: 15px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    text-align: left;
 }
