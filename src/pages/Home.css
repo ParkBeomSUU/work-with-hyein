@@ -24,6 +24,16 @@ body {
   font-family: Arial;
 }
 
+<<<<<<< HEAD
+=======
+/* .container {
+  display: flex;
+/*   border:1px solid red; */
+/* height: 100%;
+  align-items: center;
+  margin-top: 8%;
+} */
+>>>>>>> a1d956cc00fc01266d73e3fe1ead093db45d7f7c
 
 #Logo {
   display: block;

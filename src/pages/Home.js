@@ -11,7 +11,6 @@ const Positioner = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-
 // 로고
 const LogoWrapper = styled.div`
   background-color: transparent;

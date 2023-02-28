@@ -8,11 +8,13 @@ import {
   faVideo,
   faListUl,
   faCircleInfo,
+  faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
 import Cam from "./Button/Cam";
 import Order from "./Button/Order";
 import Robot from "./Button/Robot";
 import Table from "./Button/Table";
+import { FaUserCheck } from "react-icons/fa";
 
 const Menu = ({ setContent }) => {
   const handleClickButton = (e, number) => {
@@ -23,7 +25,13 @@ const Menu = ({ setContent }) => {
     <>
       <Container>
         <Row>
-          <Col id="intro">노혜인 님이 로그인 하셨습니다.</Col>
+          <Col id="intro">
+            <div id="UserIcon">
+              <FaUserCheck />
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <div id="IntroText">USER</div>
+          </Col>
         </Row>
 
         <Row>
@@ -33,7 +41,8 @@ const Menu = ({ setContent }) => {
               id="button"
               onClick={(e) => handleClickButton(e, 0)}
             >
-              <FontAwesomeIcon icon={faRobot} />
+              <FontAwesomeIcon icon={faRobot} className="ButtonIcon" />
+              <div className="ButtonName">Table</div>
             </Button>
           </Col>
 
@@ -43,7 +52,8 @@ const Menu = ({ setContent }) => {
               id="button"
               onClick={(e) => handleClickButton(e, 1)}
             >
-              <FontAwesomeIcon icon={faListUl} />
+              <FontAwesomeIcon icon={faReceipt} className="ButtonIcon" />
+              <div className="ButtonName"> Order List</div>
             </Button>
           </Col>
         </Row>
@@ -55,7 +65,8 @@ const Menu = ({ setContent }) => {
               id="button"
               onClick={(e) => handleClickButton(e, 2)}
             >
-              <FontAwesomeIcon icon={faVideo} />
+              <FontAwesomeIcon icon={faVideo} className="ButtonIcon" />
+              <div className="ButtonName">Monitor</div>
             </Button>
           </Col>
           <Col id="button_div">
@@ -64,14 +75,17 @@ const Menu = ({ setContent }) => {
               id="button"
               onClick={(e) => handleClickButton(e, 3)}
             >
-              <FontAwesomeIcon icon={faCircleInfo} />
+              <FontAwesomeIcon icon={faCircleInfo} className="ButtonIcon" />
+              <div className="ButtonName">Info</div>
             </Button>
           </Col>
         </Row>
 
         <Row>
           <Col id="cam">
-            <Col id="cam_monitor"></Col>
+            <Col id="cam_monitor">
+              <Col id="cam_monitor_inner"></Col>
+            </Col>
           </Col>
         </Row>
       </Container>
