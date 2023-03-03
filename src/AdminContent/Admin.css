@@ -67,6 +67,7 @@
   margin-bottom: 20px;
   overflow: auto;
   overflow-y: auto;
+  height: 879px;
 }
 
 #button_div {
@@ -78,10 +79,10 @@
   margin-bottom: 10px;
 }
 
-#button {
-  width: 12.5rem;
+#buttonFirst {
+  width: 12rem;
   height: 10rem;
-  margin: 5px;
+  /* margin: 5px; */
   font-size: 3rem;
   border: 0px solid rgb(35 37 47);
   border-radius: 7px;
@@ -100,7 +101,7 @@
   text-shadow: 0px 0px 20px rgb(0 0 0);
 }
 
-#button:hover {
+#buttonFirst:hover {
   /* background-color: #0dbfca; */
   transition: 0.3s;
   color: rgb(38 155 185);
@@ -145,9 +146,10 @@
     infinite alternate;
 }
 
-@keyframes shake {
+/* Info버튼 아이콘 애니메이션 */
+/* @keyframes shake {
   /* @keyframes를 이용해 shake의 각도를 좌우 15deg로 조정 */
-  30% {
+/* 30% {
     transform: rotate(15deg);
   }
   50% {
@@ -159,7 +161,7 @@
   90% {
     transform: rotate(-15deg);
   }
-}
+} */
 
 /*Info 버튼들 커지는 호버 효과*/
 @keyframes animate {
@@ -318,9 +320,9 @@
 }
 
 #order {
-  width: 9rem;
-  height: 22rem;
-  margin: 40px;
+  /* width: 9rem;
+  height: 22rem; 
+  margin: 20px; */
   font-size: 3rem;
   border: 0px solid rgb(15 81 101);
   border-radius: 7px;
@@ -333,7 +335,7 @@
   color: black;
 }
 
-#TableName {
+.TableName {
   font-size: 1.5rem;
   margin-top: 13px;
   font-weight: bold;
@@ -355,7 +357,7 @@
   float: right;
   font-size: 20px;
   margin-top: 5px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 #monitor {
@@ -407,4 +409,27 @@
 #BatteryBar {
   margin-top: 90px;
   color: red;
+}
+
+.OrderList {
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow: auto;
+}
+
+.each-table {
+  color: black;
+  border: 15px solid rgb(35 37 47);
+  padding: 0px;
+  margin-top: 30px;
+  list-style-type: none;
+  border-radius: 30px;
+  background-color: rgb(216 216 216);
+}
+
+.OrderName {
+  padding: 0px 20px 20px 20px;
+  font-size: 1.4rem;
+  overflow: auto;
+  height: 18rem;
 }

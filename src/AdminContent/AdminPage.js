@@ -11,8 +11,8 @@ const AdminPage = () => {
   console.log(content);
   return (
     <>
-      <Container id="out">
-        <Row>
+      <Container id="out" style={{ display: "flex" }}>
+        <Row style={{ width: "100%" }}>
           <Col id="first" sm={{ span: 4 }} xs={{ span: 4 }}>
             <Menu setContent={setContent} />
           </Col>

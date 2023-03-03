@@ -9,6 +9,7 @@ const Table = () => {
   return (
     <>
       <Container>
+        {" "}
         <img
           src={TablePic}
           style={{ width: "50rem", height: "30rem", marginTop: "40px" }}
@@ -16,7 +17,6 @@ const Table = () => {
         <br />
         <br />
         <br />
-
         <StartModal />
       </Container>
     </>

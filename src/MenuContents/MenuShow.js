@@ -4,9 +4,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./Menu";
 import "./MenuShow.css";
 import List from "./List";
+import { useDispatch } from "react-redux";
 
 
-const MenuShow = () => {
+const MenuShow = (props) => {
+
+
+    // const dispatch = useDispatch();
+  
+    // // 발급된 인가코드를 백엔드로 넘겨주기 위해 꺼내오는 작업이 필요하다.
+    // // code라는 이름으로 파라미터 코드 값을 꺼내오려면 아래와 같이 선언하면 된다.
+    // let code = new URL(window.location.href).searchParams.get("code");
+  
+    // React.useEffect(() => {
+    // // 꺼내온 code(인가코드)를 미들웨어를 통해 백엔드로 넘겨준다.
+    //   dispatch(userAction.kakaoLoginAC(code));
+    // }, []);
+
+
+
+
+
+
+
+
 
   const [content, setContent] = useState(0); //state 선언
 
@@ -31,6 +52,21 @@ const MenuShow = () => {
     Pineapple:0,
 
     //전통주
+    Dowon:0,
+    Hwang:0,
+    Lee:0,
+    mak:0,
+    Monkey:0,
+    Naru:0,
+    nimome:0,
+    OdiRang:0,
+    Omiza:0,
+    OneSoju:0,
+    Peach:0,
+    perpleJin:0,
+    Rye:0,
+    SuloCity:0,
+
 
 
 
@@ -40,6 +76,10 @@ const MenuShow = () => {
 
 
   console.log(content);
+
+
+
+
 
   return (
     <>

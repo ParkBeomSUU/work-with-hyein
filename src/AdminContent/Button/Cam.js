@@ -7,6 +7,7 @@ const Cam = () => {
   return (
     <>
       <Container>
+        {" "}
         <Row>
           <Col id="monitor">카메라 화면 나오는 곳</Col>
         </Row>

@@ -5,78 +5,31 @@ import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCheckToSlot } from "@fortawesome/free-solid-svg-icons";
 import { BsClipboardCheck } from "react-icons/bs";
+import OrderTest from "./OrderTest";
 
 const Order = () => {
   return (
-    <>
-      <Container>
+    <div
+      className="OrderList"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+      }}
+    >
+      <OrderTest />
+      {/* <Container fluid>
         <Row>
-          <Col id="order">
+          <Col id="order" md={6} lg={6}>
             <div id="TableName">
-              <BsClipboardCheck />
-              &nbsp; Table 1
+              <BsClipboardCheck /> &nbsp; Table 1
               <FontAwesomeIcon icon={faXmark} className="Xmark" />
             </div>
             <hr />
-            {/* <hr /> */}
-            {/* <ul id="TableName">
-              <li></li>
-              <br />
-              <li></li>
-              <br />
-              <li></li>
-            </ul> */}
-          </Col>
-          <Col id="order">
-            <div id="TableName">
-              <BsClipboardCheck />
-              &nbsp; Table 1
-              <FontAwesomeIcon icon={faXmark} className="Xmark" />
-            </div>
-            <hr />
-            {/* <ul id="TableName">
-              <li></li>
-              <br />
-              <li></li>
-              <br />
-              <li></li>
-            </ul> */}
+            <OrderTest />
           </Col>
         </Row>
-        <Row>
-          <Col id="order">
-            <div id="TableName">
-              <BsClipboardCheck />
-              &nbsp; Table 1
-              <FontAwesomeIcon icon={faXmark} className="Xmark" />
-            </div>
-            <hr />
-            {/* <ul id="TableName">
-              <li></li>
-              <br />
-              <li></li>
-              <br />
-              <li></li>
-            </ul> */}
-          </Col>
-          <Col id="order">
-            <div id="TableName">
-              <BsClipboardCheck />
-              &nbsp; Table 1
-              <FontAwesomeIcon icon={faXmark} className="Xmark" />
-            </div>
-            <hr />
-            {/* <ul id="TableName">
-              <li></li>
-              <br />
-              <li></li>
-              <br />
-              <li></li>
-            </ul> */}
-          </Col>
-        </Row>
-      </Container>
-    </>
+      </Container> */}
+    </div>
   );
 };
 

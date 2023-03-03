@@ -38,7 +38,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 0)}
             >
               <FontAwesomeIcon icon={faRobot} className="ButtonIcon" />
@@ -49,7 +49,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 1)}
             >
               <FontAwesomeIcon icon={faReceipt} className="ButtonIcon" />
@@ -62,7 +62,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 2)}
             >
               <FontAwesomeIcon icon={faVideo} className="ButtonIcon" />
@@ -72,7 +72,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 3)}
             >
               <FontAwesomeIcon icon={faCircleInfo} className="ButtonIcon" />

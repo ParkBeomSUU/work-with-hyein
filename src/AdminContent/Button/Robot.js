@@ -9,6 +9,7 @@ import HeadlightColor from "./HeadlightColor";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import RpmLeft from "./RpmLeft";
 import RpmRight from "./RpmRight";
+import Reveal from "react-reveal/Reveal";
 
 const Robot = () => {
   return (
@@ -18,7 +19,9 @@ const Robot = () => {
           {/* 배터리 */}
           <Col id="battery">
             <div className="FirstDiv">
-              <Battery />
+              <Reveal effect="fadeInUp">
+                <Battery />
+              </Reveal>
             </div>
             <div className="SecondDiv">
               <p className="FirstPtag">83%</p>{" "}

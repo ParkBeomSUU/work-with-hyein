@@ -4,11 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBatteryThreeQuarters } from "@fortawesome/free-solid-svg-icons";
+import Jump from "react-reveal/Jump";
 
 function Battery() {
   return (
-    <FontAwesomeIcon icon={faBatteryThreeQuarters} id="BatteryIcon" />
-    // <ProgressBar animated now={90} striped variant="info" id="BatteryBar" />
+    <Jump duration={2000}>
+      <FontAwesomeIcon icon={faBatteryThreeQuarters} id="BatteryIcon" />
+    </Jump>
   );
 }
 
