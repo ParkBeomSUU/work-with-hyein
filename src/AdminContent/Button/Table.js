@@ -9,16 +9,14 @@ const Table = () => {
   return (
     <>
       <Container>
-        {" "}
-        <img
-          src={TablePic}
-          style={{ width: "50rem", height: "30rem", marginTop: "40px" }}
-        />
-        <br />
-        <br />
-        <br />
-        <StartModal />
+        <Row id="MonitorRow">
+          <Col id="TableMap"></Col>
+        </Row>
       </Container>
+
+      <div className="ModalDiv">
+        <StartModal />
+      </div>
     </>
   );
 };

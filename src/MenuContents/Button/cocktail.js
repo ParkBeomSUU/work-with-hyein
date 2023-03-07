@@ -22,7 +22,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     Taste : 보드카와 레몬주스, 토마토주스, <br />
                     우스터소스를 결합한 독특한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 15.0
                     <br />
                   </p>
                 </div>
@@ -72,7 +72,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     Taste : 진과 올리브가 들어가며 <br />
                     은은하고 묵직한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 12.0
                     <br />
                   </p>
                 </div>
@@ -123,7 +123,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     <br />
                     시원하고 상큼한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 12.0
                     <br />
                   </p>
                 </div>
@@ -172,7 +172,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 14도 <br /> <br />
                     Taste : 레드와인과 과일의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 11.0
                     <br />
                   </p>
                 </div>
@@ -221,7 +221,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 18도 <br /> <br />
                     Taste : 럼 피즈에 민트를 첨가한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 12.0
                     <br />
                   </p>
                 </div>
@@ -270,7 +270,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 12도 <br /> <br />
                     Taste : 데킬라향과 오렌지향의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 17.0
                     <br />
                   </p>
                 </div>
@@ -319,7 +319,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 20도 <br /> <br />
                     Taste : 크렌베리향과 오렌지향의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 12.0
                     <br />
                   </p>
                 </div>
@@ -368,7 +368,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 40도 <br /> <br />
                     Taste : 위스키 베이스의 고풍스러운 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 11.0
                     <br />
                   </p>
                 </div>
@@ -417,7 +417,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 10도 <br /> <br />
                     Taste : 럼 베이스에 파인애플향과 라임향의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 11.0
                     <br />
                   </p>
                 </div>
@@ -465,7 +465,7 @@ const Cocktail = ({ setVolume, volume }) => {
                     alcohol degree : 35도 <br /> <br />
                     Taste : 알코올에 단맛과 쓴맛을 더한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 15.0
                     <br />
                   </p>
                 </div>

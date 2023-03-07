@@ -24,9 +24,8 @@ const Robot = () => {
               </Reveal>
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">83%</p>{" "}
-              {/* 배터리값 받아올 곳, 마진 바텀 0으로 하기*/}
-              <p>Battery</p>
+              <p className="FirstPtag">%</p> {/* 배터리값 받아올 곳*/}
+              <p className="SecondPtag">Battery</p>
             </div>
           </Col>
 
@@ -36,8 +35,7 @@ const Robot = () => {
               <Buzzer />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">ON</p>{" "}
-              {/* 버저 온오프값 받아올 곳, 마진 바텀 0으로 하기*/}
+              <p className="FirstPtag">ON</p> {/* 버저 온오프값 받아올 곳*/}
               <p className="SecondPtag">Buzzer</p>
             </div>
           </Col>
@@ -51,7 +49,7 @@ const Robot = () => {
             </div>
             <div className="SecondDiv">
               <p className="FirstPtag">ON</p>{" "}
-              {/* 헤드라이트 온오프값 받아올 곳, 마진 바텀 0으로 하기*/}
+              {/* 헤드라이트 온오프값 받아올 곳*/}
               <p className="SecondPtag">Headlight</p>
             </div>
           </Col>
@@ -62,7 +60,7 @@ const Robot = () => {
             </div>
             <div className="SecondDiv">
               <p className="FirstPtag">RGB </p>{" "}
-              {/* 헤드라이트 색상값 받아올 곳, 마진 바텀 0으로 하기*/}
+              {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">LED Color</p>
             </div>
           </Col>
@@ -76,7 +74,7 @@ const Robot = () => {
             </div>
             <div className="SecondDiv">
               <p className="FirstPtag">155</p>{" "}
-              {/* 헤드라이트 색상값 받아올 곳, 마진 바텀 0으로 하기*/}
+              {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">Left RPM</p>
             </div>
           </Col>
@@ -87,7 +85,7 @@ const Robot = () => {
             </div>
             <div className="SecondDiv">
               <p className="FirstPtag">200</p>{" "}
-              {/* 헤드라이트 색상값 받아올 곳, 마진 바텀 0으로 하기*/}
+              {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">Right RPM</p>
             </div>
           </Col>

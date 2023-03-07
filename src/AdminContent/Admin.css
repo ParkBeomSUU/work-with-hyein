@@ -32,11 +32,11 @@
   box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
 }
 #IntroText {
-  font-size: 30px;
+  font-size: 5rem;
   color: rgb(216 216 216);
 }
 #UserIcon {
-  font-size: 45px;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   color: rgb(216 216 216);
@@ -50,6 +50,18 @@
   border-radius: 7px;
   /* box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2); */
   background-color: rgb(35 37 47);
+  overflow: auto;
+  overflow-y: auto;
+}
+
+#VideoSecond {
+  width: 100%;
+  height: 100%;
+}
+
+#VideoFirst {
+  width: 100%;
+  height: 100%;
 }
 
 /*첫번째 열*/
@@ -88,6 +100,7 @@
   border-radius: 7px;
   background-color: rgb(35 37 47);
   color: rgb(216 216 216);
+  margin-top: 7px;
 }
 
 .ButtonIcon {
@@ -126,7 +139,7 @@
 }
 
 .SecondDiv {
-  display: inline-block;
+  /* display: inline-block; */
   float: center;
   font-size: 25px;
   margin-top: 50px;
@@ -352,8 +365,27 @@
   justify-content: center;
 }
 
+#TableMap {
+  width: 95%;
+  height: 40rem;
+  margin: 50px 20px 20px 20px;
+  padding: 10px;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(44 50 64);
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+
 /* OrderList 주문목록 X 아이콘 */
 .Xmark {
+  float: right;
+  font-size: 20px;
+  margin-top: 5px;
+  /* margin-right: 15px; */
+}
+
+.btn-close {
   float: right;
   font-size: 20px;
   margin-top: 5px;
@@ -374,7 +406,7 @@
 
 // Table.js 주문목록 모달
 #GoButton {
-  width: 100px;
+  width: 200px;
   margin-top: 50px;
   box-shadow: 0px 0px 5px 5px rgba(83, 81, 82, 0.2);
   background-color: rgb(216 216 216);
@@ -432,4 +464,119 @@
   font-size: 1.4rem;
   overflow: auto;
   height: 18rem;
+}
+
+.OrderCheck {
+  font-size: 1.5rem;
+  list-style-type: disc;
+
+  /* list-style-image: url(./Img/check.png); */
+}
+
+.modal-content {
+  /* background-color: rgb(216 216 216); */
+
+  /* font-weight: bold; */
+}
+
+.SendModal {
+  background-color: rgb(68 68 68);
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: 0px solid black;
+  font-weight: bold;
+}
+
+.SendModal:hover {
+  background-color: darkgray;
+  color: black;
+}
+
+.CancleModal {
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: 0px solid black;
+  font-weight: bold;
+  background-color: rgb(68 68 68);
+}
+
+.CancleModal:hover {
+  background-color: darkgray;
+  color: black;
+}
+
+.ModalDiv {
+  margin: 50px;
+}
+
+/* 크기 줄어들 때 버튼 크기 줄어듦 */
+@media (max-width: 1360px) {
+  #buttonFirst {
+    width: 10rem;
+  }
+}
+@media (max-width: 1330px) {
+  #buttonFirst {
+    width: 7rem;
+  }
+}
+@media (max-width: 1300px) {
+  #buttonFirst {
+    width: 6.5rem;
+  }
+}
+@media (max-width: 800px) {
+  #buttonFirst {
+    width: 4rem;
+  }
+}
+
+/* 크기 줄어들 때 버튼 아이콘 줄어듦, 글자 사라짐 */
+@media (max-width: 800px) {
+  .ButtonName {
+    display: none;
+  }
+  #buttonFirst {
+    font-size: 2rem;
+  }
+}
+
+/* 크기 줄어들 때 second 줄어듦
+@media (max-width: 1155px) {
+  #monitor {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+@media (max-width: 930px) {
+  #monitor {
+    width: 20rem;
+    height: 20rem;
+    align-items: center;
+  }
+
+} */
+
+/* 크기 줄어들 때 Info버튼 아이콘, 글씨 줄어듦 */
+@media (max-width: 1200px) {
+  .SecondPtag {
+    display: none;
+  }
+  .FirstPtag {
+    margin-top: 68px;
+  }
+}
+@media (max-width: 995px) {
+  .FirstPtag {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 390px) {
+  .FirstPtag {
+    font-size: 3rem;
+  }
 }

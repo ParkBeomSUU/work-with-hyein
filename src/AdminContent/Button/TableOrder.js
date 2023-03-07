@@ -5,43 +5,29 @@ import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCheckToSlot } from "@fortawesome/free-solid-svg-icons";
 import { BsClipboardCheck } from "react-icons/bs";
-import CloseButton from "./CloseButton";
 
-const OrderText = [
-  "양주 4, 칵테일 1, 커피 2",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-];
-// const OrderArray = OrderText.split(", ");
-// console.log(OrderArray);
+const TableOrder = ["양주 4, 칵테일 1, 커피 2"];
 
-const OrderTest = () => {
+const TableList = () => {
   return (
     <>
-      {OrderText.map((anOrder, idx) => {
+      {TableOrder.map((anOrder, idx) => {
         return (
           <ul
-            className="each-table"
             key={idx}
             style={{
               width: "50%",
             }}
           >
-            <div className="TableName">
+            {/* <div className="">
               <BsClipboardCheck /> &nbsp;Table {idx + 1}
-              <CloseButton className="Xmark" />
-            </div>
-            <hr
+            </div> */}
+            {/* <hr
               style={{
                 margin: "10px",
               }}
-            />
-            <div className="OrderName">
+            /> */}
+            <div className="OrderCheck">
               {anOrder.split(", ").map((o, i) => {
                 return <li key={i}>{o}</li>;
               })}
@@ -53,4 +39,4 @@ const OrderTest = () => {
   );
 };
 
-export default OrderTest;
+export default TableList;
