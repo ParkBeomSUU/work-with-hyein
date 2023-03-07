@@ -10,6 +10,9 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import RpmLeft from "./RpmLeft";
 import RpmRight from "./RpmRight";
 import Reveal from "react-reveal/Reveal";
+import values from "../fakeData.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const Robot = () => {
   return (
@@ -24,7 +27,8 @@ const Robot = () => {
               </Reveal>
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">%</p> {/* 배터리값 받아올 곳*/}
+              <p className="FirstPtag">{values.Battery}</p>{" "}
+              {/* 배터리값 받아올 곳*/}
               <p className="SecondPtag">Battery</p>
             </div>
           </Col>
@@ -35,7 +39,8 @@ const Robot = () => {
               <Buzzer />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">ON</p> {/* 버저 온오프값 받아올 곳*/}
+              <p className="FirstPtag">{values.Buzzer}</p>{" "}
+              {/* 버저 온오프값 받아올 곳*/}
               <p className="SecondPtag">Buzzer</p>
             </div>
           </Col>
@@ -48,7 +53,7 @@ const Robot = () => {
               <HeadlightOnOff />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">ON</p>{" "}
+              <p className="FirstPtag">{values.Headlight}</p>{" "}
               {/* 헤드라이트 온오프값 받아올 곳*/}
               <p className="SecondPtag">Headlight</p>
             </div>
@@ -59,7 +64,14 @@ const Robot = () => {
               <HeadlightColor />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">RGB </p>{" "}
+              <p
+                className="FirstPtag"
+                style={{
+                  color: values["LED Color"],
+                }}
+              >
+                <FontAwesomeIcon icon={faCircle} />
+              </p>{" "}
               {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">LED Color</p>
             </div>
@@ -73,7 +85,7 @@ const Robot = () => {
               <RpmLeft />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">155</p>{" "}
+              <p className="FirstPtag">{values["Left RPM"]}</p>{" "}
               {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">Left RPM</p>
             </div>
@@ -84,7 +96,7 @@ const Robot = () => {
               <RpmRight />
             </div>
             <div className="SecondDiv">
-              <p className="FirstPtag">200</p>{" "}
+              <p className="FirstPtag">{values["Right RPM"]}</p>{" "}
               {/* 헤드라이트 색상값 받아올 곳*/}
               <p className="SecondPtag">Right RPM</p>
             </div>

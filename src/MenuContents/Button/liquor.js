@@ -7,6 +7,7 @@ const Liquor = ({ setVolume, volume }) => {
     <>
       <Container>
         <Row id="Menus1">
+          {/* 파운더 */}
           <Row id="Menus">
             <Col>
               <div className="box">
@@ -56,13 +57,27 @@ const Liquor = ({ setVolume, volume }) => {
             </Col>
           </Row>
 
+          {/* 글랜다워 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/GlenDower.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/GlenDower.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>글랜다워</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               글랜다워
               <div id="PlusMa">
                 <Button
@@ -94,13 +109,27 @@ const Liquor = ({ setVolume, volume }) => {
             </Col>
           </Row>
 
+          {/* 예거 마이스터 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/Jagermeilter.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/Jagermeilter.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>예거 마이스터</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               예거 마이스터
               <div id="PlusMa">
                 <Button
@@ -134,13 +163,27 @@ const Liquor = ({ setVolume, volume }) => {
             </Col>
           </Row>
 
+          {/* 짐빔 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/JimBeam.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/JimBeam.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>짐빔</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               짐빔
               <div id="PlusMa">
                 <Button
@@ -169,13 +212,28 @@ const Liquor = ({ setVolume, volume }) => {
               </div>
             </Col>
           </Row>
+
+          {/* 티나 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/Tina.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/Tina.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>티나</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               티나
               <div id="PlusMa">
                 <Button
@@ -204,13 +262,29 @@ const Liquor = ({ setVolume, volume }) => {
               </div>
             </Col>
           </Row>
+
+          {/* 더클라스 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/TheClass33.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />더 클라스
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/TheClass33.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>더 클라스</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
+              더 클라스
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -243,13 +317,27 @@ const Liquor = ({ setVolume, volume }) => {
         </Row>
 
         <Row>
+          {/* 맥캘란 12 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/Macallan12.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="4" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/Macallan12.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>맥캘란 12</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               맥캘란 12
               <div id="PlusMa">
                 <Button
@@ -258,7 +346,7 @@ const Liquor = ({ setVolume, volume }) => {
                     setVolume({
                       ...volume,
                       Macallan12:
-                        volume.Macallan12 === 10 ? 10 : volume.Macallan12 + 1,
+                        volume.founder === 10 ? 10 : volume.Macallan12 + 1,
                     })
                   }
                 >
@@ -281,13 +369,27 @@ const Liquor = ({ setVolume, volume }) => {
             </Col>
           </Row>
 
+          {/* 텔린 싱글 몰트 */}
           <Row id="Menus">
             <Col>
-              <img
-                src={process.env.PUBLIC_URL + "/Liquor/TellinfSingleMalt.png"}
-                style={{ width: "120px" }}
-              />
-              <hr size="5" />
+              <div className="box">
+                <img
+                  src={process.env.PUBLIC_URL + "/Liquor/TellinfSingleMalt.png"}
+                  style={{ width: "120px" }}
+                />
+                <div className="introduce">
+                  <h3>텔린 싱글 몰트</h3>
+                  <p>
+                    {" "}
+                    alcohol degree : 40도 <br /> <br />
+                    Taste : 달콤하지만 묵직한 과일향
+                    <br /> <br />
+                    Price : 6.8
+                    <br />
+                  </p>
+                </div>
+                <hr size="4" />
+              </div>
               텔린 싱글 몰트
               <div id="PlusMa">
                 <Button

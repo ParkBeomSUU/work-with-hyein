@@ -9,7 +9,7 @@ const Users = () => {
       console.log(response);
     });
   }, []);
-  return <h1>admin</h1>;
+  return;
 };
 
 export default Users;

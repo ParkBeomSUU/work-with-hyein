@@ -3,17 +3,21 @@ import axios from "axios";
 import AdminInfo from "../Button/AdminInfo";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  const [user, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
-      setUsers(response.data);
-    });
+    axios
+      .get("https://jsonplaceholder.typicode.com/users/1") // 진짜 제이슨파일 주소 적음 됨
+      .then((response) => {
+        setUsers(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   return (
     <>
-      <AdminInfo users={users} />
+      <AdminInfo users={user} />
+      {user.name}
     </>
   );
 };
