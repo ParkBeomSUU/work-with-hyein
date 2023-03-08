@@ -9,12 +9,10 @@ import Table from "./Button/Table";
 const AdminList = ({ content }) => {
   return (
     <>
-      <Row>
-        {content === 0 && <Table />}
-        {content === 1 && <Order />}
-        {content === 2 && <Cam />}
-        {content === 3 && <Robot />}
-      </Row>
+      {content === 0 && <Table />}
+      {content === 1 && <Order />}
+      {content === 2 && <Cam />}
+      {content === 3 && <Robot />}
     </>
   );
 };

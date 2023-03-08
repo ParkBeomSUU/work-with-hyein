@@ -33,7 +33,7 @@ const Logo = styled(Link)`
 
 const Neon = () => {
   return (
-    <div class="container">
+    <div className="container">
       <svg id="Logo" viewBox="0 0 960 300">
         <symbol id="s-text">
           <text text-anchor="middle" x="50%" y="80%">
@@ -41,12 +41,12 @@ const Neon = () => {
           </text>
         </symbol>
 
-        <g class="g-ants">
-          <use xlinkHref="#s-text" class="text-copy"></use>
-          <use xlinkHref="#s-text" class="text-copy"></use>
-          <use xlinkHref="#s-text" class="text-copy"></use>
-          <use xlinkHref="#s-text" class="text-copy"></use>
-          <use xlinkHref="#s-text" class="text-copy"></use>
+        <g className="g-ants">
+          <use xlinkHref="#s-text" className="text-copy"></use>
+          <use xlinkHref="#s-text" className="text-copy"></use>
+          <use xlinkHref="#s-text" className="text-copy"></use>
+          <use xlinkHref="#s-text" className="text-copy"></use>
+          <use xlinkHref="#s-text" className="text-copy"></use>
         </g>
       </svg>
     </div>

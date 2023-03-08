@@ -24,23 +24,21 @@ body {
   font-family: Arial;
 }
 
-<<<<<<< HEAD
-=======
 /* .container {
   display: flex;
-/*   border:1px solid red; */
-/* height: 100%;
+  border: 0px solid transparent;
+  height: 100%;
   align-items: center;
   margin-top: 8%;
 } */
->>>>>>> a1d956cc00fc01266d73e3fe1ead093db45d7f7c
 
 #Logo {
   display: block;
-  font: 10.5em "Montserrat";
+  font: 15em "Montserrat";
   width: 1000px;
   height: 350px;
   margin: 0 auto;
+  margin-top: 200px;
   text-align: center;
 }
 

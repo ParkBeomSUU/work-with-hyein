@@ -15,6 +15,8 @@ import Order from "./Button/Order";
 import Robot from "./Button/Robot";
 import Table from "./Button/Table";
 import { FaUserCheck } from "react-icons/fa";
+import AdminList from "./AdminList";
+import InfoButton from "./Button/InfoButton";
 
 const Menu = ({ setContent }) => {
   const handleClickButton = (e, number) => {
@@ -30,15 +32,17 @@ const Menu = ({ setContent }) => {
               <FaUserCheck />
             </div>
             &nbsp;&nbsp;&nbsp;
-            <div id="IntroText">USER</div>
+            <div id="IntroText">
+              <InfoButton />
+            </div>
           </Col>
         </Row>
 
-        <Row>
+        <Row style={{ flexWrap: "noWrap" }}>
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 0)}
             >
               <FontAwesomeIcon icon={faRobot} className="ButtonIcon" />
@@ -49,7 +53,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 1)}
             >
               <FontAwesomeIcon icon={faReceipt} className="ButtonIcon" />
@@ -58,11 +62,11 @@ const Menu = ({ setContent }) => {
           </Col>
         </Row>
 
-        <Row>
+        <Row style={{ flexWrap: "noWrap" }}>
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 2)}
             >
               <FontAwesomeIcon icon={faVideo} className="ButtonIcon" />
@@ -72,7 +76,7 @@ const Menu = ({ setContent }) => {
           <Col id="button_div">
             <Button
               variant="outline-info"
-              id="button"
+              id="buttonFirst"
               onClick={(e) => handleClickButton(e, 3)}
             >
               <FontAwesomeIcon icon={faCircleInfo} className="ButtonIcon" />
@@ -84,7 +88,19 @@ const Menu = ({ setContent }) => {
         <Row>
           <Col id="cam">
             <Col id="cam_monitor">
-              <Col id="cam_monitor_inner"></Col>
+              <Col id="cam_monitor_inner">
+                {" "}
+                <iframe
+                  id="VideoFirst"
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/DAEK5GrLb_Y"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </Col>
             </Col>
           </Col>
         </Row>

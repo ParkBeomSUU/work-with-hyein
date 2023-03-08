@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Menu from "./Menu";
 import "./MenuShow.css";
 import List from "./List";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 
-const MenuShow = (props) => {
+const MenuShow = () => {
 
 
     // const dispatch = useDispatch();
@@ -22,7 +23,9 @@ const MenuShow = (props) => {
     // }, []);
 
 
-
+    // console.log(content);
+    const url="https //13.124.151.184/test"
+    const config = {"Content-Type": 'application/json'};
 
 
 
@@ -30,7 +33,7 @@ const MenuShow = (props) => {
 
 
   const [content, setContent] = useState(0); //state 선언
-
+  const [menuText, setMenuText] = useState("")
   const [ volume, setVolume ] = useState({
     //양주
     founder: 0,
@@ -71,14 +74,22 @@ const MenuShow = (props) => {
 
 
     //칵테일
+    bloodyMary:0,
+    blueHawaii:0,
+    cosmopolitan:0,
+    margarita:0,
+    martini:0,
+    mojito:0,
+    oldFashioned:0,
+    rustyNail:0,
+    sangria:0,
+    tequilaSunrise:0,
   })
 
+  useEffect(() => {
+    console.log(menuText)
 
-
-  console.log(content);
-
-
-
+  }, [menuText])
 
 
   return (
@@ -86,12 +97,13 @@ const MenuShow = (props) => {
       <Container id="out_2">
         <Row id="row_2">
           <Col id="first_2" sm={{ span: 4 }} xs={{ span: 4 }}>
-            <Menu setContent={setContent} volume={volume} />
+            <Menu setContent={setContent} volume={volume} menuText={menuText} setMenuText={setMenuText} />
           </Col>
           
           <Col id="second_2" sm={{ span: 8 }} xs={{ span: 8 }}>
            
-            <List content={content} volume={volume} setVolume={setVolume} />
+            <List content={content} volume={volume} setVolume={setVolume}
+            />
           
           </Col>
         </Row>

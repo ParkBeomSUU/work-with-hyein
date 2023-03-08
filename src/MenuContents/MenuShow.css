@@ -26,6 +26,7 @@
   border-radius: 7px;
   background-color: rgb(35 37 47);
   width: 4rem;
+  overflow-y :scroll;
 }
 
 #first_2 {
@@ -128,20 +129,8 @@
   color: white;
 }
 
-#send {
-  display: inline-block;
-  font-size: 1em;
-  padding: 1em 2em;
-  margin-top: 100px;
-  margin-bottom: 60px;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #ff0081;
-  color: #fff;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
-  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
-}
+ #send {
+height: 40px;
+margin-top: 15px;
+} 
+

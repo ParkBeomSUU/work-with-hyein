@@ -3,12 +3,9 @@ import userData from "../../local-json/users.json";
 import { InputWithLabel ,RegisterLink } from '../../components/';
 import styled from 'styled-components';
 import oc from 'open-color';
-
 import { shadow } from '../../lib/styleUtil';
-import Auth from "../../KakaoLogin/Auth";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios';
-
 
 
 const LoginBtn = styled.button`
@@ -42,99 +39,64 @@ const Title = styled.div`
 `;
 
 
-class  Login extends Component  {
-    //리액트에서는 document안됨
-
-    //변수,함수 내부멤버에는 const 안붙임
-
-    handleSubmit = (e) => {
-        e.preventDefault()
-        
-        // JSON 파일에서 가져온 모의 회원 정보 
-        const { userEmail, userPw } = userData[0]
-        console.log(userEmail, userPw)
-
-        // 폼에다 입력한 정보 읽어온 것 
-        const inputEmail = e.target.email.value
-        const inputPw = e.target.password.value
-
-        if(userEmail === inputEmail && userPw === inputPw){
-            alert("로그인 성공")
-            // 다른 화면으로 넘어가기 
-        }else{
-            alert("로그인 실패")
-        }
-
-        /*
-        alert(
-            userEmail === inputEmail && userPw === inputPw ? 
-            "로그인 성공" : "로그인 실패"
-        )
-        */
 
         
+
+
+const Login = () => {
+    
+    //카카오 로그인
+    const REST_API_KEY = "8948a4eef1e5e49c9bf9a77d394f04db";
+    const REDIRECT_URI ="http://localhost:3000/Menu/MenuContents";
+    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    const KAKAO_LOGOUT_URL ='http://localhost:3000'
+    
+
+    const [kperson, setKPerson] = useState('')
+    console.log(window.location)
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    useEffect(() => {
+      if(code !== null) {
+          axios.get('/~~~',
+                  {params: {code: code}}
+              ).then(response => { 
+                  console.log(response)
+                  setKPerson(response.data)
+
+              }).then(() => {
+                  window.history.replaceState(kperson, null, "http://localhost:3000/Menu/MenuContents")
+              })
+      }
+  })
+
+    const handleSubmit = e => {
+      e.preventDefault()
     }
 
+    // const kakaoLogin = () => {
+    //   window.location.href = KAKAO_AUTH_URL; //새로운 페이지로 이동한다.
+    // }
 
+    return <form onSubmit={handleSubmit}>
+        <Title>로그인</Title>
+        <InputWithLabel label="이메일" id ="email" name="email" placeholder="이메일"/>
+        <InputWithLabel label="비밀번호" name="password" placeholder="비밀번호" type="password"/>
+        <LoginBtn type="submit">로그인</LoginBtn>
+        {/* <button onClick={kakaoLogin}>
+          <img src={process.env.PUBLIC_URL +"/kakao_login.png"} alt="kakao login" />
+        </button> */}
+            <a
+            type="submit"
+            className="w-full mt-3 font-bold text-black bg-yellow-300 btn btn-warning"
+            href={KAKAO_AUTH_URL} >
+              <h1 className="mr-2 text-2xl" />
+              카카오로 로그인
+          </a>
 
-    render() {
-                //카카오 로그인
-
-        const REST_API_KEY = "8948a4eef1e5e49c9bf9a77d394f04db";
-        const REDIRECT_URI ="http://localhost:3000/Menu/MenuContents";
-         const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
-        const Logout_Redirect_URL ='http://localhost:3000'
-
-        const kakaoLogin = () => {
-            window.location.href = KAKAO_AUTH_URL;
-          }
-
-        // const [kperson, setkperson] = this.useState('')
-        // console.log(window.location)
-        // const parmas = new URLSearchParams(window.location.serach);
-        // console.log(parmas.get("code"))
-        // const code = parmas.get("code")
-        // console.log(code)
-        // this.useEffect(() =>{
-        //     axios.get('/klogin',
-        //     {params: {code:code}}
-        //     ).then(response => {
-        //         console.log(response)
-        //         setkperson(response.data)
-        //     }).then(() =>{
-        //         window.history.pushState(kperson,null ,"http://localhost:3000/auth/login")
-        //     })
-        //     .catch(error => console.log(error))
-        // },[])
-        // console.log(kperson.profile)
-        // console.log(kperson.id)
-        // console.log(kperson.nickName)
-
-
-        
-
-
-        
-
-//자체 서버에서 받아오는 부분
-        console.log('userData', userData)
-        let id= JSON.stringify(userData[0].userId);
-        console.log('id ', id);
-
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <Title>로그인</Title>
-                <InputWithLabel label="이메일" id ="email" name="email" placeholder="이메일"/>
-                <InputWithLabel label="비밀번호" name="password" placeholder="비밀번호" type="password"/>
-                <LoginBtn type="submit">로그인</LoginBtn>
-                <button onClick={kakaoLogin}>     {/* href={ KAKAO_AUTH_URL } */}
-                <img src={process.env.PUBLIC_URL +"/kakao_login.png"} />
-                </button>
-
-                <RegisterLink to="/auth/register">회원가입</RegisterLink>
-            </form>
-        );
-    }
+        <RegisterLink to="/auth/register">회원가입</RegisterLink>
+    </form>
 }
 
 export default Login;

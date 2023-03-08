@@ -7,8 +7,20 @@ const Cam = () => {
   return (
     <>
       <Container>
-        <Row>
-          <Col id="monitor">카메라 화면 나오는 곳</Col>
+        {" "}
+        <Row id="MonitorRow">
+          <Col id="monitor">
+            <iframe
+              id="VideoSecond"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/pSUydWEqKwE"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </Col>
         </Row>
       </Container>
     </>

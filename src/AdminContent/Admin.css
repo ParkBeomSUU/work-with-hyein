@@ -32,11 +32,14 @@
   box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
 }
 #IntroText {
-  font-size: 30px;
+  font-size: 2rem;
   color: rgb(216 216 216);
+  font-weight: bold;
+
+  padding: 10px;
 }
 #UserIcon {
-  font-size: 45px;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   color: rgb(216 216 216);
@@ -50,6 +53,18 @@
   border-radius: 7px;
   /* box-shadow: 0px 0px 15px 5px rgba(102, 186, 255, 0.2); */
   background-color: rgb(35 37 47);
+  overflow: auto;
+  overflow-y: auto;
+}
+
+#VideoSecond {
+  width: 100%;
+  height: 100%;
+}
+
+#VideoFirst {
+  width: 100%;
+  height: 100%;
 }
 
 /*첫번째 열*/
@@ -67,6 +82,7 @@
   margin-bottom: 20px;
   overflow: auto;
   overflow-y: auto;
+  height: 879px;
 }
 
 #button_div {
@@ -76,17 +92,19 @@
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
+  box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
 }
 
-#button {
-  width: 12.5rem;
+#buttonFirst {
+  width: 12rem;
   height: 10rem;
-  margin: 5px;
+  /* margin: 5px; */
   font-size: 3rem;
   border: 0px solid rgb(35 37 47);
   border-radius: 7px;
   background-color: rgb(35 37 47);
   color: rgb(216 216 216);
+  margin-top: 7px;
 }
 
 .ButtonIcon {
@@ -100,7 +118,7 @@
   text-shadow: 0px 0px 20px rgb(0 0 0);
 }
 
-#button:hover {
+#buttonFirst:hover {
   /* background-color: #0dbfca; */
   transition: 0.3s;
   color: rgb(38 155 185);
@@ -121,11 +139,11 @@
   color: rgb(216 216 216);
   font-weight: bold;
 
-  animation: FirstDiv 3s linear infinite;
+  /* animation: FirstDiv 3s linear infinite; */
 }
 
 .SecondDiv {
-  display: inline-block;
+  /* display: inline-block; */
   float: center;
   font-size: 25px;
   margin-top: 50px;
@@ -145,9 +163,43 @@
     infinite alternate;
 }
 
-@keyframes shake {
+#InfoButtons {
+  font-size: 5rem;
+  margin-top: 25px;
+}
+
+#InfoBtn {
+  font-size: 4rem;
+  margin-top: 45px;
+}
+
+#LeftWheelIcon {
+  animation: rotate linear 1s infinite;
+  /* color: rgb(23 26 18); */
+  /* filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7)); */
+}
+#RightWheelIcon {
+  animation: rotate linear 1s infinite;
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Info버튼 아이콘 애니메이션 */
+/* @keyframes shake {
   /* @keyframes를 이용해 shake의 각도를 좌우 15deg로 조정 */
-  30% {
+/* 30% {
     transform: rotate(15deg);
   }
   50% {
@@ -159,7 +211,7 @@
   90% {
     transform: rotate(-15deg);
   }
-}
+} */
 
 /*Info 버튼들 커지는 호버 효과*/
 @keyframes animate {
@@ -318,9 +370,9 @@
 }
 
 #order {
-  width: 9rem;
-  height: 22rem;
-  margin: 40px;
+  /* width: 9rem;
+  height: 22rem; 
+  margin: 20px; */
   font-size: 3rem;
   border: 0px solid rgb(15 81 101);
   border-radius: 7px;
@@ -333,7 +385,7 @@
   color: black;
 }
 
-#TableName {
+.TableName {
   font-size: 1.5rem;
   margin-top: 13px;
   font-weight: bold;
@@ -350,12 +402,31 @@
   justify-content: center;
 }
 
+#TableMap {
+  width: 95%;
+  height: 40rem;
+  margin: 50px 20px 20px 20px;
+  padding: 10px;
+  border: 0px solid;
+  border-radius: 7px;
+  background-color: rgb(44 50 64);
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+
 /* OrderList 주문목록 X 아이콘 */
 .Xmark {
   float: right;
   font-size: 20px;
   margin-top: 5px;
-  margin-right: 5px;
+  /* margin-right: 15px; */
+}
+
+.btn-close {
+  float: right;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-right: 15px;
 }
 
 #monitor {
@@ -372,7 +443,7 @@
 
 // Table.js 주문목록 모달
 #GoButton {
-  width: 100px;
+  width: 200px;
   margin-top: 50px;
   box-shadow: 0px 0px 5px 5px rgba(83, 81, 82, 0.2);
   background-color: rgb(216 216 216);
@@ -407,4 +478,169 @@
 #BatteryBar {
   margin-top: 90px;
   color: red;
+}
+
+.OrderList {
+  font-size: 1.5rem;
+  font-weight: bold;
+  overflow: auto;
+}
+
+.each-table {
+  color: black;
+  border: 15px solid rgb(35 37 47);
+  padding: 0px;
+  margin-top: 30px;
+  list-style-type: none;
+  border-radius: 30px;
+  background-color: rgb(216 216 216);
+}
+
+.OrderName {
+  padding: 0px 20px 20px 20px;
+  font-size: 1.4rem;
+  overflow: auto;
+  height: 18rem;
+}
+
+.OrderCheck {
+  font-size: 1.5rem;
+  list-style-type: disc;
+
+  /* list-style-image: url(./Img/check.png); */
+}
+
+.modal-content {
+  /* background-color: rgb(216 216 216); */
+
+  /* font-weight: bold; */
+}
+
+/* 주문확인 모달 안 보내기버튼 */
+.SendModal {
+  background-color: rgb(68 68 68);
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: 0px solid black;
+  font-weight: bold;
+}
+
+.SendModal:hover {
+  background-color: darkgray;
+  color: black;
+}
+
+/* 주문확인 모달 안 취소버튼 */
+.CancleModal {
+  width: 80px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  border: 0px solid black;
+  font-weight: bold;
+  background-color: rgb(68 68 68);
+}
+.CancleModal:hover {
+  background-color: darkgray;
+  color: black;
+}
+
+/* 주문확인 모달 감싸는 div */
+.ModalDiv {
+  margin: 50px;
+}
+
+#BatteryIcon {
+  width: 80px;
+}
+
+#LightOnIcon {
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7));
+}
+#LedIcon {
+  /* filter: drop-shadow(0 0 2px rgba(139, 136, 150, 0.5))
+    drop-shadow(0 0 5px rgba(139, 136, 150, 0.5))
+    drop-shadow(0 0 15px rgba(139, 136, 150, 0.5)); */
+}
+
+/* 미디어쿼리 */
+/* 크기 줄어들 때 버튼 크기 줄어듦 */
+@media (max-width: 1360px) {
+  #buttonFirst {
+    width: 10rem;
+  }
+}
+@media (max-width: 1330px) {
+  #buttonFirst {
+    width: 7rem;
+  }
+}
+@media (max-width: 1300px) {
+  #buttonFirst {
+    width: 6.5rem;
+  }
+}
+@media (max-width: 800px) {
+  #buttonFirst {
+    width: 4rem;
+  }
+}
+
+/* 크기 줄어들 때 버튼 아이콘 줄어듦, 글자 사라짐 */
+@media (max-width: 800px) {
+  .ButtonName {
+    display: none;
+  }
+  #buttonFirst {
+    font-size: 2rem;
+  }
+}
+
+/* 크기 줄어들 때 admin 아이디 사라짐 */
+@media (max-width: 730px) {
+  #IntroText {
+    display: none;
+  }
+}
+
+/* 크기 줄어들 때 second 줄어듦
+@media (max-width: 1155px) {
+  #monitor {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+@media (max-width: 930px) {
+  #monitor {
+    width: 20rem;
+    height: 20rem;
+    align-items: center;
+  }
+
+} */
+
+/* 크기 줄어들 때 Info버튼 아이콘, 글씨 줄어듦 */
+@media (max-width: 1200px) {
+  .SecondPtag {
+    display: none;
+  }
+  .FirstPtag {
+    margin-top: 68px;
+  }
+}
+@media (max-width: 995px) {
+  .FirstPtag {
+    font-size: 1.7rem;
+    margin-top: 70px;
+  }
+}
+@media (max-width: 390px) {
+  .FirstPtag {
+    font-size: 3rem;
+  }
 }

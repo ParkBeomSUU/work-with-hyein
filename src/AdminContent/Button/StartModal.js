@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "../Admin.css";
+import TableOrder from "./TableOrder";
 
 function Start() {
   const [show, setShow] = useState(false);
@@ -11,27 +12,35 @@ function Start() {
 
   return (
     <>
-      <Button variant="light" id="GoButton" size="lg" onClick={handleShow}>
+      <Button
+        style={{ width: 200, height: 50 }}
+        variant="light"
+        id="GoButton"
+        size="lg"
+        onClick={handleShow}
+      >
         주문 확인
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title className="GoModal" id="GoTitle">
-            주문 목록
+            주문 확인
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="GoModal" id="GoBody"></Modal.Body>
+        <Modal.Body className="GoModal" id="GoBody">
+          <TableOrder />
+        </Modal.Body>
         <Modal.Footer>
           <Button
-            className="ModalSend"
+            className="SendModal"
             variant="outline-info"
             onClick={handleClose} // 여기에 보내는 기능 추가
           >
             보내기
           </Button>
           <Button
-            className="ModalCancle"
+            className="CancleModal"
             variant="outline-secondary"
             onClick={handleClose}
           >
