@@ -34,6 +34,9 @@
 #IntroText {
   font-size: 2rem;
   color: rgb(216 216 216);
+  font-weight: bold;
+
+  padding: 10px;
 }
 #UserIcon {
   font-size: 2.5rem;
@@ -89,6 +92,7 @@
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
+  box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
 }
 
 #buttonFirst {
@@ -135,7 +139,7 @@
   color: rgb(216 216 216);
   font-weight: bold;
 
-  animation: FirstDiv 3s linear infinite;
+  /* animation: FirstDiv 3s linear infinite; */
 }
 
 .SecondDiv {
@@ -157,6 +161,39 @@
 .FirstDiv:hover {
   animation: shake 0.3s /* 마우스 오버시 아이콘 .3s 동안 흔듦 */ linear 0s
     infinite alternate;
+}
+
+#InfoButtons {
+  font-size: 5rem;
+  margin-top: 25px;
+}
+
+#InfoBtn {
+  font-size: 4rem;
+  margin-top: 45px;
+}
+
+#LeftWheelIcon {
+  animation: rotate linear 1s infinite;
+  /* color: rgb(23 26 18); */
+  /* filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7)); */
+}
+#RightWheelIcon {
+  animation: rotate linear 1s infinite;
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 /* Info버튼 아이콘 애니메이션 */
@@ -479,6 +516,7 @@
   /* font-weight: bold; */
 }
 
+/* 주문확인 모달 안 보내기버튼 */
 .SendModal {
   background-color: rgb(68 68 68);
   width: 100px;
@@ -494,6 +532,7 @@
   color: black;
 }
 
+/* 주문확인 모달 안 취소버튼 */
 .CancleModal {
   width: 80px;
   height: 50px;
@@ -503,16 +542,33 @@
   font-weight: bold;
   background-color: rgb(68 68 68);
 }
-
 .CancleModal:hover {
   background-color: darkgray;
   color: black;
 }
 
+/* 주문확인 모달 감싸는 div */
 .ModalDiv {
   margin: 50px;
 }
 
+#BatteryIcon {
+  width: 80px;
+}
+
+#LightOnIcon {
+  color: rgb(255, 255, 255);
+  filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
+    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7));
+}
+#LedIcon {
+  /* filter: drop-shadow(0 0 2px rgba(139, 136, 150, 0.5))
+    drop-shadow(0 0 5px rgba(139, 136, 150, 0.5))
+    drop-shadow(0 0 15px rgba(139, 136, 150, 0.5)); */
+}
+
+/* 미디어쿼리 */
 /* 크기 줄어들 때 버튼 크기 줄어듦 */
 @media (max-width: 1360px) {
   #buttonFirst {
@@ -545,6 +601,13 @@
   }
 }
 
+/* 크기 줄어들 때 admin 아이디 사라짐 */
+@media (max-width: 730px) {
+  #IntroText {
+    display: none;
+  }
+}
+
 /* 크기 줄어들 때 second 줄어듦
 @media (max-width: 1155px) {
   #monitor {
@@ -573,6 +636,7 @@
 @media (max-width: 995px) {
   .FirstPtag {
     font-size: 1.7rem;
+    margin-top: 70px;
   }
 }
 @media (max-width: 390px) {

@@ -9,7 +9,8 @@ import Jump from "react-reveal/Jump";
 function Battery() {
   return (
     <Jump duration={2000}>
-      <FontAwesomeIcon icon={faBatteryThreeQuarters} id="BatteryIcon" />
+      {/* <ProgressBar id="BatteryIcon" /> */}
+      <FontAwesomeIcon icon={faBatteryThreeQuarters} />
     </Jump>
   );
 }

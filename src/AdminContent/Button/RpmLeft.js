@@ -5,7 +5,7 @@ import "../Admin.css";
 import { GiCarWheel } from "react-icons/gi";
 
 function RpmLeft() {
-  return <GiCarWheel />;
+  return <GiCarWheel id="LeftWheelIcon" />;
 }
 
 export default RpmLeft;

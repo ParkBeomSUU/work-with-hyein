@@ -7,7 +7,7 @@ const Liquor = ({ setVolume, volume }) => {
     <>
       <Container>
         <Row id="Menus1">
-          {/* 파운더 */}
+          {/* 파운더스 */}
           <Row id="Menus">
             <Col>
               <div className="box">
@@ -16,19 +16,19 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>파운더</h3>
+                  <h3>파운더스</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
                     Taste : 달콤하지만 묵직한 과일향
                     <br /> <br />
-                    Price : 6.8
+                    Price : 68.0
                     <br />
                   </p>
                 </div>
                 <hr size="4" />
               </div>
-              파운더
+              파운더스
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -70,9 +70,10 @@ const Liquor = ({ setVolume, volume }) => {
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    Taste : 말린 과일향과 달콤한 사탕 맛이 <br />
+                    은은하게 느껴짐
                     <br /> <br />
-                    Price : 6.8
+                    Price : 65.0
                     <br />
                   </p>
                 </div>
@@ -121,10 +122,10 @@ const Liquor = ({ setVolume, volume }) => {
                   <h3>예거 마이스터</h3>
                   <p>
                     {" "}
-                    alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    alcohol degree : 35도 <br /> <br />
+                    Taste : 허브향과 달달함의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 60.0
                     <br />
                   </p>
                 </div>
@@ -176,9 +177,9 @@ const Liquor = ({ setVolume, volume }) => {
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    Taste : 부드럽고 달콤한 바닐라 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 50.0
                     <br />
                   </p>
                 </div>
@@ -225,10 +226,10 @@ const Liquor = ({ setVolume, volume }) => {
                   <h3>티나</h3>
                   <p>
                     {" "}
-                    alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    alcohol degree : 16도 <br /> <br />
+                    Taste : 딸기의 달달한 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 65.0
                     <br />
                   </p>
                 </div>
@@ -276,9 +277,9 @@ const Liquor = ({ setVolume, volume }) => {
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    Taste : 깔끔하고 부드러운 맛
                     <br /> <br />
-                    Price : 6.8
+                    Price : 55.0
                     <br />
                   </p>
                 </div>
@@ -330,9 +331,10 @@ const Liquor = ({ setVolume, volume }) => {
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    Taste : 과일향과 쉐리향 그리고 약간의 달콤함, <br />
+                    타피향과 나무향의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 250.0
                     <br />
                   </p>
                 </div>
@@ -369,7 +371,7 @@ const Liquor = ({ setVolume, volume }) => {
             </Col>
           </Row>
 
-          {/* 텔린 싱글 몰트 */}
+          {/* 틸링 싱글 몰트 */}
           <Row id="Menus">
             <Col>
               <div className="box">
@@ -378,19 +380,19 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>텔린 싱글 몰트</h3>
+                  <h3>틸링 싱글 몰트</h3>
                   <p>
                     {" "}
-                    alcohol degree : 40도 <br /> <br />
-                    Taste : 달콤하지만 묵직한 과일향
+                    alcohol degree : 46도 <br /> <br />
+                    Taste : 꽃향과 과일향의 조화
                     <br /> <br />
-                    Price : 6.8
+                    Price : 150.0
                     <br />
                   </p>
                 </div>
                 <hr size="4" />
               </div>
-              텔린 싱글 몰트
+              틸링 싱글 몰트
               <div id="PlusMa">
                 <Button
                   id="Plus"

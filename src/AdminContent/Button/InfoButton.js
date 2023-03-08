@@ -7,7 +7,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users/1") // 진짜 제이슨파일 주소 적음 됨
+      .get("https://jsonplaceholder.typicode.com/users/2") // 진짜 제이슨파일 주소 적음 됨
       .then((response) => {
         setUsers(response.data);
         console.log(response.data);

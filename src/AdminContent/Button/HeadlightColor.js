@@ -4,9 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFillDrip } from "@fortawesome/free-solid-svg-icons";
+import { MdInvertColors } from "react-icons/md";
 
 function HeadlightColor() {
-  return <FontAwesomeIcon icon={faFillDrip} className="BatteryIcon" />;
+  return <MdInvertColors />;
 }
 
 export default HeadlightColor;

@@ -12,17 +12,12 @@ import {
   faVolumeHigh,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Buzzer() {
-  const On = "리액트";
-  return (
-    <>
-      {On === "리액트" ? (
-        <FontAwesomeIcon icon={faVolumeHigh} />
-      ) : (
-        <FontAwesomeIcon icon={faVolumeXmark} />
-      )}
-    </>
+function BuzzerOn({ isOn }) {
+  return isOn == "ON" ? (
+    <FontAwesomeIcon icon={faVolumeHigh} />
+  ) : (
+    <FontAwesomeIcon icon={faVolumeXmark} />
   );
 }
 
-export default Buzzer;
+export default BuzzerOn;
