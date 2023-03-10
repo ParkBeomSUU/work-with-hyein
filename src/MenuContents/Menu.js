@@ -1,33 +1,26 @@
 import React, {useState,useEffect} from "react";
 import { useCookies } from "react-cookie";
 import { Link } from "react-router-dom";
-
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./MenuShow.css";
-
-
 import Receipt from './Button/Receipt';
-import ReciptModal from "./Button/ReciptModal";
-
 import Liquor from "./Button/liquor";
 import Cocktail from "./Button/Cocktail";
 import Korean from "./Button/Korean";
 import Food from "./Button/Food";
-
 import Korea from "./Image/Korea.png";
 import cock from "./Image/Cocktail.png";
 import Liq from "./Image/Liquor.png";
 import foodd from "./Image/Food.png";
 import axios from "axios";
-
 import OrderButton from "./Button/OrderButton";
 import qs from "qs";
 import { post } from 'axios';
 import { text } from "@fortawesome/fontawesome-svg-core";
+import { prices } from "./Button/prices";
 
-
-const Menu = ({ setContent, volume, setMenuText,menuText }) => {
+const Menu = ({ setContent, volume, setMenuText,menuText,bill, setBill }) => {
 
   //카카오 해보자
   const [, , removeCookie] = useCookies('nickName')
@@ -35,6 +28,8 @@ const Menu = ({ setContent, volume, setMenuText,menuText }) => {
   const [nickName, setNickName] = useState('')
   const [email, setEmail] = useState('')
   const [profile, setProfile] = useState('')
+
+  const [isOrderDone, setOrderDone] = useState(false)
   const KAKAO_LOGOUT_URL ='http://localhost:3000'
 
   const params = new URLSearchParams(window.location.search);
@@ -43,9 +38,7 @@ const Menu = ({ setContent, volume, setMenuText,menuText }) => {
   function deleteCookie() {
     removeCookie('nickName');   
     axios.get('/deleteCookie')
-}
-
-
+    }
   useEffect(() => {
       if(code !== null) {
           axios.get('/~~~',
@@ -81,26 +74,57 @@ const Menu = ({ setContent, volume, setMenuText,menuText }) => {
   }, [code, email, kperson, nickName, profile])
 
 
-
-
   //버튼 보내는거
-  const handleClickButton = (e, number) =>{
-    setContent(number)
-  };
+ const handleClickButton = (e, number) =>{
+  setContent(number)};
 //버튼 보내는거
 const url="https //13.124.151.184/test"
 const config = {"Content-Type": 'application/json'};
 
 useEffect(() => {
+
+
+
+   setOrderDone('');
     let content ="";
     for(let key in volume) {
       if(volume[key] > 0){
   
-        content+=key+" "+volume[key]+","
+        content+=key+": "+volume[key]+","
       }
    }
    setMenuText(content)  
   }, [ volume ])
+
+  useEffect(() => {
+
+    if(isOrderDone){
+      const forBill ={}
+      const volumeKey = Object.keys(volume) //볼륨이랑 가격의 키를 받아온다.
+      const priceKey = Object.keys(prices)
+
+      volumeKey.map((menu, index) => {
+        let price = volume[menu] * prices[priceKey[index]]
+        if(price !== 0){ //0 빼고
+          forBill[menu] = volume[menu] * prices[priceKey[index]]
+        }
+      })
+      setBill(forBill)
+      
+
+      // console.log(bill)
+
+
+
+
+      
+    }else{
+      alert("주문 준비중입니다!")
+    }
+
+  }, [isOrderDone])
+
+//주문 버튼을 눌렀을때 영수증에 지속적으로 값들을 저장해보자.
 
   return (
     <>
@@ -117,7 +141,7 @@ useEffect(() => {
 
                   
                     </a>
-                    <Receipt />
+                    <Receipt volume={volume}  bill={bill}/>
                
                 </>
           </Col>
@@ -181,17 +205,13 @@ useEffect(() => {
               <form action="http://localhost:3000/admin" method="post"  id="formBox">
 
               {volume.founder > 0 && <p>{`파운더 : ${volume.founder}`}</p>} 
-
               {volume.GlenDower > 0 && <p>{`글랜다워 : ${volume.GlenDower}`}</p>}
-
               {volume.Jagermeilter > 0 && <p>{`예거마이스터 : ${volume.Jagermeilter}`}</p>} 
               {volume.JimBeam > 0 &&<p> {`짐빔 : ${volume.JimBeam}`}</p>} 
               {volume.Tina > 0 && <p> {`티나 : ${volume.Tina}`}</p>}
               {volume.TheClass33 > 0 && <p>{`더클라스33 : ${volume.TheClass33}`}</p>}
               {volume.Macallan12 > 0 && <p>{`맥캘란12 : ${volume.Macallan12}`}</p>} 
               {volume.TellinfSingleMalt > 0 && <p>{`티링 : ${volume.TellinfSingleMalt}`}</p>} 
-
-
               {volume.Gambas > 0 && <p>{`감바스 : ${volume.Gambas}`}</p>} 
               {volume.FridOjiCheese > 0 && <p>{`오지치즈후라이 : ${volume.FridOjiCheese}`}</p>}
               {volume.cheeseBall > 0 && <p>{`치즈볼 : ${volume.cheeseBall}`}</p>} 
@@ -199,9 +219,6 @@ useEffect(() => {
               {volume.Mellon > 0 && <p>{`멜론 : ${volume.Mellon}`}</p>}
               {volume.Pepperoni > 0 && <p>{`페페로니 : ${volume.Pepperoni}`}</p>} 
               {volume.pineapple > 0 && <p>{`파인애플 : ${volume.pineapple}`}</p>} 
-
-
-
               {volume.Dowon > 0 && <p>{`도원결의 : ${volume.Dowon}`}</p>}
               {volume.Hwang > 0 && <p>{`황진이 : ${volume.Hwang}`}</p>}
               {volume.Lee > 0 && <p>{`이강주 : ${volume.Lee}`}</p>}
@@ -228,29 +245,13 @@ useEffect(() => {
               {volume.sangria > 0 && <p>{`상그리아: ${volume.sangria}`}</p>}
               {volume.tequilaSunrise > 0 && <p>{`데킬라선라이즈: ${volume.tequilaSunrise}`}</p>}
 
-
-       
           </form>
 
             </Col>
           </Col>
-          <OrderButton  onClick={(e) =>{
-              console.log(menuText)
-              e.preventDefault();
-              axios.post('https://13.124.151.184/test', {
-                menuText: menuText           
-
-              })
-              .then((res) => {
-                console.log("성공");
-
-              })
-              .catch((error) => {
-                console.log("실패");
-              })
-               }}/>
+       
+          <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} />
         </Row>
-  
         </Container>
    
     </>

@@ -35,7 +35,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      bloodyMary: volume.bloodyMary === 10 ? 10 : volume.bloodyMary + 1,
                     })
                   }
                 >
@@ -85,19 +85,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      martini: volume.martini === 10 ? 10 : volume.martini + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.martini} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      martini: volume.martini === 0 ? 0 : volume.martini - 1,
                     })
                   }
                 >
@@ -136,19 +136,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      margarita: volume.margarita === 10 ? 10 : volume.margarita + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.margarita} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      margarita: volume.margarita === 0 ? 0 : volume.margarita - 1,
                     })
                   }
                 >
@@ -185,19 +185,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      sangria: volume.sangria === 10 ? 10 : volume.sangria + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.sangria} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      sangria: volume.sangria === 0 ? 0 : volume.sangria - 1,
                     })
                   }
                 >
@@ -234,19 +234,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      mojito: volume.mojito === 10 ? 10 : volume.mojito + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.mojito} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      mojito: volume.mojito === 0 ? 0 : volume.mojito - 1,
                     })
                   }
                 >
@@ -283,19 +283,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      tequilaSunrise: volume.tequilaSunrise === 10 ? 10 : volume.tequilaSunrise + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.tequilaSunrise} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      tequilaSunrise: volume.tequilaSunrise === 0 ? 0 : volume.tequilaSunrise - 1,
                     })
                   }
                 >
@@ -332,19 +332,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      cosmopolitan: volume.cosmopolitan === 10 ? 10 : volume.cosmopolitan + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.cosmopolitan} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      cosmopolitan: volume.cosmopolitan === 0 ? 0 : volume.cosmopolitan - 1,
                     })
                   }
                 >
@@ -381,19 +381,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      rustyNail: volume.rustyNail === 10 ? 10 : volume.rustyNail + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.rustyNail} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      rustyNail: volume.rustyNail === 0 ? 0 : volume.rustyNail - 1,
                     })
                   }
                 >
@@ -430,19 +430,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      blueHawaii: volume.blueHawaii === 10 ? 10 : volume.blueHawaii + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.blueHawaii} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      blueHawaii: volume.blueHawaii === 0 ? 0 : volume.blueHawaii - 1,
                     })
                   }
                 >
@@ -478,19 +478,19 @@ const Cocktail = ({ setVolume, volume }) => {
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 10 ? 10 : volume.founder + 1,
+                      oldFashioned: volume.oldFashioned === 10 ? 10 : volume.oldFashioned + 1,
                     })
                   }
                 >
                   +{" "}
                 </Button>
-                <div id="Count"> {volume.founder} </div>
+                <div id="Count"> {volume.oldFashioned} </div>
                 <Button
                   id="Minus"
                   onClick={() =>
                     setVolume({
                       ...volume,
-                      founder: volume.founder === 0 ? 0 : volume.founder - 1,
+                      oldFashioned: volume.oldFashioned === 0 ? 0 : volume.oldFashioned - 1,
                     })
                   }
                 >

@@ -6,21 +6,11 @@ import "./MenuShow.css";
 import List from "./List";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-
+import { prices } from "./Button/prices";
 
 const MenuShow = () => {
 
 
-    // const dispatch = useDispatch();
-  
-    // // 발급된 인가코드를 백엔드로 넘겨주기 위해 꺼내오는 작업이 필요하다.
-    // // code라는 이름으로 파라미터 코드 값을 꺼내오려면 아래와 같이 선언하면 된다.
-    // let code = new URL(window.location.href).searchParams.get("code");
-  
-    // React.useEffect(() => {
-    // // 꺼내온 code(인가코드)를 미들웨어를 통해 백엔드로 넘겨준다.
-    //   dispatch(userAction.kakaoLoginAC(code));
-    // }, []);
 
 
     // console.log(content);
@@ -31,7 +21,7 @@ const MenuShow = () => {
 
 
 
-
+  const [bill, setBill] = useState({})
   const [content, setContent] = useState(0); //state 선언
   const [menuText, setMenuText] = useState("")
   const [ volume, setVolume ] = useState({
@@ -71,8 +61,6 @@ const MenuShow = () => {
     SuloCity:0,
 
 
-
-
     //칵테일
     bloodyMary:0,
     blueHawaii:0,
@@ -86,18 +74,41 @@ const MenuShow = () => {
     tequilaSunrise:0,
   })
 
+  // useEffect(() => {
+  //   console.log(menuText)
+  //   // console.log(volume)
+
+  //   // 각 메뉴의 선택 개수와 가격을 곱해 총액을 계산하는 로직 추가하고
+  //   const forBill = {} //빈 부분 만들어서 추가 용이하게 , 볼륨에 가격 곱한거 넣을부분
+
+  //   const volumeKey = Object.keys(volume) //볼륨이랑 가격의 키를 받아온다.
+  //   const priceKey = Object.keys(prices)
+
+  //   volumeKey.map((menu, index) => {
+  //     let price = volume[menu] * prices[priceKey[index]]
+  //     if(price !== 0){ //0 빼고
+  //       forBill[menu] = volume[menu] * prices[priceKey[index]]
+  //     }
+  //   })
+
+  //   setBill(forBill)
+
+  // },[menuText])
+
+
   useEffect(() => {
-    console.log(menuText)
+    console.log("현재 주문 내역은:", bill)
+  }, [bill])
 
-  }, [menuText])
 
 
+  
   return (
     <>
       <Container id="out_2">
         <Row id="row_2">
           <Col id="first_2" sm={{ span: 4 }} xs={{ span: 4 }}>
-            <Menu setContent={setContent} volume={volume} menuText={menuText} setMenuText={setMenuText} />
+            <Menu setContent={setContent} volume={volume} menuText={menuText} setMenuText={setMenuText}  bill={bill} setBill={setBill} />
           </Col>
           
           <Col id="second_2" sm={{ span: 8 }} xs={{ span: 8 }}>
