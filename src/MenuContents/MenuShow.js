@@ -5,20 +5,12 @@ import Menu from "./Menu";
 import "./MenuShow.css";
 import List from "./List";
 import { useDispatch } from "react-redux";
-import axios from "axios";
-import { prices } from "./Button/prices";
 
 const MenuShow = () => {
-
-
-
 
     // console.log(content);
     const url="https //13.124.151.184/test"
     const config = {"Content-Type": 'application/json'};
-
-
-
 
 
   const [bill, setBill] = useState({})
@@ -74,27 +66,6 @@ const MenuShow = () => {
     tequilaSunrise:0,
   })
 
-  // useEffect(() => {
-  //   console.log(menuText)
-  //   // console.log(volume)
-
-  //   // 각 메뉴의 선택 개수와 가격을 곱해 총액을 계산하는 로직 추가하고
-  //   const forBill = {} //빈 부분 만들어서 추가 용이하게 , 볼륨에 가격 곱한거 넣을부분
-
-  //   const volumeKey = Object.keys(volume) //볼륨이랑 가격의 키를 받아온다.
-  //   const priceKey = Object.keys(prices)
-
-  //   volumeKey.map((menu, index) => {
-  //     let price = volume[menu] * prices[priceKey[index]]
-  //     if(price !== 0){ //0 빼고
-  //       forBill[menu] = volume[menu] * prices[priceKey[index]]
-  //     }
-  //   })
-
-  //   setBill(forBill)
-
-  // },[menuText])
-
 
   useEffect(() => {
     console.log("현재 주문 내역은:", bill)
@@ -108,7 +79,7 @@ const MenuShow = () => {
       <Container id="out_2">
         <Row id="row_2">
           <Col id="first_2" sm={{ span: 4 }} xs={{ span: 4 }}>
-            <Menu setContent={setContent} volume={volume} menuText={menuText} setMenuText={setMenuText}  bill={bill} setBill={setBill} />
+            <Menu setContent={setContent} setVolume={setVolume} volume={volume} menuText={menuText} setMenuText={setMenuText}  bill={bill} setBill={setBill} />
           </Col>
           
           <Col id="second_2" sm={{ span: 8 }} xs={{ span: 8 }}>

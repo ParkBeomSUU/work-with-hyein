@@ -30,19 +30,12 @@ const LoginBtn = styled.button`
         background: #1EBAED;;
     }
 `;
-
 const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
     color: ${oc.gray[8]};
     margin-bottom: 1rem;
 `;
-
-
-
-        
-
-
 const Login = () => {
     
     //카카오 로그인
@@ -50,13 +43,10 @@ const Login = () => {
     const REDIRECT_URI ="http://localhost:3000/Menu/MenuContents";
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
     const KAKAO_LOGOUT_URL ='http://localhost:3000'
-    
-
     const [kperson, setKPerson] = useState('')
     console.log(window.location)
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
-
     useEffect(() => {
       if(code !== null) {
           axios.get('/~~~',
@@ -69,30 +59,37 @@ const Login = () => {
                   window.history.replaceState(kperson, null, "http://localhost:3000/Menu/MenuContents")
               })
       }
-  })
+    })
 
     const handleSubmit = e => {
       e.preventDefault()
     }
 
-    // const kakaoLogin = () => {
-    //   window.location.href = KAKAO_AUTH_URL; //새로운 페이지로 이동한다.
-    // }
+    //자체서버 로그인
+    
 
     return <form onSubmit={handleSubmit}>
         <Title>로그인</Title>
         <InputWithLabel label="이메일" id ="email" name="email" placeholder="이메일"/>
         <InputWithLabel label="비밀번호" name="password" placeholder="비밀번호" type="password"/>
-        <LoginBtn type="submit">로그인</LoginBtn>
-        {/* <button onClick={kakaoLogin}>
-          <img src={process.env.PUBLIC_URL +"/kakao_login.png"} alt="kakao login" />
-        </button> */}
+        <LoginBtn type="submit" onClick={(e) =>{
+            axios.post('',{
+                InputWithLabel :InputWithLabel
+            })
+            .then((res) =>{
+                console.log("로그인")
+            }).catch((error) => {
+                   alert("아이디를 확인해주세요")
+                 })
+        }}>로그인</LoginBtn>
+
+
+
+
             <a
             type="submit"
-            className="w-full mt-3 font-bold text-black bg-yellow-300 btn btn-warning"
             href={KAKAO_AUTH_URL} >
-              <h1 className="mr-2 text-2xl" />
-              카카오로 로그인
+          <img src={process.env.PUBLIC_URL +"/kakao_login.png"} alt="kakao login" />
           </a>
 
         <RegisterLink to="/auth/register">회원가입</RegisterLink>

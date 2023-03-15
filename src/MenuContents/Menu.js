@@ -19,8 +19,10 @@ import qs from "qs";
 import { post } from 'axios';
 import { text } from "@fortawesome/fontawesome-svg-core";
 import { prices } from "./Button/prices";
+import MenuCheckModal from "./Button/MenuCheckModal";
 
-const Menu = ({ setContent, volume, setMenuText,menuText,bill, setBill }) => {
+
+const Menu = ({ setContent, volume, setMenuText,bill, setBill,setVolume }) => {
 
   //카카오 해보자
   const [, , removeCookie] = useCookies('nickName')
@@ -28,13 +30,21 @@ const Menu = ({ setContent, volume, setMenuText,menuText,bill, setBill }) => {
   const [nickName, setNickName] = useState('')
   const [email, setEmail] = useState('')
   const [profile, setProfile] = useState('')
+  const [receiptContents,setReceiptContents]= useState('')
 
-  const [isOrderDone, setOrderDone] = useState(false)
   const KAKAO_LOGOUT_URL ='http://localhost:3000'
-
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
 
+
+  //주문하기 들어왔을때만 영수증에 들어가게 하기
+  const [isOrderDone, setOrderDone,] = useState(false)
+
+
+
+
+
+//카카오 로그인
   function deleteCookie() {
     removeCookie('nickName');   
     axios.get('/deleteCookie')
@@ -73,7 +83,6 @@ const Menu = ({ setContent, volume, setMenuText,menuText,bill, setBill }) => {
       }
   }, [code, email, kperson, nickName, profile])
 
-
   //버튼 보내는거
  const handleClickButton = (e, number) =>{
   setContent(number)};
@@ -81,23 +90,20 @@ const Menu = ({ setContent, volume, setMenuText,menuText,bill, setBill }) => {
 const url="https //13.124.151.184/test"
 const config = {"Content-Type": 'application/json'};
 
+//볼륨 값이 있을때 주문이 영수증에 꽂힘
 useEffect(() => {
-
-
-
    setOrderDone('');
     let content ="";
     for(let key in volume) {
       if(volume[key] > 0){
-  
         content+=key+": "+volume[key]+","
       }
    }
    setMenuText(content)  
   }, [ volume ])
 
+  //  메뉴의 개수와 가격 price.js에서 설정한것을 곱해서 영수증 만들기
   useEffect(() => {
-
     if(isOrderDone){
       const forBill ={}
       const volumeKey = Object.keys(volume) //볼륨이랑 가격의 키를 받아온다.
@@ -110,40 +116,29 @@ useEffect(() => {
         }
       })
       setBill(forBill)
-      
-
-      // console.log(bill)
-
-
-
-
-      
+            
     }else{
-      alert("주문 준비중입니다!")
     }
-
   }, [isOrderDone])
 
-//주문 버튼을 눌렀을때 영수증에 지속적으로 값들을 저장해보자.
+  // 메뉴첵모달에서 확인 눌러야 영수증js에 들어감
+
 
   return (
     <>
       <Container>
         <Row>
-          <Col id="intro_2">
+          <Col id="intro_2"> {/*로그인 이름과 영수증 부분 */}
           <>
                     <img className="w-10 h-8" src={profile} alt="profile" id="profile"/>
                     <p className="w-16 h-8">{nickName}</p>
                     <a className="w-16 h-8" href={KAKAO_LOGOUT_URL} id="logout" onClick={deleteCookie}>
                         <button className="w-16 h-8 text-white bg-blue-600 border-none rounded-md hover:bg-blue-800">
                             Logout
-                        </button>
-
-                  
+                        </button>                 
                     </a>
-                    <Receipt volume={volume}  bill={bill}/>
-               
-                </>
+                    <Receipt receiptContents={receiptContents} volume={volume}  bill={bill} setReceiptContents={setReceiptContents}/>               
+          </>
           </Col>
         </Row>
 
@@ -152,8 +147,7 @@ useEffect(() => {
             <Button
               variant="outline-info"
               onClick={(e) => handleClickButton(e, 0)}
-              id="button_2"
-            >
+              id="button_2" >
               <img src={Liq} style={{ width: "75px" }} />
               <br />
               <a style={{ fontSize: "1.5rem" }}> &#8213; Liquor &#8213; </a>
@@ -163,21 +157,20 @@ useEffect(() => {
             <Button
               variant="outline-info"
               onClick={(e) => handleClickButton(e, 1)}
-              id="button_2"
-            >
+              id="button_2" >
               <img src={cock} style={{ width: "75px" }} />
               <br />
               <a style={{ fontSize: "1.5rem" }}>&#8213; Cocktail &#8213; </a>
             </Button>
           </Col>
         </Row>
+
         <Row>
           <Col id="button_div_2">
             <Button
               variant="outline-info"
               onClick={(e) => handleClickButton(e, 2)}
-              id="button_2"
-            >
+              id="button_2" >
               <img src={Korea} style={{ width: "75px" }} />
               <br />
               <a style={{ fontSize: "1.4rem" }}>
@@ -233,7 +226,6 @@ useEffect(() => {
               {volume.purpleJin > 0 && <p>{`퍼플 진: ${volume.purpleJin}`}</p>}
               {volume.Rye > 0 && <p>{`퍼플진 : ${volume.Rye}`}</p>}
               {volume.SuloCity > 0 && <p>{`술로시티: ${volume.SuloCity}`}</p>}
-
               {volume.bloodyMary > 0 && <p>{`블러드 메리: ${volume.bloodyMary}`}</p>}
               {volume.blueHawaii > 0 && <p>{`블루 하와이: ${volume.blueHawaii}`}</p>}
               {volume.cosmopolitan > 0 && <p>{`코즈모폴리탄: ${volume.cosmopolitan}`}</p>}
@@ -250,7 +242,12 @@ useEffect(() => {
             </Col>
           </Col>
        
-          <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} />
+          {/* <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} /> */}
+          <MenuCheckModal   
+          isOrderDone={isOrderDone} setOrderDone={setOrderDone}  volume={volume}  bill={bill}
+          setBill={setBill} setMenuText={setMenuText} setVolume={setVolume} setReceiptContents={setReceiptContents}
+          
+          />
         </Row>
         </Container>
    

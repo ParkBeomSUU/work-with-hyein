@@ -9,35 +9,40 @@ import MenuShow from '../MenuShow';
 
 
 // 모달을 노출하는 페이지
-const Receipt =({ bill,volume,content,isOderDone}) => {
+const Receipt =({bill,volume,totalPrice ,setTotalPrice, receiptContents,setReceiptContents}) => {
   const [show, setShow] = useState(false);
-  const [ totalPrice, setTotalPrice ] = useState(0)
-//bill,volume,menuText,menu
-
+  const [Recipts,setRecipts] = useState(0);
+  //모달 헤더 
   const headerMeta =[
     '상품',
     '수량',
     '가격'
   ]
+  // useEffect(() => {
+  //   let reToal = 0
+  //   Object.keys(receiptContents.bill).forEach((t) => {
+  //     reToal += bill[t]
+  //   })  
+  //   setRecipts(reToal)   
+  //   console.log("영수증 합계 금액은:", receiptContents.bill)
 
+  // }, [receiptContents.bill])
+  // useEffect(() => {
+  // }, [ Recipts ])
+
+
+
+
+  useEffect(() => {
+    console.log("여기는 영수증이다!")
+    
+    console.log(receiptContents)
+  }, [receiptContents])
+
+  //  열고 닫고
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  //총합 구해보기
 
-  useEffect(() => {
-
-    let tp = 0
-    Object.keys(bill).forEach((bk) => {
-      tp += bill[bk]
-    })
-
-    setTotalPrice(tp)
-  
-  }, [bill])
-
-  useEffect(() => {
-    console.log("현재까지 계산된 총액은:", totalPrice)
-  }, [ totalPrice ])
   return (
     <>
       <Button variant="light" id="OrderCheck" size="lg" onClick={handleShow}>
@@ -61,31 +66,32 @@ const Receipt =({ bill,volume,content,isOderDone}) => {
         </thead>
 
         <tbody className='ReciptBody'>
-           {/* 
-           2023.03.10 첫 번째 과제. bill 값을 이용해 가격 테이블을 표시하고
-           총계를 구한다 
-           */}
-           
-           {Object.keys(bill).map((b, i) => {
-            return <>
-            <tr>
-              <td>{b}</td> 
-              <td>{volume[b]}</td>
-             <td> {bill[b]}</td>
-             </tr>
-             </>
-           })}
-           
+         
+        {receiptContents && Object.keys(receiptContents.bill).map((aMenu, index) => {
+          return <><tr>
+            <th>{aMenu}</th>
+            <th>{receiptContents.volume[aMenu]}</th>
+            <th>{receiptContents.bill[aMenu]}</th>
+          </tr>
+          </>
+              })}
         </tbody>
 
 
-        <tfoot className='ReciptFoot'>
-          <th></th>
-          <th></th>
-         total : {totalPrice}
-           
+        <tfoot className='ReciptFoot' style={{ width:"100%", textAlign: "right"}}>
+         <tr>
+          <td style={{backgroundColor: "white"}}></td>  
+          <td style={{backgroundColor: "white"}}></td> 
+          <td style={{backgroundColor: "white"}}>
+            
+          total :{receiptContents.totalPrice}원</td> 
+        </tr>
+      
+   
+       </tfoot>
+       
+        
 
-        </tfoot>
        
       </Table>
 
@@ -94,16 +100,11 @@ const Receipt =({ bill,volume,content,isOderDone}) => {
           <Button
             className="ModalSend"
             variant="outline-info"
-            onClick={handleClose} // 여기에 보내는 기능 추가
+            onClick={handleClose} 
           >
             확인
           </Button>
-          <Button
-            className="ModalCancle"
-            variant="outline-secondary"
-            onClick={handleClose}>
-            확인
-          </Button>
+
         </Modal.Footer>
       </Modal>
     </>

@@ -4,7 +4,7 @@ import axios from "axios";
 import Menu from "../Menu";
 import Receipt from "./Receipt";
 import { useEffect } from "react";
-const OrderButton = ( {isOrderDone, setOrderDone, setContent, volume, setMenuText,menuText,bill, setBill }) => {
+const OrderButton = ( {isOrderDone, setOrderDone,menuText }) => {
   
   return (
     <>
