@@ -1,24 +1,21 @@
-import React, { Component, useState,useEffect } from "react";
-import { Route } from "react-router-dom";
+import React, { Component, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import { Home, Auth } from "./pages";
 import MenuShow from "./MenuContents/MenuShow";
 import AdminPage from "./AdminContent/AdminPage";
+import NotFound from "./AdminContent/NotFound";
 
+const App = () => {
+  // const [currentOrderList, setOrderList] = useState({});
 
-const App = ({bill}) => {
-
-  const [currentOrderList, setOrderList] = useState({});
-  useEffect (() =>{
-
-    setOrderList();
-  },[])
   return (
-    <>
-      <Route path="/Auth" component={Auth} />
-      <Route path="/Menu" component={MenuShow} currentOrderList={currentOrderList} setOrderList={setOrderList} bill={bill}/>
+    <Switch>
+      <Route exact path="/Auth" component={Auth} />
+      <Route exact path="/Menu" component={MenuShow} />
       <Route exact path="/" component={Home} />
-      <Route path="/Admin" component={AdminPage}  bill={bill} currentOrderList={currentOrderList} />
-    </>
+      <Route exact path="/Admin" component={AdminPage} />
+      <Route path="/*" component={NotFound} />
+    </Switch>
   );
 };
 

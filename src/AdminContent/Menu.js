@@ -14,7 +14,7 @@ import Cam from "./Button/Cam";
 import Order from "./Button/Order";
 import Robot from "./Button/Robot";
 import Table from "./Button/Table";
-import { FaUserCheck } from "react-icons/fa";
+import { RiAdminFill } from "react-icons/ri";
 import AdminList from "./AdminList";
 import InfoButton from "./Button/InfoButton";
 
@@ -29,7 +29,7 @@ const Menu = ({ setContent }) => {
         <Row>
           <Col id="intro">
             <div id="UserIcon">
-              <FaUserCheck />
+              <RiAdminFill />
             </div>
             &nbsp;&nbsp;&nbsp;
             <div id="IntroText">
@@ -41,7 +41,7 @@ const Menu = ({ setContent }) => {
         <Row style={{ flexWrap: "noWrap" }}>
           <Col id="button_div">
             <Button
-              variant="outline-info"
+              variant="outline-dark"
               id="buttonFirst"
               onClick={(e) => handleClickButton(e, 0)}
             >
@@ -52,7 +52,7 @@ const Menu = ({ setContent }) => {
 
           <Col id="button_div">
             <Button
-              variant="outline-info"
+              variant="outline-dark"
               id="buttonFirst"
               onClick={(e) => handleClickButton(e, 1)}
             >
@@ -65,7 +65,7 @@ const Menu = ({ setContent }) => {
         <Row style={{ flexWrap: "noWrap" }}>
           <Col id="button_div">
             <Button
-              variant="outline-info"
+              variant="outline-dark"
               id="buttonFirst"
               onClick={(e) => handleClickButton(e, 2)}
             >
@@ -75,7 +75,7 @@ const Menu = ({ setContent }) => {
           </Col>
           <Col id="button_div">
             <Button
-              variant="outline-info"
+              variant="outline-dark"
               id="buttonFirst"
               onClick={(e) => handleClickButton(e, 3)}
             >
@@ -89,16 +89,15 @@ const Menu = ({ setContent }) => {
           <Col id="cam">
             <Col id="cam_monitor">
               <Col id="cam_monitor_inner">
-                {" "}
                 <iframe
-                  id="VideoFirst"
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/DAEK5GrLb_Y"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  id="MusicApi"
+                  width="100%"
+                  height="100%"
+                  scrolling="no"
+                  frameborder="no"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gilbertcriville/sets/playlist-1&amp;color=269bb9&show_artwork=false
+                  { ADD YOUR PARAMETERS HERE }"
                 ></iframe>
               </Col>
             </Col>

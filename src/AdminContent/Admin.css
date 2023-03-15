@@ -80,8 +80,7 @@
   background-color: rgb(35 37 47);
   margin-top: 20px;
   margin-bottom: 20px;
-  overflow: auto;
-  overflow-y: auto;
+  overflow: hidden;
   height: 879px;
 }
 
@@ -92,7 +91,7 @@
   padding: 0px;
   margin-top: 10px;
   margin-bottom: 10px;
-  box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2);
+  /* box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2); */
 }
 
 #buttonFirst {
@@ -386,9 +385,11 @@
 }
 
 .TableName {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 13px;
   font-weight: bold;
+  color: rgb(169 90 82);
+  font-family: "Hahmlet-Regular";
   /* text-shadow: 0px 0px 10px rgb(40 180 199); */
 }
 
@@ -403,9 +404,9 @@
 }
 
 #TableMap {
-  width: 95%;
-  height: 40rem;
-  margin: 50px 20px 20px 20px;
+  width: 800px;
+  height: 750px;
+  margin: 55px 20px 20px 20px;
   padding: 10px;
   border: 0px solid;
   border-radius: 7px;
@@ -413,6 +414,11 @@
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
   overflow: auto;
 }
+/* #Btn1 {
+  position: absolute;
+  width: 20rem;
+  height: 10px;
+} */
 
 /* OrderList 주문목록 X 아이콘 */
 .Xmark {
@@ -437,32 +443,13 @@
   border: 0px solid;
   border-radius: 7px;
   background-color: rgb(28 32 41);
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3); */
   color: white;
 }
 
-// Table.js 주문목록 모달
-#GoButton {
-  width: 200px;
-  margin-top: 50px;
-  box-shadow: 0px 0px 5px 5px rgba(83, 81, 82, 0.2);
-  background-color: rgb(216 216 216);
-  font-size: 50px;
-}
-
-#GoButton:hover {
-  background-color: white;
-  transition: 0.3s;
-
-  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
-    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
-}
-
-.GoModal {
+/* .GoModal {
   color: black;
-}
+} */
 
 #cam_monitor_inner {
   width: 100%;
@@ -486,6 +473,7 @@
   overflow: auto;
 }
 
+/* OrderList 주문 카드 */
 .each-table {
   color: black;
   border: 15px solid rgb(35 37 47);
@@ -493,14 +481,15 @@
   margin-top: 30px;
   list-style-type: none;
   border-radius: 30px;
-  background-color: rgb(216 216 216);
+  background-color: rgb(245 245 245);
 }
 
 .OrderName {
   padding: 0px 20px 20px 20px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   overflow: auto;
   height: 18rem;
+  color: rgb(51 51 51);
 }
 
 .OrderCheck {
@@ -518,18 +507,18 @@
 
 /* 주문확인 모달 안 보내기버튼 */
 .SendModal {
-  background-color: rgb(68 68 68);
-  width: 100px;
+  background-color: transparent;
+  width: 80px;
   height: 50px;
   font-size: 20px;
-  color: white;
-  border: 0px solid black;
+  color: rgb(85 84 82);
+  border: 1.5px solid rgb(85 84 82);
   font-weight: bold;
 }
 
 .SendModal:hover {
-  background-color: darkgray;
-  color: black;
+  background-color: rgb(85 84 82);
+  color: rgb(233 224 208);
 }
 
 /* 주문확인 모달 안 취소버튼 */
@@ -537,14 +526,15 @@
   width: 80px;
   height: 50px;
   font-size: 20px;
-  color: white;
-  border: 0px solid black;
+  color: rgb(85 84 82);
+  border: 1.5px solid rgb(85 84 82);
   font-weight: bold;
-  background-color: rgb(68 68 68);
+  background-color: transparent;
 }
 .CancleModal:hover {
-  background-color: darkgray;
-  color: black;
+  background-color: rgb(85 84 82);
+  border: 1.5px solid rgb(85 84 82);
+  color: rgb(233 224 208);
 }
 
 /* 주문확인 모달 감싸는 div */
@@ -556,16 +546,111 @@
   width: 80px;
 }
 
+/* Info버튼 전구 빛나는 효과 */
 #LightOnIcon {
   color: rgb(255, 255, 255);
-  filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
-    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
-    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7));
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 0 5px rgba(55, 255, 255, 0.7))
+    drop-shadow(0 0 15px rgba(55, 255, 255, 0.7));
 }
 #LedIcon {
   /* filter: drop-shadow(0 0 2px rgba(139, 136, 150, 0.5))
     drop-shadow(0 0 5px rgba(139, 136, 150, 0.5))
     drop-shadow(0 0 15px rgba(139, 136, 150, 0.5)); */
+}
+
+/* OrderList버튼 메뉴들 */
+#List {
+  text-align: justify;
+  text-align-last: center;
+  margin: 10px;
+}
+
+.btn {
+  &.active {
+    background-color: lightblue;
+  }
+}
+
+// Table.js 주문목록 모달
+#GoButton {
+  width: 200px;
+  margin-top: 50px;
+  /* box-shadow: 0px 0px 5px 5px rgba(83, 81, 82, 0.2); */
+  background-color: rgb(216 216 216);
+  font-size: 50px;
+  border: 3px solid black;
+  color: black;
+}
+
+#GoButton:hover {
+  transition: 0.3s;
+
+  /* box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4); */
+}
+
+/* #TableImg {
+  postiion: relative;
+  width: 700px;
+  height: 350px;
+} */
+
+/* 테이블 영수증 버튼 */
+.TableBtn {
+  background-color: transparent !important;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid black;
+  color: black;
+}
+
+.TableBtn:hover {
+  border: 1px solid black;
+}
+
+/* 테이블 버튼 번호 */
+#Btn1 {
+  position: absolute;
+  top: 200px;
+  left: 202px;
+}
+
+#Btn2 {
+  position: absolute;
+  top: 200px;
+  right: 222px;
+}
+
+#Btn3 {
+  position: absolute;
+  bottom: 185px;
+  left: 205px;
+}
+
+#Btn4 {
+  position: absolute;
+  bottom: 185px;
+  right: 225px;
+}
+
+/* 테이블 모달 내용 */
+.modal-content {
+  background-color: rgb(233 224 208);
+
+  justify-content: center;
+  text-align: center;
+}
+
+/* 테이블 모달 헤더 (안됨) */
+.modal-header {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgb(85 84 82);
 }
 
 /* 미디어쿼리 */
@@ -643,4 +728,15 @@
   .FirstPtag {
     font-size: 3rem;
   }
+}
+
+/* 폰트 */
+
+/* OrderList  */
+@font-face {
+  font-family: "Hahmlet-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }

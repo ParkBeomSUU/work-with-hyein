@@ -11,10 +11,13 @@ import {
   faVolumeXmark,
   faVolumeHigh,
 } from "@fortawesome/free-solid-svg-icons";
+import Tada from "react-reveal/Tada";
 
 function BuzzerOn({ isOn }) {
   return isOn == "ON" ? (
-    <FontAwesomeIcon icon={faVolumeHigh} />
+    <Tada duration={2000}>
+      <FontAwesomeIcon icon={faVolumeHigh} />
+    </Tada>
   ) : (
     <FontAwesomeIcon icon={faVolumeXmark} />
   );
