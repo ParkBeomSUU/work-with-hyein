@@ -34,8 +34,8 @@ const LoginBtn = styled.button`
 
 `;
 
-class Register extends Component {
-    render() {
+const Register = () => {
+   
         console.log('userData', userData)
         let id= JSON.stringify(userData[0].userId);
         console.log('id ', id);
@@ -54,7 +54,6 @@ class Register extends Component {
             </Content>
         );
     }
-}
 
 export default Register;
 //유효성 검사하기 

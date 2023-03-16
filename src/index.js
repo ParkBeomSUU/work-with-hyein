@@ -8,5 +8,6 @@ import axios from "axios";
 const store = configureStore();
 axios.defaults.withCredentials = true;
 
+
 ReactDOM.render(<Root store={store} />, document.getElementById("root"));
 //registerServiceWorker();

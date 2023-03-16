@@ -32,9 +32,12 @@ const Menu = ({ setContent, volume, setMenuText,bill, setBill,setVolume }) => {
   const [profile, setProfile] = useState('')
   const [receiptContents,setReceiptContents]= useState('')
 
-  const KAKAO_LOGOUT_URL ='http://localhost:3000'
+    const REST_API_KEY = "1cfc5abbc1e0dd24af7409e5284da67a";
+    const REDIRECT_URI ="http://localhost:3000/";
+    const KAKAO_LOGOUT_URL =`https://kauth.kakao.com/oauth/logout?client_id=${REST_API_KEY}&logout_redirect_uri=${REDIRECT_URI}`
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
+
 
 
   //주문하기 들어왔을때만 영수증에 들어가게 하기
