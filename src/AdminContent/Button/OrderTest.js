@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCheckToSlot } from "@fortawesome/free-solid-svg-icons";
 import { BsClipboardCheck } from "react-icons/bs";
-import CloseButton from "./CloseButton";
+import CloseButton from "react-bootstrap/CloseButton";
+// import Checkbox from "./Checkbox";
 
-const OrderText = [
-  "양주 4, 칵테일 1, 커피 2",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-  "양주 3, 칵테일 3, 커피 3",
-];
 // const OrderArray = OrderText.split(", ");
 // console.log(OrderArray);
 
 const OrderTest = () => {
+  //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
+  const [OrderText, setOrderText] = useState([
+    "양주 4",
+    "양주 3, 칵테일 3",
+    "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
+    "칵테일 3, 커피 3",
+  ]);
+
+  // 삭제 기능
+  const handleDelete = (delIdx) => {
+    setOrderText(
+      OrderText.filter((_, idx) => {
+        return delIdx != idx;
+      })
+    );
+  };
+
   return (
     <>
       {OrderText.map((anOrder, idx) => {
@@ -33,18 +41,32 @@ const OrderTest = () => {
             }}
           >
             <div className="TableName">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <BsClipboardCheck /> &nbsp;Table {idx + 1}
-              <CloseButton className="Xmark" />
+              <CloseButton
+                onClick={() => {
+                  handleDelete(idx);
+                }}
+                className="Xmark"
+              />
             </div>
             <hr
               style={{
                 margin: "10px",
               }}
             />
+
             <div className="OrderName">
-              {anOrder.split(", ").map((o, i) => {
-                return <li key={i}>{o}</li>;
-              })}
+              {anOrder
+                .split(", ")
+                .reverse()
+                .map((o, i) => {
+                  return (
+                    <li id="List" key={i}>
+                      {o}
+                    </li>
+                  );
+                })}
             </div>
           </ul>
         );

@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
 import TableImg from "../Img/tableimg.png";
 import RecipeModal from "./RecipeModal";
-import StartModal from "./StartModal";
+import TotalSales from "./TotalSales";
 
 const order = {
   melon: 2,
@@ -42,7 +42,21 @@ const Table = () => {
           className="TableBtn"
           id="Btn1"
         >
-          1
+          Table 1
+        </Button>
+
+        <Button
+          onClick={() => {
+            setShow(true);
+            setTableContent({
+              order,
+              table: 1,
+            });
+          }}
+          className="TableBtn"
+          id="GoRobot"
+        >
+          Send
         </Button>
         <Button
           onClick={() => {
@@ -55,7 +69,7 @@ const Table = () => {
           className="TableBtn"
           id="Btn2"
         >
-          2
+          Table 2
         </Button>
         <Button
           onClick={() => {
@@ -68,7 +82,7 @@ const Table = () => {
           className="TableBtn"
           id="Btn3"
         >
-          3
+          Table 3
         </Button>
         <Button
           onClick={() => {
@@ -81,8 +95,9 @@ const Table = () => {
           className="TableBtn"
           id="Btn4"
         >
-          4
+          Table 4
         </Button>
+        <TotalSales />
       </div>
       <RecipeModal show={show} setShow={setShow} tableContent={tableContent} />
     </>

@@ -46,7 +46,7 @@ const Menu = ({ setContent }) => {
               onClick={(e) => handleClickButton(e, 0)}
             >
               <FontAwesomeIcon icon={faRobot} className="ButtonIcon" />
-              <div className="ButtonName">Table</div>
+              <div className="ButtonName">Recipe</div>
             </Button>
           </Col>
 
@@ -94,7 +94,7 @@ const Menu = ({ setContent }) => {
                   width="100%"
                   height="100%"
                   scrolling="no"
-                  frameborder="no"
+                  frameBorder="no"
                   allow="autoplay"
                   src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gilbertcriville/sets/playlist-1&amp;color=269bb9&show_artwork=false
                   { ADD YOUR PARAMETERS HERE }"

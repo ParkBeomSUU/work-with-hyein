@@ -495,14 +495,6 @@
 .OrderCheck {
   font-size: 1.5rem;
   list-style-type: disc;
-
-  /* list-style-image: url(./Img/check.png); */
-}
-
-.modal-content {
-  /* background-color: rgb(216 216 216); */
-
-  /* font-weight: bold; */
 }
 
 /* 주문확인 모달 안 보내기버튼 */
@@ -612,6 +604,13 @@
   border: 1px solid black;
 }
 
+/* 로봇보내기버튼 */
+#GoRobot {
+  position: absolute;
+  top: 200px;
+  left: 270px;
+}
+
 /* 테이블 버튼 번호 */
 #Btn1 {
   position: absolute;
@@ -639,8 +638,6 @@
 
 /* 테이블 모달 내용 */
 .modal-content {
-  background-color: rgb(233 224 208);
-
   justify-content: center;
   text-align: center;
 }
@@ -651,6 +648,61 @@
   justify-content: center;
   align-items: center;
   color: rgb(85 84 82);
+}
+
+#ErrorDiv {
+  height: 60vw;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+#ErrorPage {
+  font-family: "HBIOS-SYS";
+  font-size: 5rem;
+}
+
+#LoginAgain {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-color: aliceblue;
+  color: black;
+}
+
+#TotalModal {
+  /* position: absolute;
+  bottom: 0;
+  display: "flex";
+  align-items: "center";
+  justify-content: "flex-end"; */
+  float: center;
+  width: 200px;
+  height: 50px;
+  border-radius: 70px;
+  background-color: rgb(181 181 181);
+}
+
+#TotalTableCss {
+  background-color: transparent;
+}
+
+.center {
+  color: rgb(89, 79, 79);
+  border: 1px solid black;
+}
+
+#TotalClose {
+  background-color: rgb(171, 155, 155);
+  border: 0px solid black;
+  font-size: 20px;
+  color: black;
+  width: 70px;
+  height: 50px;
+}
+#TotalClose:hover {
+  background-color: rgb(221, 204, 204);
+  border: 0px solid black;
 }
 
 /* 미디어쿼리 */
@@ -676,7 +728,7 @@
   }
 }
 
-/* 크기 줄어들 때 버튼 아이콘 줄어듦, 글자 사라짐 */
+/* 버튼 아이콘 줄어듦, 글자 사라짐 */
 @media (max-width: 800px) {
   .ButtonName {
     display: none;
@@ -686,14 +738,14 @@
   }
 }
 
-/* 크기 줄어들 때 admin 아이디 사라짐 */
+/* admin 아이디 사라짐 */
 @media (max-width: 730px) {
   #IntroText {
     display: none;
   }
 }
 
-/* 크기 줄어들 때 second 줄어듦
+/* second 줄어듦
 @media (max-width: 1155px) {
   #monitor {
     width: 30rem;
@@ -706,10 +758,9 @@
     height: 20rem;
     align-items: center;
   }
-
 } */
 
-/* 크기 줄어들 때 Info버튼 아이콘, 글씨 줄어듦 */
+/* Info버튼 아이콘, 글씨 줄어듦 */
 @media (max-width: 1200px) {
   .SecondPtag {
     display: none;
@@ -731,11 +782,19 @@
 }
 
 /* 폰트 */
-
 /* OrderList  */
 @font-face {
   font-family: "Hahmlet-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 404 페이지 */
+@font-face {
+  font-family: "HBIOS-SYS";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
