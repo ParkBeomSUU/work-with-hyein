@@ -1,9 +1,15 @@
-import react, {Component} from 'react';
+import react, {Component, useState} from 'react';
 import userData from "../../local-json/users.json";
 import { Content,InputWithLabel, RegisterLink} from '../../components/';
 import styled from 'styled-components';
 import { shadow } from '../../lib/styleUtil';
-
+import axios from 'axios';
+const Title = styled.div`
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: gray;
+    margin-bottom: 1rem;
+`;
 const LoginBtn = styled.button`
     margin-top: 1rem;
     padding-top: 0.6rem;
@@ -34,24 +40,71 @@ const LoginBtn = styled.button`
 
 `;
 
+const registerFunc = async (params) => await axios.post('~~~~~',
+              {"UserId":params.UserId, "UserPw":params.UserPw,"tableNum":params.tableNum,"userNick":params.userNick});
+
+
 const Register = () => {
    
-        console.log('userData', userData)
-        let id= JSON.stringify(userData[0].userId);
-        console.log('id ', id);
+        const [UserId, setUserId] = useState("");
+        const [UserPw,setUserPw] = useState("");
+        const [tableNum,setTableNum]= useState(0);
+        const [userNick,setuserNick] = useState("");
 
-        return (
 
-            <Content title="회원가입">
-                <InputWithLabel label="이메일" name="userEmail" placeholder="이메일"/>
-                <InputWithLabel label="아이디" name="userId" placeholder="아이디"/>
-                <InputWithLabel label="비밀번호" name="userPw" placeholder="비밀번호" type="password"/>
+    const SignUp = async (event) => {
+            event.preventDefault();
+   
+            if(tableNum === 0){
+                alert("테이블 번호를 선택해 주세요!")
+                return
+            }
+     
+            registerFunc({
+                UserId, UserPw, tableNum, userNick
+            })
+            .then(()=>{
+                window.location.href = 'http://localhost:3000/auth/login';})
+            .catch(error=>{
+                console.log(error.response.data); 
+            })
+          };
+   
+
+        
+    
+
+
+
+        return (<>
+        <form onSubmit={(e) => {
+            SignUp(e)
+        }}>
+
+            <Title>회원 가입</Title>
+                <h6 style={{color:"black"}}>테이블 번호</h6>
+            <select name='TableNumber'  style={{width :"100%"}}  onChange={e => { 
+                setTableNum(parseInt(e.target.value)) 
+                console.log(tableNum)
+                }}>
+                <option style={{ display: "none" }} value="0" disabled selected>테이블을 선택해주세요.</option>
+                <option value='1' >1번 테이블</option>
+                <option value='2' >2번 테이블</option>
+                <option value='3' >3번 테이블</option>
+                <option value='4' >4번 테이블</option>
+
+            </select>
+                <InputWithLabel label="아이디" name="userId" placeholder="아이디"  onChange={e => setUserId(e.target.value)}/>
+                <InputWithLabel label="비밀번호" name="userPw" placeholder="비밀번호" type="password" onChange={e => setUserPw(e.target.value)}/>
                 <InputWithLabel label="비밀번호 확인" name="userPw" placeholder="비밀번호 확인" type="password"/>
-                <InputWithLabel label=" 닉네임" name="userNick" placeholder="닉네임" />
+                <InputWithLabel label=" 닉네임" name="userNick" placeholder="닉네임"  onChange={e => setuserNick(e.target.value)}/>
 
-                <LoginBtn>회원가입</LoginBtn>
+                <LoginBtn type="submit">회원가입</LoginBtn>
                 <RegisterLink to="/auth/login">로그인</RegisterLink>
-            </Content>
+                
+            </form>
+
+            </>
         );
     }
 

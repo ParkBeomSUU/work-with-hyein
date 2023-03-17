@@ -45,8 +45,6 @@ const Menu = ({ setContent, volume, setMenuText,bill, setBill,setVolume }) => {
 
 
 
-
-
 //카카오 로그인
   function deleteCookie() {
     removeCookie('nickName');   

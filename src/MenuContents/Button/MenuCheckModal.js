@@ -9,7 +9,8 @@ const temp = {
   width: "90%",
   height: "100%",
   margin: "5%",
-  padding :"0"
+  padding :"0",
+  color :"black"
 }
 
 //헤더 
@@ -119,7 +120,7 @@ const MenuCheckModal = ({setReceiptContents, isOrderDone, setOrderDone,setBill,s
           </Modal.Header>
   
           <Modal.Body className="OrderList" >
-          <Table striped bordered hover variant="dark" className="center">
+          <Table striped   variant="Primary" className="center">
           <thead>
             <tr>
              {headerMeta.map(i=><th>{i}</th>)}
