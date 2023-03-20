@@ -16,7 +16,7 @@
   text-align: center;
 }
 
-/*로그인 메시지*/
+/*관리자 로그인*/
 #intro {
   width: 15rem;
   height: 9rem;
@@ -45,7 +45,7 @@
   color: rgb(216 216 216);
 }
 
-/*좌측 하단 카메라, 맵 화면*/
+/*사운드클라우드 API*/
 #cam {
   height: 22rem;
   margin-top: 20px;
@@ -57,6 +57,7 @@
   overflow-y: auto;
 }
 
+/* 카메라화면 나오는 곳 */
 #VideoSecond {
   width: 100%;
   height: 100%;
@@ -84,6 +85,7 @@
   height: 879px;
 }
 
+/* first열 버튼 감싸는 Col */
 #button_div {
   /* border: 2px solid black; */
   width: 12rem;
@@ -94,6 +96,7 @@
   /* box-shadow: 10px 10px 20px 0px rgba(150, 150, 150, 0.2); */
 }
 
+/* first열 버튼 */
 #buttonFirst {
   width: 12rem;
   height: 10rem;
@@ -126,6 +129,7 @@
   border: 0px solid rgb(35 37 47);
 }
 
+/* Info버튼 아이콘 div */
 .FirstDiv {
   display: inline-block;
   float: left;
@@ -135,12 +139,12 @@
   justify-content: center;
   flex-direction: column;
   margin-top: 60px;
-  color: rgb(216 216 216);
+  color: white;
   font-weight: bold;
-
   /* animation: FirstDiv 3s linear infinite; */
 }
 
+/* Info버튼 p태그 2개 들어있는 div */
 .SecondDiv {
   /* display: inline-block; */
   float: center;
@@ -149,38 +153,46 @@
   color: rgb(216 216 216);
   font-weight: bold;
 }
+/* Info버튼 - 상태값 */
 .FirstPtag {
   font-size: 40px;
   margin-bottom: 5px;
+  color: white;
 }
-.SecondPtag {
-  font-size: 25px;
-}
-
 .FirstDiv:hover {
   animation: shake 0.3s /* 마우스 오버시 아이콘 .3s 동안 흔듦 */ linear 0s
     infinite alternate;
 }
+/* Info버튼 - 이름 */
+.SecondPtag {
+  font-size: 25px;
+}
 
+/* Info버튼 - 헤드라이트색상, 왼/오rpm 아이콘 크기 조절*/
 #InfoButtons {
   font-size: 5rem;
   margin-top: 25px;
 }
 
+/* Info버튼 - 배터리, 버저, 헤드라이트on/off 아이콘 크기 조절*/
 #InfoBtn {
   font-size: 4rem;
   margin-top: 45px;
 }
 
+/* Info버튼 - 왼쪽 rpm 아이콘*/
 #LeftWheelIcon {
   animation: rotate linear 1s infinite;
-  /* color: rgb(23 26 18); */
-  /* filter: drop-shadow(0 0 2px rgba(251, 249, 0, 0.7))
-    drop-shadow(0 0 5px rgba(251, 249, 0, 0.7))
-    drop-shadow(0 0 15px rgba(251, 249, 0, 0.7)); */
+  color: rgb(255, 255, 255);
+  /* filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7)); */
+  /* drop-shadow(0 0 5px rgba(220, 215, 215)); */
+  /* drop-shadow(0 0 15px rgba(255, 251, 251, 0.7)); */
 }
+
+/* Info버튼 - 오른쪽 rpm 아이콘*/
 #RightWheelIcon {
   animation: rotate linear 1s infinite;
+  color: rgb(255, 255, 255);
 }
 @keyframes rotate {
   from {
@@ -243,7 +255,6 @@
   text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
     0 0 200px #0072ff; */
 }
-
 #battery:hover {
   transform: scale(1.1);
   transition: 0.4s ease-out;
@@ -270,7 +281,6 @@
   text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
     0 0 200px #0072ff; */
 }
-
 #buzzer:hover {
   transform: scale(1.1);
   transition: 0.4s ease-out;
@@ -368,6 +378,7 @@
   transition: 0.4s ease-out;
 }
 
+/* OrderList버튼 주문목록 */
 #order {
   /* width: 9rem;
   height: 22rem; 
@@ -376,14 +387,13 @@
   border: 0px solid rgb(15 81 101);
   border-radius: 7px;
   background-color: rgb(216 216 216);
-
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-
   overflow-y: auto;
   color: black;
 }
 
+/* OrderList버튼 주문목록 헤더 */
 .TableName {
   font-size: 1.2rem;
   margin-top: 13px;
@@ -393,16 +403,17 @@
   /* text-shadow: 0px 0px 10px rgb(40 180 199); */
 }
 
-.OrderIcon {
+/* .OrderIcon {
   filter: drop-shadow(10px 0px 8px rgb(0 0 0));
   display: flex;
   align-items: center;
-}
+} */
 
 #table {
   justify-content: center;
 }
 
+/* Recipe버튼 테이블이미지 들어간 div */
 #TableMap {
   width: 800px;
   height: 750px;
@@ -414,11 +425,6 @@
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
   overflow: auto;
 }
-/* #Btn1 {
-  position: absolute;
-  width: 20rem;
-  height: 10px;
-} */
 
 /* OrderList 주문목록 X 아이콘 */
 .Xmark {
@@ -435,6 +441,7 @@
   margin-right: 15px;
 }
 
+/* second열 카메라화면 나오는 곳 */
 #monitor {
   width: 95%;
   height: 52rem;
@@ -447,10 +454,7 @@
   color: white;
 }
 
-/* .GoModal {
-  color: black;
-} */
-
+/* first열 음악API */
 #cam_monitor_inner {
   width: 100%;
   height: 20rem;
@@ -462,10 +466,10 @@
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
 }
 
-#BatteryBar {
+/* #BatteryBar {
   margin-top: 90px;
   color: red;
-}
+} */
 
 .OrderList {
   font-size: 1.5rem;
@@ -498,35 +502,36 @@
 }
 
 /* 주문확인 모달 안 보내기버튼 */
-.SendModal {
-  background-color: transparent;
-  width: 80px;
-  height: 50px;
+/* .SendModal {
+  background-color: rgb(212 207 207);
+  border: 0px solid black;
   font-size: 20px;
-  color: rgb(85 84 82);
-  border: 1.5px solid rgb(85 84 82);
+  color: rgb(61, 58, 58);
   font-weight: bold;
+  width: 70px;
+  height: 50px;
 }
 
 .SendModal:hover {
-  background-color: rgb(85 84 82);
-  color: rgb(233 224 208);
-}
+  background-color: rgb(92, 89, 89);
+  color: white;
+  border: 0px solid black;
+} */
 
 /* 주문확인 모달 안 취소버튼 */
 .CancleModal {
-  width: 80px;
-  height: 50px;
+  background-color: rgb(92, 89, 89);
+  border: 0px solid black;
   font-size: 20px;
-  color: rgb(85 84 82);
-  border: 1.5px solid rgb(85 84 82);
+  color: white;
   font-weight: bold;
-  background-color: transparent;
+  width: 70px;
+  height: 50px;
 }
 .CancleModal:hover {
-  background-color: rgb(85 84 82);
-  border: 1.5px solid rgb(85 84 82);
-  color: rgb(233 224 208);
+  background-color: rgb(175, 173, 173);
+  color: rgb(255, 255, 255);
+  border: 0px solid black;
 }
 
 /* 주문확인 모달 감싸는 div */
@@ -536,6 +541,7 @@
 
 #BatteryIcon {
   width: 80px;
+  color: white;
 }
 
 /* Info버튼 전구 빛나는 효과 */
@@ -564,7 +570,7 @@
   }
 }
 
-// Table.js 주문목록 모달
+/* Table.js 주문목록 모달 */
 #GoButton {
   width: 200px;
   margin-top: 50px;
@@ -650,6 +656,7 @@
   color: rgb(85 84 82);
 }
 
+/* 404페이지 */
 #ErrorDiv {
   height: 60vw;
   display: grid;
@@ -658,16 +665,21 @@
 }
 
 #ErrorPage {
-  font-family: "HBIOS-SYS";
+  font-family: "NEXEN_TIRE_Bold";
   font-size: 5rem;
 }
-
+/* 다시 로그인 버튼 */
 #LoginAgain {
   display: grid;
   justify-content: center;
   align-content: center;
   background-color: aliceblue;
   color: black;
+  width: 100%;
+  height: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  font-family: "NEXEN_TIRE_Bold";
 }
 
 #TotalModal {
@@ -680,29 +692,57 @@
   width: 200px;
   height: 50px;
   border-radius: 70px;
-  background-color: rgb(181 181 181);
+  background-color: rgb(245 245 245);
+  font-family: "Pretendard-Regular";
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
 
-#TotalTableCss {
+/* 매출합계모달 표 헤더, 푸터*/
+#TotalModalHeader {
   background-color: transparent;
+  font-weight: bold;
+  color: rgb(170 90 82);
+}
+#TotalCount {
+  color: rgb(170 90 82);
+  font-weight: bold;
+  font-size: 23px;
+  float: right;
 }
 
+/* 매출합계모달 표 */
 .center {
-  color: rgb(89, 79, 79);
-  border: 1px solid black;
+  color: rgb(48, 44, 44);
+  border: 2px solid rgb(89 79 79);
+  overflow-y: auto;
 }
 
+/* 매출합계모달 닫기버튼 */
 #TotalClose {
-  background-color: rgb(171, 155, 155);
+  background-color: rgb(92, 89, 89);
   border: 0px solid black;
   font-size: 20px;
-  color: black;
+  color: white;
+  font-weight: bold;
   width: 70px;
   height: 50px;
 }
 #TotalClose:hover {
-  background-color: rgb(221, 204, 204);
+  background-color: rgb(175, 173, 173);
+  color: rgb(255, 255, 255);
   border: 0px solid black;
+}
+
+/* 매출합계모달 표 전체 CSS */
+.OrderTotalModal {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* 미디어쿼리 */
@@ -782,7 +822,7 @@
 }
 
 /* 폰트 */
-/* OrderList  */
+/* OrderList버튼 폰트*/
 @font-face {
   font-family: "Hahmlet-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2")
@@ -791,11 +831,11 @@
   font-style: normal;
 }
 
-/* 404 페이지 */
+/* 404 페이지 폰트*/
 @font-face {
-  font-family: "HBIOS-SYS";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/HBIOS-SYS.woff2")
-    format("woff2");
+  font-family: "NEXEN_TIRE_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/NEXEN_TIRE_Bold.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }

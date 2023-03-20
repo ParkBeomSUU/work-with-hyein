@@ -9,9 +9,9 @@ const NotFound = () => {
   return (
     <div id="ErrorDiv">
       <div>
-        <h1 id="ErrorPage">404, page not found</h1>
+        <h1 id="ErrorPage">PAGE NOT FOUND</h1>
         <Link id="LoginAgain" to="/">
-          다시 로그인
+          Retry
         </Link>
       </div>
     </div>

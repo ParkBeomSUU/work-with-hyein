@@ -11,25 +11,25 @@ function RecipeModal({ show, setShow, tableContent }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{ color: "black" }}>주문 목록</Modal.Title>
+          <Modal.Title style={{ color: "black" }}>영수증</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ color: "black" }}>
           {JSON.stringify(tableContent)}
         </Modal.Body>
         <Modal.Footer>
-          <Button
+          {/* <Button
             className="SendModal"
             variant="secondary"
             onClick={handleClose}
           >
             결제
-          </Button>
+          </Button> */}
           <Button
             className="CancleModal"
             variant="primary"
             onClick={handleClose}
           >
-            취소
+            닫기
           </Button>
         </Modal.Footer>
       </Modal>

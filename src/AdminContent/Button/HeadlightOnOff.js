@@ -5,13 +5,19 @@ import "../Admin.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faX } from "@fortawesome/free-solid-svg-icons";
 import { BsLightbulbOffFill } from "react-icons/bs";
+import Flash from "react-reveal/Flash";
+import HeadShake from "react-reveal/HeadShake";
 // import { BsLightbulbOff } from "react-icons/bs";
 
 function HeadlightOnOff({ isOn }) {
   return isOn == "ON" ? (
-    <FontAwesomeIcon icon={faLightbulb} id="LightOnIcon" />
+    <Flash duration={2000}>
+      <FontAwesomeIcon icon={faLightbulb} id="LightOnIcon" />
+    </Flash>
   ) : (
-    <BsLightbulbOffFill />
+    <HeadShake duration={2000}>
+      <BsLightbulbOffFill />
+    </HeadShake>
   );
 }
 

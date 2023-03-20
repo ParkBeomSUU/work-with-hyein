@@ -6,15 +6,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faCheckToSlot } from "@fortawesome/free-solid-svg-icons";
 import { BsClipboardCheck } from "react-icons/bs";
 import CloseButton from "react-bootstrap/CloseButton";
+import axios from "axios";
 // import Checkbox from "./Checkbox";
 
 // const OrderArray = OrderText.split(", ");
 // console.log(OrderArray);
 
 const OrderTest = () => {
+  const accessToken = window.localStorage.getItem("accessToken");
+  console.log("토큰 값!!" + accessToken);
+  axios
+    .get("http://localhost:8080/userOne", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+    })
+    .then((response) => {
+      console.log("테이블 넘버" + response.data["tableNum"]);
+    });
+
   //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
   const [OrderText, setOrderText] = useState([
-    "양주 4",
     "양주 3, 칵테일 3",
     "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
     "칵테일 3, 커피 3",

@@ -96,7 +96,7 @@ const Menu = ({ setContent }) => {
                   scrolling="no"
                   frameBorder="no"
                   allow="autoplay"
-                  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gilbertcriville/sets/playlist-1&amp;color=269bb9&show_artwork=false
+                  src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gilbertcriville/sets/playlist-1&amp;color=999999&show_artwork=false
                   { ADD YOUR PARAMETERS HERE }"
                 ></iframe>
               </Col>

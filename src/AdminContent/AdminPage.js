@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Menu from "./Menu";
+import Menu from "./AdminMenu";
 import "./Admin.css";
 import AdminList from "./AdminList";
 import { isBrowser } from "react-device-detect";
