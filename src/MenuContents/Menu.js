@@ -17,9 +17,10 @@ import axios from "axios";
 import OrderButton from "./Button/OrderButton";
 import qs from "qs";
 import { post } from "axios";
-import { text } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { prices } from "./Button/prices";
 import MenuCheckModal from "./Button/MenuCheckModal";
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 const Menu = ({
   setContent,
@@ -87,6 +88,18 @@ const Menu = ({
     }
   }, [code, email, kperson, nickName, profile]);
 
+
+  //자체서버 로그아웃
+  const LogOut = () => {
+    // Access Token을 로컬 스토리지에서 제거.
+    window.localStorage.removeItem("accessToken");
+    // 로그인 페이지로 이동.
+    window.location.href = "http://localhost:3000/";
+  };
+
+
+
+
   //버튼 보내는거
   const handleClickButton = (e, number) => {
     setContent(number);
@@ -94,6 +107,23 @@ const Menu = ({
   //버튼 보내는거
   const url = "https //13.124.151.184/test";
   const config = { "Content-Type": "application/json" };
+
+  //관리자한테 메뉴들을 보내주는 부분
+  useEffect(() => {
+
+    axios.post('~~~~',{
+      'receiptContents' :receiptContents,
+ 
+      
+    })
+    .then((res) => {
+      console.log("성공");
+    })
+    .catch((error) => {
+      console.log("실패");
+    })
+
+  }, [receiptContents])
 
   //볼륨 값이 있을때 주문이 영수증에 꽂힘
   useEffect(() => {
@@ -133,25 +163,22 @@ const Menu = ({
       <Container>
         <Row>
           <Col id="intro_2">
-            {" "}
-            {/*로그인 이름과 영수증 부분 */}
+
+            {/*로그인 이름과 영수증 부분 {tableNum} */}
             <>
-              <img
-                className="w-10 h-8"
-                src={profile}
-                alt="profile"
-                id="profile"
-              />
-              <p className="w-16 h-8">{nickName}</p>
-              <a
-                className="w-16 h-8"
+              <p className="tablenumber"style={{fontSize:"20px", marginTop:"8px"}} > {}번 테이블</p>
+
+              <a className="Logout-A">
+              <button
+                className="LogoutButton"
                 href={KAKAO_LOGOUT_URL}
                 id="logout"
-                onClick={deleteCookie}
-              >
-                <button className="w-16 h-8 text-white bg-blue-600 border-none rounded-md hover:bg-blue-800">
-                  Logout
-                </button>
+                onClick={(e)=>{deleteCookie();
+                  LogOut(); }}>
+              <FontAwesomeIcon icon={faSignOut} style={{color: "#1565ef", width:"50px", height:"30px"}} />
+
+                 <h6 className="logoutText"> LOGOUT </h6>
+              </button>
               </a>
               <Receipt
                 receiptContents={receiptContents}
@@ -184,6 +211,7 @@ const Menu = ({
               onClick={(e) => handleClickButton(e, 1)}
               id="button_2"
             >
+
               <img src={cock} style={{ width: "75px" }} id="MenuImg" />
               <br />
               <a style={{ fontSize: "1.5rem" }} id="MenuText">

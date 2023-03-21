@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import { Table } from "react-bootstrap";
 import axios from "axios";
 
+//스타일
 const temp = {
   width: "90%",
   height: "100%",
@@ -13,7 +14,7 @@ const temp = {
   color: "black",
 };
 
-//헤더
+//메뉴 받아오는 부분
 const MenuCheckModal = ({
   setReceiptContents,
   isOrderDone,
@@ -23,10 +24,12 @@ const MenuCheckModal = ({
   setVolume,
   bill,
   volume,
+  receiptContents
 }) => {
   const [show, setShow] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
+//헤더 테이블
   const headerMeta = ["상품", "수량", "가격"];
 
   //모달 관리
@@ -102,6 +105,8 @@ const MenuCheckModal = ({
     });
   };
 
+
+
   return (
     <>
       <Button
@@ -162,21 +167,13 @@ const MenuCheckModal = ({
             variant="outline-info"
             id="send"
             onClick={(e) => {
-              // setOrderDone(!isOrderDone)
-              // e.preventDefault();
-              // axios.post('',{
-              // })
-              // .then((res) => {
-              //   console.log("성공");
-              // })
-              // .catch((error) => {
-              //   console.log("실패");
-              // })
               console.log("나 클릭됐슈");
               setReceiptContents({
                 bill,
                 volume,
                 totalPrice,
+              //tableNum
+
               });
 
               //클랙했을때 리셋

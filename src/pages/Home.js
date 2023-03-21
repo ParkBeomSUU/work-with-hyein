@@ -55,7 +55,7 @@ import { Light } from "three";
 // 화면의 살짝 아래
 const Positioner = styled.div`
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
@@ -108,8 +108,8 @@ const Robot = () => {
       <div class="sketchfab-embed-wrapper">
         <div
           style={{
-            width: "100%",
-            height: "5%",
+            // width: "100%",
+            // height: "5%",
             position: "absolute",
             zIndex: "2",
             backgroundColor: "white",
@@ -143,8 +143,7 @@ const Footer = () => {
     <>
       <div
         style={{
-          width: "100%",
-          height: "6.5%",
+
           position: "absolute",
           zIndex: "2",
           backgroundColor: "white",
@@ -188,10 +187,8 @@ const Footer = () => {
 // }
 const ContentHeader = () => (
   <>
-    {/* <HiRobot /> */}
-    <Robot />
-    {/* <ThreeJS/> */}
-    {/* <Inner style={{width:"100%", height:"100%"}}/> */}
+
+    <div class="logo"><b>E<span>C</span>U<span>Z</span>O</b></div>
 
     <Positioner style={{ position: "absolute", zIndex: "2" }}>
       <LogoWrapper>

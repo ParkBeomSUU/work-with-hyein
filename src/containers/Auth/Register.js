@@ -1,3 +1,4 @@
+
 import react, {Component, useState} from 'react';
 import userData from "../../local-json/users.json";
 import { Content,InputWithLabel, RegisterLink} from '../../components/';
@@ -40,9 +41,13 @@ const LoginBtn = styled.button`
 
 `;
 
-const registerFunc = async (params) => await axios.post('~~~~~',
-              {"UserId":params.UserId, "UserPw":params.UserPw,"tableNum":params.tableNum,"userNick":params.userNick});
+const registerFunc = async (value) => await axios.post('http://localhost:8080/join',
+              {"userId":value.UserId, "userPw":value.UserPw,"tableNum":value.tableNum,"userNick":value.userNick});
 
+
+const dupleId = ()=>{
+    axios.post('http://localhost:8080',)
+}
 
 const Register = () => {
    
@@ -69,10 +74,10 @@ const Register = () => {
                 console.log(error.response.data); 
             })
           };
-   
 
-        
-    
+
+
+
 
 
 
@@ -94,6 +99,7 @@ const Register = () => {
                 <option value='4' >4번 테이블</option>
 
             </select>
+            <button onClick={dupleId}>아이디 중복체크</button>
                 <InputWithLabel label="아이디" name="userId" placeholder="아이디"  onChange={e => setUserId(e.target.value)}/>
                 <InputWithLabel label="비밀번호" name="userPw" placeholder="비밀번호" type="password" onChange={e => setUserPw(e.target.value)}/>
                 <InputWithLabel label="비밀번호 확인" name="userPw" placeholder="비밀번호 확인" type="password"/>
