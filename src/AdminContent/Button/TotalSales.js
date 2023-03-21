@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Table } from "react-bootstrap";
+import total from "../TotalData.json";
 
 // 모달을 노출하는 페이지
 const TotalSales = ({}) => {
@@ -14,18 +15,18 @@ const TotalSales = ({}) => {
   return (
     <>
       <Button variant="light" id="TotalModal" size="lg" onClick={handleShow}>
-        매출 합계
+        TOTAL
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="OrderList">매출 합계</Modal.Title>
+          <Modal.Title className="OrderList"></Modal.Title>
         </Modal.Header>
 
-        <Modal.Body className="OrderList">
+        <Modal.Body className="OrderTotalModal">
           <Table bordered variant="transparent" className="center">
             <thead id="TableHeader">
-              <tr id="TotalTableCss">
+              <tr id="TotalModalHeader">
                 <th></th>
                 <th>메뉴명</th>
                 <th>수량</th>
@@ -34,40 +35,39 @@ const TotalSales = ({}) => {
             </thead>
 
             <tbody>
-              {/* return ( */}
               <>
                 <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Otto</td>
+                  <td>{total.id}</td>
+                  <td>{total.orderList}</td>
+                  <td>{total.orderCount}</td>
+                  <td>{total.o_total}원</td>
                 </tr>
 
                 <tr>
-                  <td>2</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Otto</td>
+                  <td></td>
+                  <td>{total.orderList}</td>
+                  <td>{total.orderCount}</td>
+                  <td>{total.o_total}원</td>
                 </tr>
 
                 <tr>
-                  <td>3</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Otto</td>
+                  <td></td>
+                  <td>{total.orderList}</td>
+                  <td>{total.orderCount}</td>
+                  <td>{total.o_total}원</td>
                 </tr>
               </>
-              {/* ); */}
             </tbody>
 
-            <tfoot className="TotalFoot">
+            {/* <tfoot id="">
               <th></th>
               <th></th>
-              TOTAL: 원
-            </tfoot>
+              <th></th>
+              총계: 0000000원
+            </tfoot> */}
           </Table>
         </Modal.Body>
-
+        <p id="TotalCount">총 합계: 283,700원</p>
         <Modal.Footer>
           <Button id="TotalClose" variant="outline-info" onClick={handleClose}>
             닫기

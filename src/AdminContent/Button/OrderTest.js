@@ -13,6 +13,7 @@ import axios from "axios";
 // console.log(OrderArray);
 
 const OrderTest = () => {
+<<<<<<< HEAD
   // 값 저장
   const  [tableNum, setTableNum ] = useState(0);
   const [content,setContent] = useState("");
@@ -65,6 +66,37 @@ const OrderTest = () => {
     "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
     "칵테일 3, 커피 3",
   ]);
+=======
+  const accessToken = window.localStorage.getItem("accessToken");
+  console.log("토큰 값!!" + accessToken);
+  axios
+    .get("http://localhost:8080/userOne", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+    })
+    .then((response) => {
+      console.log("테이블 넘버" + response.data["tableNum"]);
+    });
+  axios
+    .get("http://localhost:8080/order", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
+    })
+    .then((response) => {
+      let arr = response.data;
+      arr = arr[arr.length - 1];
+      let content = arr["content"];
+      //"아무개나1, 아무개나2, 아무개나3"
+      console.log("테이블 넘버" + response.data["tableNum"]);
+    });
+
+  //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
+  const [OrderText, setOrderText] = useState([]);
+>>>>>>> 3f7dde2f6c0d426ca6c2b108b83f8d31021417d1
 
   // 삭제 기능
   const handleDelete = (delIdx) => {

@@ -19,7 +19,9 @@ function BuzzerOn({ isOn }) {
       <FontAwesomeIcon icon={faVolumeHigh} />
     </Tada>
   ) : (
-    <FontAwesomeIcon icon={faVolumeXmark} />
+    <Tada duration={2000}>
+      <FontAwesomeIcon icon={faVolumeXmark} />
+    </Tada>
   );
 }
 
