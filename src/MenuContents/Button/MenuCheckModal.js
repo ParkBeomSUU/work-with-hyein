@@ -24,7 +24,8 @@ const MenuCheckModal = ({
   setVolume,
   bill,
   volume,
-  receiptContents
+  receiptContents,
+  content
 }) => {
   const [show, setShow] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -161,7 +162,7 @@ const MenuCheckModal = ({
         </Modal.Body>
 
         <Modal.Footer>
-          <div style={{ color: "black" }}> 이렇게 주문하시겠슴?</div>
+          <div style={{ color: "black" }}> 주문하시겠습니까??</div>
           <Button
             className="ModalSend"
             variant="outline-info"
@@ -172,6 +173,7 @@ const MenuCheckModal = ({
                 bill,
                 volume,
                 totalPrice,
+                content
               //tableNum
 
               });

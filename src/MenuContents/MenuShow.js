@@ -79,7 +79,7 @@ const MenuShow = () => {
       <Container id="out_2">
         <Row id="row_2">
           <Col id="first_2" sm={{ span: 4 }} xs={{ span: 4 }}>
-            <Menu setContent={setContent} setVolume={setVolume} volume={volume} menuText={menuText} setMenuText={setMenuText}  bill={bill} setBill={setBill} />
+            <Menu content={content}setContent={setContent} setVolume={setVolume} volume={volume} menuText={menuText} setMenuText={setMenuText}  bill={bill} setBill={setBill} />
           </Col>
           
           <Col id="second_2" sm={{ span: 8 }} xs={{ span: 8 }}>

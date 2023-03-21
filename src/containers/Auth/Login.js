@@ -56,6 +56,7 @@ const Login = (props) => {
                 window.localStorage.setItem('accessToken', accessToken);
                 // 로그인이 성공한 경우 메인 페이지로 이동합니다.
                 window.location.href = 'http://localhost:3000/admin';
+                
 
             })
             .catch(ex=>{
@@ -76,6 +77,7 @@ const Login = (props) => {
                 <Title>로그인</Title>
                 <InputWithLabel onChange={e => setUserId(e.target.value)} label="아이디" name="userId" placeholder="아이디"/>
                 <InputWithLabel onChange={e => setUserPw(e.target.value)} label="비밀번호" name="password" placeholder="비밀번호" type="password"/>
+
                 <LoginBtn type="submit">로그인</LoginBtn>
 
             </form>

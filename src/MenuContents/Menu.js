@@ -25,6 +25,7 @@ import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 const Menu = ({
   setContent,
   volume,
+  content,
   setMenuText,
   bill,
   setBill,
@@ -167,6 +168,11 @@ const Menu = ({
             {/*로그인 이름과 영수증 부분 {tableNum} */}
             <>
               <p className="tablenumber"style={{fontSize:"20px", marginTop:"8px"}} > {}번 테이블</p>
+
+              
+              {/* {userID ==="admin" && 
+
+              <button onclick="location.href='http://localhost:3000/admin'">Admin 페이지로 이동</button>} */}
 
               <a className="Logout-A">
               <button
@@ -345,6 +351,7 @@ const Menu = ({
             isOrderDone={isOrderDone}
             setOrderDone={setOrderDone}
             volume={volume}
+            content={content}
             bill={bill}
             setBill={setBill}
             setMenuText={setMenuText}

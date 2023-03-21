@@ -6,17 +6,19 @@ import AdminPage from "./AdminContent/AdminPage";
 import NotFound from "./AdminContent/NotFound";
 import Login from "./containers/Auth/Login";
 
-const App = () => {
+const App = (userID) => {
   return (
     <Switch>
       <Route path="/auth" component={Auth} />
       <Route path="/auth/login" component={Login} />
       <Route exact path="/menu" component={MenuShow} />
       <Route exact path="/" component={Home} />
-      <Route exact path="/Admin" component={AdminPage} />
+      {userID ==="admin" && 
+      <Route exact path="/Admin" component={AdminPage} /> }
       <Route path="/*" component={NotFound} />
     </Switch>
   );
 };
+//      {/* {userID ==="admin" && ( */  }
 
 export default App;
