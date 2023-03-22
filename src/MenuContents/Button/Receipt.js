@@ -53,7 +53,7 @@ const Receipt = ({
         </Modal.Header>
 
         <Modal.Body className="OrderList">
-          <Table striped bordered hover variant="dark" className="center">
+          <Table striped bordered hover className="center">
             <thead>
               <tr>
                 {headerMeta.map((i) => (

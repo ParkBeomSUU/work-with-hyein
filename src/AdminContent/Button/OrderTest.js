@@ -20,6 +20,14 @@ const OrderTest = () => {
   const [createAt, setCreateAt] = useState(0);
   const [updateAt, setUpdateAt] =useState(0);
 
+  //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
+  const [OrderText, setOrderText] = useState([
+    content,
+    "양주 3, 칵테일 3",
+    "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
+    "칵테일 3, 커피 3",
+  ]);
+
   const accessToken = window.localStorage.getItem('accessToken');
 
   //token 받는것.
@@ -56,16 +64,14 @@ const OrderTest = () => {
   //값 화인 content가 갱신되면 orderText를 갱신
   useEffect(() => {
     console.log("useEffect사용",content)
+    setOrderText([
+      content,
+      "양주 3, 칵테일 3",
+      "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
+      "칵테일 3, 커피 3",
+    ])
   }, [content])
   console.log("global ",content)
-  //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
-  const [OrderText, setOrderText] = useState([
-      content,
-    "양주 3, 칵테일 3",
-    "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
-    "칵테일 3, 커피 3",
-  ]);
-
 
   // 삭제 기능
   const handleDelete = (delIdx) => {

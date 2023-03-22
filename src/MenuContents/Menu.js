@@ -30,6 +30,7 @@ const Menu = ({
   bill,
   setBill,
   setVolume,
+  menuText
   
 }) => {
   //카카오 해보자
@@ -106,9 +107,10 @@ const Menu = ({
   const handleClickButton = (e, number) => {
     setContent(number);
   };
+  
   //버튼 보내는거
-  const url = "https //13.124.151.184/test";
-  const config = { "Content-Type": "application/json" };
+  // const url = "https //13.124.151.184/test";
+  // const config = { "Content-Type": "application/json" };
 
   
 
@@ -162,18 +164,20 @@ const Menu = ({
               <button onclick="location.href='http://localhost:3000/admin'">Admin 페이지로 이동</button>} */}
 
               <a className="Logout-A">
+
               <button
                 className="LogoutButton"
                 href={KAKAO_LOGOUT_URL}
                 id="logout"
                 onClick={(e)=>{deleteCookie();
                   LogOut(); }}>
-              <FontAwesomeIcon icon={faSignOut} style={{color: "#1565ef", width:"50px", height:"30px"}} />
+                    <FontAwesomeIcon icon={faSignOut} className="fontawesonicon" />
 
-                 <h6 className="logoutText"> LOGOUT </h6>
+                    <h6 className="logoutText"> LOGOUT </h6>
               </button>
               </a>
-              <Receipt
+              
+              <Receipt className="receipt"
                 receiptContents={receiptContents}
                 volume={volume}
                 bill={bill}
@@ -334,10 +338,11 @@ const Menu = ({
           </Col>
 
           {/* <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} /> */}
-          <MenuCheckModal
+          <MenuCheckModal 
             isOrderDone={isOrderDone}
             setOrderDone={setOrderDone}
             volume={volume}
+            menuText={menuText}
             content={content}
             bill={bill}
             setBill={setBill}

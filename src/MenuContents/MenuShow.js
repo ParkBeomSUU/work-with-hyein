@@ -72,8 +72,10 @@ const MenuShow = () => {
   }, [bill])
 
 
+  useEffect(() => {
+    console.log("여기는 메뉴쇼", content)
+  }, [content])
 
-  
   return (
     <>
       <Container id="out_2">
