@@ -41,31 +41,37 @@ const Login = (props) => {
     //자체서버 로그인 토큰 저장
     const [userId, setUserId] = useState("")
     const [userPw, setUserPw] = useState("")
-    const handleSubmit = async (event) =>{
+    
+    
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        let data = { "userId":userId,"userPw":userPw };
-        axios.post("http://localhost:8080/login" ,data,{
-            headers: {
-                "Content-Type": `application/json`,
-            } })
-            .then(response =>{
-
-                console.log("성공"+response.headers)
-                // Access Token을 받아서 로컬 스토리지에 저장합니다.
-                let accessToken =response.headers.get("Authorization").substring(7);
-                window.localStorage.setItem('accessToken', accessToken);
-                // 로그인이 성공한 경우 메인 페이지로 이동합니다.
-                window.location.href = 'http://localhost:3000/admin';
-                
-
-            })
-            .catch(ex=>{
-                console.log("로그인 실패 : " + ex);
-            })
-            .finally(()=>{
-                console.log("login request end");
-            });
-    }
+        let data = { "userId": userId, "userPw": userPw };
+        axios.post("http://localhost:8080/login", data, {
+          headers: {
+            "Content-Type": `application/json`,
+          }
+        })
+          .then(response => {
+         
+              console.log("성공" + response.headers);
+              // Access Token을 받아서 로컬 스토리지에 저장합니다.
+              let accessToken = response.headers.get("Authorization").substring(7);
+              window.localStorage.setItem('accessToken', accessToken);
+      // 로그인이 성공한 경우 메인 페이지로 이동합니다.
+      if (userId === "admin") {
+        window.location.href = 'http://localhost:3000/admin';
+      } else {
+        window.location.href = 'http://localhost:3000/Menu';
+      }
+    })
+          .catch(ex => {
+            console.log("로그인 실패 : " + ex);
+      
+          })
+          .finally(() => {
+            console.log("login request end");
+          });
+      }
 
     useEffect(()=>{
         console.log("LoginPage render ... ");

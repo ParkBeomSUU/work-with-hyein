@@ -105,7 +105,26 @@ const MenuCheckModal = ({
       tequilaSunrise: 0,
     });
   };
+//관리자한테 메뉴들을 보내주는 부분
+useEffect(() => {
 
+  axios.post('~~~~',{
+    'content':content,
+    // "bill":bill,
+    "totalPrice":totalPrice,
+    // "volume":volume,
+    // 'receiptContents' :receiptContents,
+
+    
+  })
+  .then((res) => {
+    console.log("성공");
+  })
+  .catch((error) => {
+    console.log("실패");
+  })
+
+}, [receiptContents])
 
 
   return (
@@ -170,8 +189,8 @@ const MenuCheckModal = ({
             onClick={(e) => {
               console.log("나 클릭됐슈");
               setReceiptContents({
-                bill,
-                volume,
+                // bill,
+                // volume,
                 totalPrice,
                 content
               //tableNum

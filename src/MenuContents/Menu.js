@@ -30,6 +30,7 @@ const Menu = ({
   bill,
   setBill,
   setVolume,
+  
 }) => {
   //카카오 해보자
   const [, , removeCookie] = useCookies("nickName");
@@ -109,22 +110,8 @@ const Menu = ({
   const url = "https //13.124.151.184/test";
   const config = { "Content-Type": "application/json" };
 
-  //관리자한테 메뉴들을 보내주는 부분
-  useEffect(() => {
+  
 
-    axios.post('~~~~',{
-      'receiptContents' :receiptContents,
- 
-      
-    })
-    .then((res) => {
-      console.log("성공");
-    })
-    .catch((error) => {
-      console.log("실패");
-    })
-
-  }, [receiptContents])
 
   //볼륨 값이 있을때 주문이 영수증에 꽂힘
   useEffect(() => {

@@ -13,8 +13,8 @@ const App = (userID) => {
       <Route path="/auth/login" component={Login} />
       <Route exact path="/menu" component={MenuShow} />
       <Route exact path="/" component={Home} />
-      {userID ==="admin" && 
-      <Route exact path="/Admin" component={AdminPage} /> }
+      {/* {userID ==="admin" &&  */}
+      <Route exact path="/Admin" component={AdminPage} /> 
       <Route path="/*" component={NotFound} />
     </Switch>
   );

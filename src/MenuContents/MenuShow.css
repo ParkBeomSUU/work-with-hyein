@@ -154,7 +154,8 @@
   background-color:rgb(35 37 47);
   transition: width .35s;
   -webkit-transition: width .35s;
-  overflow: hidden
+  overflow: hidden;
+	float: right;
 
 
 }
