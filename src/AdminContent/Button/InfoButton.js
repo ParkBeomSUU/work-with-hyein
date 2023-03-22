@@ -3,23 +3,25 @@ import axios from "axios";
 import AdminInfo from "../Button/AdminInfo";
 
 const Users = () => {
-  const [user, setUsers] = useState([]);
+  const [user, setUsers] = useState("혠오");
+  const [tableNum, seTableNum] = useState("Table 1");
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users/2") // 진짜 제이슨파일 주소 적음 됨
+      .get("http://localhost:8080/login")
       .then((response) => {
-        setUsers(response.data);
-        console.log(response.data);
+        /*
+       아래 코드의 reponse.data 부분이
+       사용자의 별명에 접근하는 코드로 변경되어야 한다 
+       */
+        setUsers(response.data["userId"]);
+      })
+      .catch(() => {
+        console.error("네트워크 에러가 발생한 듯합니다");
       });
   }, []);
 
-  return (
-    <>
-      <AdminInfo users={user} />
-      {user.name}
-    </>
-  );
+  return <>{user}</>;
 };
 
 export default Users;

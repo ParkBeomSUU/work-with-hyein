@@ -5,11 +5,11 @@ import "../Admin.css";
 
 const Users = () => {
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((response) => {
-      console.log(response);
+    axios.get("http://localhost:8080/login").then((response) => {
+      console.log(response.data);
     });
   }, []);
-  return;
+  return <>{}</>;
 };
 
 export default Users;

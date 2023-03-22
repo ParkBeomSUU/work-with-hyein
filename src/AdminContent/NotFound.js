@@ -8,12 +8,10 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <div id="ErrorDiv">
-      <div>
-        <h1 id="ErrorPage">PAGE NOT FOUND</h1>
-        <Link id="LoginAgain" to="/">
-          Retry
-        </Link>
-      </div>
+      <h1 id="ErrorPage">PAGE NOT FOUND</h1>
+      <Link id="LoginAgain" to="/">
+        Retry
+      </Link>
     </div>
   );
 };

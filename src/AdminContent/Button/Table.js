@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Card, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
-import TableImg from "../Img/tableimg.png";
 import RecipeModal from "./RecipeModal";
 import TotalSales from "./TotalSales";
 

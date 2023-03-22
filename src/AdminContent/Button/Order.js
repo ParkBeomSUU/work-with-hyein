@@ -1,10 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Admin.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faCheckToSlot } from "@fortawesome/free-solid-svg-icons";
-import { BsClipboardCheck } from "react-icons/bs";
 import OrderTest from "./OrderTest";
 
 const Order = () => {

@@ -14,11 +14,11 @@ import axios from "axios";
 
 const OrderTest = () => {
   // 값 저장
-  const  [tableNum, setTableNum ] = useState(0);
-  const [content,setContent] = useState("");
-  const [totalPrice,setTotalPrice] =useState(0);
+  const [tableNum, setTableNum] = useState(0);
+  const [content, setContent] = useState("");
+  const [totalPrice, setTotalPrice] = useState(0);
   const [createAt, setCreateAt] = useState(0);
-  const [updateAt, setUpdateAt] =useState(0);
+  const [updateAt, setUpdateAt] = useState(0);
 
   //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
   const [OrderText, setOrderText] = useState([
@@ -28,50 +28,53 @@ const OrderTest = () => {
     "칵테일 3, 커피 3",
   ]);
 
-  const accessToken = window.localStorage.getItem('accessToken');
+  const accessToken = window.localStorage.getItem("accessToken");
 
   //token 받는것.
-    axios.get("http://localhost:8080/userOne", {
+  axios
+    .get("http://localhost:8080/userOne", {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization':"Bearer "+accessToken,
-      }
-    }).then(response => {
-      let tableNum_local = response.data['tableNum']
-      setTableNum(tableNum_local)
-
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
     })
+    .then((response) => {
+      let tableNum_local = response.data["tableNum"];
+      setTableNum(tableNum_local);
+    });
 
-    axios.get("http://localhost:8080/order", {
+  axios
+    .get("http://localhost:8080/order", {
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization':"Bearer "+accessToken,
-      }
-    }).then(response => {
-      let data=response.data
-      let last = data[data.length-1];
-      let content=last['content'];
-      console.log("local content", content)
-      let totalPrice = last['totalPrice'];
-      let createAt = last['createAt'];
-      let updateAt = last['updateAt'];
-      setContent(content)
-      setTotalPrice(totalPrice)
-      setCreateAt(createAt)
-      setUpdateAt(updateAt)
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + accessToken,
+      },
     })
+    .then((response) => {
+      let data = response.data;
+      let last = data[data.length - 1];
+      let content = last["content"];
+      console.log("local content", content);
+      let totalPrice = last["totalPrice"];
+      let createAt = last["createAt"];
+      let updateAt = last["updateAt"];
+      setContent(content);
+      setTotalPrice(totalPrice);
+      setCreateAt(createAt);
+      setUpdateAt(updateAt);
+    });
 
   //값 화인 content가 갱신되면 orderText를 갱신
   useEffect(() => {
-    console.log("useEffect사용",content)
+    console.log("useEffect사용", content);
     setOrderText([
       content,
       "양주 3, 칵테일 3",
       "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
       "칵테일 3, 커피 3",
-    ])
-  }, [content])
-  console.log("global ",content)
+    ]);
+  }, [content]);
+  console.log("global ", content);
 
   // 삭제 기능
   const handleDelete = (delIdx) => {

@@ -6,17 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faRobot,
   faVideo,
-  faListUl,
   faCircleInfo,
   faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
-import Cam from "./Button/Cam";
-import Order from "./Button/Order";
-import Robot from "./Button/Robot";
-import Table from "./Button/Table";
 import { RiAdminFill } from "react-icons/ri";
-import AdminList from "./AdminList";
 import InfoButton from "./Button/InfoButton";
+// import AdminList from "./AdminList";
 
 const Menu = ({ setContent }) => {
   const handleClickButton = (e, number) => {
@@ -93,8 +88,8 @@ const Menu = ({ setContent }) => {
                   id="MusicApi"
                   width="100%"
                   height="100%"
-                  scrolling="no"
-                  frameBorder="no"
+                  // scrolling="no"
+                  // frameBorder="no"
                   allow="autoplay"
                   src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gilbertcriville/sets/playlist-1&amp;color=999999&show_artwork=false
                   { ADD YOUR PARAMETERS HERE }"
