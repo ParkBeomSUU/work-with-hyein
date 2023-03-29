@@ -15,74 +15,94 @@ import axios from "axios";
 const OrderTest = () => {
   // 값 저장
   const [tableNum, setTableNum] = useState(0);
-  const [content, setContent] = useState("");
+  const [content_t1, setContent_t1] = useState("주문내역 없음");
+  const [content_t2, setContent_t2] = useState("주문내역 없음");
+  const [content_t3, setContent_t3] = useState("주문내역 없음");
+  const [content_t4, setContent_t4] = useState("주문내역 없음");
+  const [userId, setUserId] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
   const [createAt, setCreateAt] = useState(0);
   const [updateAt, setUpdateAt] = useState(0);
+  const accessToken = window.localStorage.getItem("adminAccessToken");
+  const [pathVal, setPathVal] = useState(1);
 
   //  번호 일치하는 테이블에 들어가게 하려면 어떻게 코드를 짜야하는지
   const [OrderText, setOrderText] = useState([
-    content,
-    "양주 3, 칵테일 3",
-    "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
-    "칵테일 3, 커피 3",
+    content_t1,
+    content_t2,
+    content_t3,
+    content_t4,
   ]);
 
-  const accessToken = window.localStorage.getItem("accessToken");
-
-  //token 받는것.
-  axios
-    .get("http://localhost:8080/userOne", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-    .then((response) => {
-      let tableNum_local = response.data["tableNum"];
-      setTableNum(tableNum_local);
-    });
-
-  axios
-    .get("http://localhost:8080/order", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + accessToken,
-      },
-    })
-    .then((response) => {
-      let data = response.data;
-      let last = data[data.length - 1];
-      let content = last["content"];
-      console.log("local content", content);
-      let totalPrice = last["totalPrice"];
-      let createAt = last["createAt"];
-      let updateAt = last["updateAt"];
-      setContent(content);
-      setTotalPrice(totalPrice);
-      setCreateAt(createAt);
-      setUpdateAt(updateAt);
-    });
-
-  //값 화인 content가 갱신되면 orderText를 갱신
   useEffect(() => {
-    console.log("useEffect사용", content);
-    setOrderText([
-      content,
-      "양주 3, 칵테일 3",
-      "양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 양주 3, 칵테일 3, 커피 3, 피자 1",
-      "칵테일 3, 커피 3",
-    ]);
-  }, [content]);
-  console.log("global ", content);
+    setOrderText([content_t1, content_t2, content_t3, content_t4]);
+  }, [content_t1, content_t2, content_t3, content_t4]);
+
+  //1번 테이블~4번 까지 Loop
+  useEffect(() => {
+    setTimeout(() => {
+      axios
+        .get(`http://localhost:8080/order/list`, {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + accessToken,
+          },
+        })
+        .then((response) => {
+          for (let i = 0; i < 4; i += 1) {
+            let last = response.data[i];
+            console.log(last);
+            let content = last["content"];
+            let userId = last["userId"];
+            let tableNum = last["tableNum"];
+            let totalPrice = last["totalPrice"];
+            let createAt = last["createAt"];
+            let updateAt = last["updateAt"];
+            setTableNum(tableNum);
+            setUserId(userId);
+            setTotalPrice(totalPrice);
+            setCreateAt(createAt);
+            setUpdateAt(updateAt);
+            if (tableNum == "1") setContent_t1(content);
+            else if (tableNum == "2") setContent_t2(content);
+            else if (tableNum == "3") setContent_t3(content);
+            else if (tableNum == "4") setContent_t4(content);
+          }
+        })
+        .catch((error) => {});
+      if (pathVal === 4) {
+        setPathVal(1);
+      } else {
+        setPathVal(pathVal + 1);
+      }
+    }, 25000);
+    // return ()=>clearInterval(timer)
+  }, [pathVal]);
 
   // 삭제 기능
   const handleDelete = (delIdx) => {
-    setOrderText(
-      OrderText.filter((_, idx) => {
-        return delIdx != idx;
+    axios
+      .delete(`http://localhost:8080/order/${delIdx + 1}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
       })
-    );
+      .then(() => {
+        setOrderText(
+          OrderText.map((anOrder, idx) => {
+            if (idx === delIdx) {
+              if (delIdx == "1") setContent_t1("주문내역 없음");
+              else if (delIdx == "2") setContent_t2("주문내역 없음");
+              else if (delIdx == "3") setContent_t3("주문내역 없음");
+              else if (delIdx == "4") setContent_t4("주문내역 없음");
+              return "주문내역 없음";
+            } else {
+              return anOrder;
+            }
+          })
+        );
+      });
   };
 
   return (

@@ -19,14 +19,6 @@ const TableList = () => {
               width: "50%",
             }}
           >
-            {/* <div className="">
-              <BsClipboardCheck /> &nbsp;Table {idx + 1}
-            </div> */}
-            {/* <hr
-              style={{
-                margin: "10px",
-              }}
-            /> */}
             <div className="OrderCheck">
               {anOrder.split(", ").map((o, i) => {
                 return <li key={i}>{o}</li>;

@@ -10,7 +10,7 @@ const NotFound = () => {
     <div id="ErrorDiv">
       <h1 id="ErrorPage">PAGE NOT FOUND</h1>
       <Link id="LoginAgain" to="/">
-        Retry
+        Login
       </Link>
     </div>
   );

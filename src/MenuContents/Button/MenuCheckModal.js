@@ -16,22 +16,23 @@ const temp = {
 
 //메뉴 받아오는 부분
 const MenuCheckModal = ({
-                          setReceiptContents,
-                          isOrderDone,
-                          setOrderDone,
-                          setBill,
-                          setMenuText,
-                          setVolume,
-                          bill,
-                          volume,
-                          receiptContents,
-                          content,
-                          menuText
-                        }) => {
+  setReceiptContents,
+  isOrderDone,
+  setOrderDone,
+  setBill,
+  setMenuText,
+  setVolume,
+  bill,
+  volume,
+  receiptContents,
+  content,
+  menuText,
+  setForHyenoh,
+}) => {
   const [show, setShow] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
-//헤더 테이블
+  //헤더 테이블
   const headerMeta = ["상품", "수량", "가격"];
 
   //모달 관리
@@ -106,138 +107,155 @@ const MenuCheckModal = ({
       tequilaSunrise: 0,
     });
   };
-//관리자한테 메뉴들을 보내주는 부분
-// useEffect(() => {
+  //관리자한테 메뉴들을 보내주는 부분
+  // useEffect(() => {
 
-//   axios.post('~~~~',{
-//     'menuText':menuText,
-//     // "bill":bill,
-//     "totalPrice":totalPrice,
-//     // "volume":volume,
-//     // 'receiptContents' :receiptContents,
+  //   axios.post('~~~~',{
+  //     'menuText':menuText,
+  //     // "bill":bill,
+  //     "totalPrice":totalPrice,
+  //     // "volume":volume,
+  //     // 'receiptContents' :receiptContents,
 
+  //   })
+  //   .then((res) => {
+  //     console.log("성공");
+  //   })
+  //   .catch((error) => {
+  //     console.log("실패");
+  //   })
 
-//   })
-//   .then((res) => {
-//     console.log("성공");
-//   })
-//   .catch((error) => {
-//     console.log("실패");
-//   })
+  // }, [receiptContents])
 
-// }, [receiptContents])
+  const sendMenu = () => {
+    const token = window.localStorage.getItem("accessToken");
+    // 내가 content, totalPrice
+    axios
+      .post(
+        "http://localhost:8080/order",
+        { menuText: menuText, totalPrice: totalPrice },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("성공했습니다.");
+      })
+      .catch((error) => {
+        console.log("실패", error);
+      });
 
-  const sendMenu =() => {
-      const token =window.localStorage.getItem("accessToken")
-      // 내가 content, totalPrice
-      axios.post('http://localhost:8080/order',
-          {'menuText':menuText,'totalPrice':totalPrice},
-          {headers:{'Content-Type': 'application/json','Authorization':"Bearer "+token}
-          })
-          .then((res) => {
-              console.log("성공했습니다.");
-          })
-          .catch((error) => {
-              console.log("실패",error);
-          })
-
-
-      axios.post('http://localhost:3000/admin',
-          {'bill':bill,'volume':volume},
-          {headers:{'Content-Type': 'application/json','Authorization':"Bearer "+token}
-          })
-          .then((res) => {
-              console.log("성공했습니다.");
-          })
-          .catch((error) => {
-              console.log("실패",error);
-          })
-  }
+    axios
+      .post(
+        "http://localhost:3000/admin",
+        { bill: bill, volume: volume },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
+      .then((res) => {
+        console.log("성공했습니다.");
+      })
+      .catch((error) => {
+        console.log("실패", error);
+      });
+  };
 
   return (
-      <>
-        <Button
-            variant="light"
-            id="OrderCheck"
-            size="lg"
-            onClick={(e) => {
-              setOrderDone(!isOrderDone);
-              handleShow();
-            }}
-        >
-          주문 하기 !
-        </Button>
+    <>
+      <Button
+        variant="light"
+        id="OrderCheck"
+        size="lg"
+        onClick={(e) => {
+          setOrderDone(!isOrderDone);
+          handleShow();
+        }}
+      >
+        주문 하기 !
+      </Button>
 
-        <Modal style={temp} show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title className="OrderList" style={{ textAlign: "center" }}>
-              주문확인
-            </Modal.Title>
-          </Modal.Header>
+      <Modal style={temp} show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title className="OrderList" style={{ textAlign: "center" }}>
+            주문확인
+          </Modal.Title>
+        </Modal.Header>
 
-          <Modal.Body className="OrderList">
-            <Table bordered variant="dark" className="center">
-              <thead>
+        <Modal.Body className="OrderList">
+          <Table bordered variant="dark" className="center">
+            <thead>
               <tr>
                 {headerMeta.map((i) => (
-                    <th>{i}</th>
+                  <th>{i}</th>
                 ))}
               </tr>
-              </thead>
+            </thead>
 
-              <tbody className="ReciptBody">
+            <tbody className="ReciptBody">
               {Object.keys(bill).map((b) => {
                 return (
-                    <>
-                      <tr>
-                        <td>{b}</td>
-                        <td>{volume[b]}</td>
-                        <td> {bill[b]}</td>
-                      </tr>
-                    </>
+                  <>
+                    <tr>
+                      <td>{b}</td>
+                      <td>{volume[b]}</td>
+                      <td> {bill[b]}</td>
+                    </tr>
+                  </>
                 );
               })}
-              </tbody>
+            </tbody>
 
-              <tfoot className="ReciptFoot">
+            <tfoot className="ReciptFoot">
               <th></th>
               <th></th>
               total : {totalPrice} 원
-              </tfoot>
-            </Table>
-          </Modal.Body>
+            </tfoot>
+          </Table>
+        </Modal.Body>
 
-          <Modal.Footer>
-            <div style={{ color: "black" }}> 주문하시겠습니까??</div>
-            <Button
-                className="ModalSend"
-                variant="outline-info"
-                id="send"
-                onClick={(e) => {
-                  console.log("나 클릭됐슈");
-                  sendMenu();
-                  // setReceiptContents({
-                  //   // bill,
-                  //   // volume,
-                  //   totalPrice,
-                  //   content
-                  // //tableNum
+        <Modal.Footer>
+          <div style={{ color: "black" }}> 주문하시겠습니까??</div>
+          <Button
+            className="ModalSend"
+            variant="outline-info"
+            id="send"
+            onClick={(e) => {
+              console.log("나 클릭됐슈");
+              sendMenu();
+              setForHyenoh({
+                bill,
+                volume,
+                totalPrice,
+              });
+              // setReceiptContents({
+              //   // bill,
+              //   // volume,
+              //   totalPrice,
+              //   content
+              // //tableNum
 
-                  // });
-                  //클랙했을때 리셋
-                  ClickReset();
+              // });
+              //클랙했을때 리셋
+              ClickReset();
 
-                  //클릭했을때 영수증에 보내기
+              //클릭했을때 영수증에 보내기
 
-                  //닫기보턴
-                  handleClose();
-                }}
-            >
-              확인
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
+              //닫기보턴
+              handleClose();
+            }}
+          >
+            확인
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 

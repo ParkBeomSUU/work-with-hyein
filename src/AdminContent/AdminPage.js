@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import "./Admin.css";
 import AdminList from "./AdminList";
 
-const AdminPage = () => {
+const AdminPage = ({ forHyenoh }) => {
   const [content, setContent] = useState(0); //state 선언
   console.log(content);
   return (
@@ -17,7 +17,7 @@ const AdminPage = () => {
           </Col>
 
           <Col id="second" sm={{ span: 8 }} xs={{ span: 8 }}>
-            <AdminList content={content} />
+            <AdminList forHyenoh={forHyenoh} content={content} />
           </Col>
         </Row>
       </Container>

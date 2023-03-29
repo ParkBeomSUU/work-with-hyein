@@ -35,7 +35,7 @@
   font-size: 2rem;
   color: rgb(216 216 216);
   font-weight: bold;
-
+  font-family: "NEXEN_TIRE_Bold";
   padding: 10px;
 }
 #UserIcon {
@@ -81,7 +81,7 @@
   background-color: rgb(35 37 47);
   margin-top: 20px;
   margin-bottom: 20px;
-  overflow: hidden;
+  overflow: auto;
   height: 879px;
 }
 
@@ -112,6 +112,10 @@
 .ButtonIcon {
   filter: drop-shadow(10px 0px 8px rgb(0 0 0));
 }
+.ButtonIcon2 {
+  font-size: 65px;
+  filter: drop-shadow(10px 0px 8px rgb(0 0 0));
+}
 
 .ButtonName {
   margin-top: 10px;
@@ -124,9 +128,6 @@
   /* background-color: #0dbfca; */
   transition: 0.3s;
   color: rgb(38 155 185);
-  /* box-shadow: 0 0 5px #0dbfca, 0 0 25px #0dbfca, 0 0 50px #0dbfca,
-    0 0 200px #0dbfca; */
-  border: 0px solid rgb(35 37 47);
 }
 
 /* Info버튼 아이콘 div */
@@ -142,6 +143,51 @@
   color: white;
   font-weight: bold;
   /* animation: FirstDiv 3s linear infinite; */
+}
+
+.SpeedDiv {
+  display: inline-block;
+  flexdirection: column;
+  width: 240px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-top: 25px; */
+  color: white;
+  font-weight: bold;
+}
+.SpeedDiv2 {
+  display: inline-block;
+  flexdirection: column;
+  width: 240px;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-top: 25px; */
+  color: white;
+  font-weight: bold;
+}
+
+#SpeedText {
+  display: inline-block;
+  width: 240px;
+  height: 170px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* margin-top: 25px; */
+  color: white;
+  font-weight: bold;
+}
+#SpeedFirst {
+  margin-top: 30px;
+}
+
+#TireIcon {
+  font-size: 90px;
+  padding-bottom: 60px;
 }
 
 /* Info버튼 p태그 2개 들어있는 div */
@@ -184,15 +230,14 @@
 #LeftWheelIcon {
   animation: rotate linear 1s infinite;
   color: rgb(255, 255, 255);
-  /* filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.7)); */
-  /* drop-shadow(0 0 5px rgba(220, 215, 215)); */
-  /* drop-shadow(0 0 15px rgba(255, 251, 251, 0.7)); */
+  margin-bottom: 37px;
 }
 
 /* Info버튼 - 오른쪽 rpm 아이콘*/
 #RightWheelIcon {
   animation: rotate linear 1s infinite;
   color: rgb(255, 255, 255);
+  margin-bottom: 37px;
 }
 @keyframes rotate {
   from {
@@ -423,7 +468,8 @@
   border-radius: 7px;
   background-color: rgb(44 50 64);
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.3);
-  overflow: auto;
+  overflow-x: auto;
+  position: relative;
 }
 
 /* OrderList 주문목록 X 아이콘 */
@@ -598,16 +644,27 @@
 
 /* 테이블 영수증 버튼 */
 .TableBtn {
+  width: 150px;
+  height: 120px;
+  border: 0px solid black;
   background-color: transparent !important;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 1px solid black;
-  color: black;
+  font-family: "KCC-Ganpan";
+  font-size: 35px;
+  color: white;
+  text-shadow: 0px 0px 10px white;
+}
+@font-face {
+  font-family: "KCC-Ganpan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 .TableBtn:hover {
-  border: 1px solid black;
+  border: 0px solid black;
+  color: rgb(128 130 127);
+  text-shadow: 0px 0px 10px rgb(128 130 127);
 }
 
 /* 로봇보내기버튼 */
@@ -620,26 +677,26 @@
 /* 테이블 버튼 번호 */
 #Btn1 {
   position: absolute;
-  top: 200px;
-  left: 202px;
+  top: 170px;
+  left: 158px;
 }
 
 #Btn2 {
   position: absolute;
-  top: 200px;
-  right: 222px;
+  top: 170px;
+  right: 178px;
 }
 
 #Btn3 {
   position: absolute;
-  bottom: 185px;
-  left: 205px;
+  bottom: 155px;
+  left: 160px;
 }
 
 #Btn4 {
   position: absolute;
-  bottom: 185px;
-  right: 225px;
+  bottom: 155px;
+  right: 180px;
 }
 
 /* 테이블 모달 내용 */
@@ -668,6 +725,7 @@
   font-family: "NEXEN_TIRE_Bold";
   font-size: 90px;
   height: 100px;
+  color: white;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgba(22, 38, 44, 0.734),
     0 0 30px rgba(22, 38, 44, 0.734), 0 0 40px rgba(22, 38, 44, 0.734),
     0 0 55px rgba(22, 38, 44, 0.734), 0 0 75px rgba(22, 38, 44, 0.734);
@@ -695,17 +753,27 @@
 }
 
 #TotalModal {
-  /* position: absolute;
-  bottom: 0;
-  display: "flex";
-  align-items: "center";
-  justify-content: "flex-end"; */
-  float: center;
-  width: 200px;
-  height: 50px;
-  border-radius: 70px;
-  background-color: rgb(245 245 245);
+  position: absolute;
+  top: 0;
+  left: 85%;
+  transform: translateX(-20%);
+  float: right;
+  width: 120px;
+  height: 60px;
+  border-radius: 30px;
   font-family: "Pretendard-Regular";
+  font-weight: bold;
+  margin-top: 25px;
+  border: none;
+  background-color: rgb(226 226 226);
+  box-shadow: 0 0 0px #ececec, 0 0 10px #ececec, 0 0 0px #ececec,
+    0 0 200px #cacaca;
+  font-family: "KCC-Ganpan";
+}
+#TotalModal:hover {
+  background-color: rgb(236 236 236);
+  box-shadow: 0 0 5px #ececec, 0 0 50px #ececec, 0 0 0px #ececec,
+    0 0 200px #cacaca;
 }
 @font-face {
   font-family: "Pretendard-Regular";
@@ -713,6 +781,24 @@
     format("woff");
   font-weight: 400;
   font-style: normal;
+}
+#TotalModalIcon {
+  font-size: 30px;
+  padding-right: 1px;
+  color: black;
+}
+
+#TotalModalPtag {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#ReceiptModalHeader {
+  font-weight: bold;
+  margin-top: 10px;
+  color: rgb(0 126 155);
+  font-size: 25px;
 }
 
 /* 매출합계모달 표 헤더, 푸터*/
@@ -753,8 +839,17 @@
 
 /* 매출합계모달 표 전체 CSS */
 .OrderTotalModal {
-  font-size: 20px;
   font-weight: bold;
+}
+
+#LedButton {
+  background-color: transparent;
+  border: none;
+}
+
+/* 관리자 로그아웃 아이콘 */
+#logoutAdmin {
+  color: rgb(38 155 185);
 }
 
 /* 미디어쿼리 */
@@ -787,6 +882,10 @@
   }
   #buttonFirst {
     font-size: 2rem;
+  }
+  .ButtonIcon2 {
+    font-size: 3rem;
+    padding-right: 8px;
   }
 }
 
@@ -830,6 +929,27 @@
 @media (max-width: 390px) {
   .FirstPtag {
     font-size: 3rem;
+  }
+}
+
+/* Info Speed */
+@media (max-width: 1420px) {
+  #RightWheelIcon {
+    display: none;
+  }
+  #SpeedFirst {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  #TireIcon {
+    display: none;
+  }
+
+  #SpeedFirst {
+    margin-top: 50px;
+    font-size: 50px;
   }
 }
 

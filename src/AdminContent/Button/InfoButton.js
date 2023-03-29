@@ -4,7 +4,6 @@ import AdminInfo from "../Button/AdminInfo";
 
 const Users = () => {
   const [user, setUsers] = useState("혠오");
-  const [tableNum, seTableNum] = useState("Table 1");
 
   useEffect(() => {
     axios

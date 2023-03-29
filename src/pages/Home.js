@@ -143,7 +143,6 @@ const Footer = () => {
     <>
       <div
         style={{
-
           position: "absolute",
           zIndex: "2",
           backgroundColor: "white",
@@ -185,20 +184,27 @@ const Footer = () => {
 //   )
 
 // }
-const ContentHeader = () => (
-  <>
+const ContentHeader = () => {
+  // const [forHyenoh, setForHyenoh] = useState("");
 
-    <div class="logo"><b>E<span>C</span>U<span>Z</span>O</b></div>
+  return (
+    <>
+      <div class="logo">
+        <b>
+          E<span>C</span>U<span>Z</span>O
+        </b>
+      </div>
 
-    <Positioner style={{ position: "absolute", zIndex: "2" }}>
-      <LogoWrapper>
-        <Logo to="/auth/login" style={{ position: "absolute", zIndex: "2" }}>
-          LOGIN
-        </Logo>
-      </LogoWrapper>
-    </Positioner>
-    <Footer style={{ position: "absolute", zIndex: "2" }} />
-  </>
-);
+      <Positioner style={{ position: "absolute", zIndex: "2" }}>
+        <LogoWrapper>
+          <Logo to="/auth/login" style={{ position: "absolute", zIndex: "2" }}>
+            LOGIN
+          </Logo>
+        </LogoWrapper>
+      </Positioner>
+      <Footer style={{ position: "absolute", zIndex: "2" }} />
+    </>
+  );
+};
 
 export default ContentHeader;

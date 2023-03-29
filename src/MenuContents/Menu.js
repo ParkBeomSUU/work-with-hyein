@@ -30,8 +30,8 @@ const Menu = ({
   bill,
   setBill,
   setVolume,
-  menuText
-  
+  menuText,
+  setForHyenoh,
 }) => {
   //카카오 해보자
   const [, , removeCookie] = useCookies("nickName");
@@ -91,7 +91,6 @@ const Menu = ({
     }
   }, [code, email, kperson, nickName, profile]);
 
-
   //자체서버 로그아웃
   const LogOut = () => {
     // Access Token을 로컬 스토리지에서 제거.
@@ -100,20 +99,14 @@ const Menu = ({
     window.location.href = "http://localhost:3000/";
   };
 
-
-
-
   //버튼 보내는거
   const handleClickButton = (e, number) => {
     setContent(number);
   };
-  
+
   //버튼 보내는거
   // const url = "https //13.124.151.184/test";
   // const config = { "Content-Type": "application/json" };
-
-  
-
 
   //볼륨 값이 있을때 주문이 영수증에 꽂힘
   useEffect(() => {
@@ -153,31 +146,41 @@ const Menu = ({
       <Container>
         <Row>
           <Col id="intro_2">
-
             {/*로그인 이름과 영수증 부분 {tableNum} */}
             <>
-              <p className="tablenumber"style={{fontSize:"20px", marginTop:"8px"}} > {}번 테이블</p>
+              <p
+                className="tablenumber"
+                style={{ fontSize: "20px", marginTop: "8px" }}
+              >
+                {" "}
+                {/* tableNum */}번 테이블
+              </p>
 
-              
               {/* {userID ==="admin" && 
 
               <button onclick="location.href='http://localhost:3000/admin'">Admin 페이지로 이동</button>} */}
 
               <a className="Logout-A">
+                <button
+                  className="LogoutButton"
+                  href={KAKAO_LOGOUT_URL}
+                  id="logout"
+                  onClick={(e) => {
+                    deleteCookie();
+                    LogOut();
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faSignOut}
+                    className="fontawesonicon"
+                  />
 
-              <button
-                className="LogoutButton"
-                href={KAKAO_LOGOUT_URL}
-                id="logout"
-                onClick={(e)=>{deleteCookie();
-                  LogOut(); }}>
-                    <FontAwesomeIcon icon={faSignOut} className="fontawesonicon" />
-
-                    <h6 className="logoutText"> LOGOUT </h6>
-              </button>
+                  <h6 className="logoutText"> LOGOUT </h6>
+                </button>
               </a>
-              
-              <Receipt className="receipt"
+
+              <Receipt
+                className="receipt"
                 receiptContents={receiptContents}
                 volume={volume}
                 bill={bill}
@@ -208,7 +211,6 @@ const Menu = ({
               onClick={(e) => handleClickButton(e, 1)}
               id="button_2"
             >
-
               <img src={cock} style={{ width: "75px" }} id="MenuImg" />
               <br />
               <a style={{ fontSize: "1.5rem" }} id="MenuText">
@@ -338,7 +340,7 @@ const Menu = ({
           </Col>
 
           {/* <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} /> */}
-          <MenuCheckModal 
+          <MenuCheckModal
             isOrderDone={isOrderDone}
             setOrderDone={setOrderDone}
             volume={volume}
@@ -349,6 +351,7 @@ const Menu = ({
             setMenuText={setMenuText}
             setVolume={setVolume}
             setReceiptContents={setReceiptContents}
+            setForHyenoh={setForHyenoh}
           />
         </Row>
       </Container>

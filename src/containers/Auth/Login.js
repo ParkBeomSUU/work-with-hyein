@@ -55,7 +55,11 @@ const Login = (props) => {
         let accessToken = response.headers.get("Authorization").substring(7);
         window.localStorage.setItem("accessToken", accessToken);
         // 로그인이 성공한 경우 메인 페이지로 이동합니다.
-        window.location.href = "http://localhost:3000/admin";
+        if (userId === "admin") {
+          window.location.href = "http://localhost:3000/admin";
+        } else {
+          window.location.href = "http://localhost:3000/Menu";
+        }
       })
       .catch((ex) => {
         console.log("로그인 실패 : " + ex);
