@@ -16,7 +16,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>파운더스</h3>
+                  <h3>Founder</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -28,7 +28,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              파운더스
+              Founder
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -66,7 +66,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>글랜다워</h3>
+                  <h3>Glen Dower</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -79,7 +79,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              글랜다워
+              Glen Dower
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -119,7 +119,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>예거 마이스터</h3>
+                  <h3>Jagermeilter</h3>
                   <p>
                     {" "}
                     alcohol degree : 35도 <br /> <br />
@@ -131,7 +131,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              예거 마이스터
+              Jagermeilter
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -173,7 +173,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>짐빔</h3>
+                  <h3>Jim Beam</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -185,7 +185,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              짐빔
+              Jim Beam
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -223,7 +223,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>티나</h3>
+                  <h3>Tina</h3>
                   <p>
                     {" "}
                     alcohol degree : 16도 <br /> <br />
@@ -235,7 +235,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              티나
+              Tina
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -273,7 +273,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>더 클라스</h3>
+                  <h3>TheClass33</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -285,7 +285,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              더 클라스
+              TheClass33
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -327,7 +327,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>맥캘란 12</h3>
+                  <h3>Macallan12</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -340,7 +340,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              맥캘란 12
+              Macallan12
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -380,7 +380,7 @@ const Liquor = ({ setVolume, volume }) => {
                   style={{ width: "120px" }}
                 />
                 <div className="introduce">
-                  <h3>틸링 싱글 몰트</h3>
+                  <h3>TellinfSingleMalt</h3>
                   <p>
                     {" "}
                     alcohol degree : 46도 <br /> <br />
@@ -392,7 +392,7 @@ const Liquor = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              틸링 싱글 몰트
+              TellinfSingleMalt
               <div id="PlusMa">
                 <Button
                   id="Plus"

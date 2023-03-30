@@ -15,7 +15,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "140px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>블러디 메리</h3>
+                  <h3>bloodyMary</h3>
                   <p>
                     {" "}
                     alcohol degree : 15도 <br /> <br />
@@ -28,7 +28,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              블러디 메리
+              bloodyMary
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -65,7 +65,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "190px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>마티니</h3>
+                  <h3>martini</h3>
                   <p>
                     {" "}
                     alcohol degree : 30도 <br /> <br />
@@ -78,7 +78,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              마티니
+              martini
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -115,7 +115,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "200px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>마가리타</h3>
+                  <h3>margarita</h3>
                   <p>
                     {" "}
                     alcohol degree : 30도 <br /> <br />
@@ -129,7 +129,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              마가리타
+              margarita
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -166,7 +166,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "170px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>상그리아</h3>
+                  <h3>sangria</h3>
                   <p>
                     {" "}
                     alcohol degree : 14도 <br /> <br />
@@ -178,7 +178,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              상그리아
+              sangria
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -215,7 +215,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "170px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>모히또</h3>
+                  <h3>mojito</h3>
                   <p>
                     {" "}
                     alcohol degree : 18도 <br /> <br />
@@ -227,7 +227,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              모히또
+              mojito
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -264,7 +264,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "150px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>데킬라 선라이즈</h3>
+                  <h3>tequila Sunrise</h3>
                   <p>
                     {" "}
                     alcohol degree : 12도 <br /> <br />
@@ -276,7 +276,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              데킬라 선라이즈
+              tequila Sunrise
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -313,7 +313,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "150px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>코스모폴리탄</h3>
+                  <h3>cosmopolitan</h3>
                   <p>
                     {" "}
                     alcohol degree : 20도 <br /> <br />
@@ -325,7 +325,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              코스모폴리탄
+              cosmopolitan
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -362,7 +362,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "190px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>러스티 네일</h3>
+                  <h3>rusty Nail</h3>
                   <p>
                     {" "}
                     alcohol degree : 40도 <br /> <br />
@@ -374,7 +374,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              러스티 네일
+              rusty Nail
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -411,7 +411,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "180px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>블루 하와이</h3>
+                  <h3>blue Hawaii</h3>
                   <p>
                     {" "}
                     alcohol degree : 10도 <br /> <br />
@@ -423,7 +423,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              블루 하와이
+              blue Hawaii
               <div id="PlusMa">
                 <Button
                   id="Plus"
@@ -459,7 +459,7 @@ const Cocktail = ({ setVolume, volume }) => {
                   style={{ width: "140px", height: "170px" }}
                 />
                 <div className="introduce">
-                  <h3>올드 패션드</h3>
+                  <h3>oldFashioned</h3>
                   <p>
                     {" "}
                     alcohol degree : 35도 <br /> <br />
@@ -471,7 +471,7 @@ const Cocktail = ({ setVolume, volume }) => {
                 </div>
                 <hr size="4" />
               </div>
-              올드 패션드
+              oldFashioned
               <div id="PlusMa">
                 <Button
                   id="Plus"

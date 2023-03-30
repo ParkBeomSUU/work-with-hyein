@@ -32,6 +32,7 @@ const Menu = ({
   setVolume,
   menuText,
   setForHyenoh,
+  forHyenoh
 }) => {
   //카카오 해보자
   const [, , removeCookie] = useCookies("nickName");
@@ -44,6 +45,15 @@ const Menu = ({
   const KAKAO_LOGOUT_URL = "http://localhost:3000";
   const params = new URLSearchParams(window.location.search);
   const code = params.get("code");
+
+  //모달첵을 로컬스트로지에 저장해서 영수증에 저장해보자
+  // useEffect(() => {
+    // console.log("getItem : " ,localStorage.getItem("receiptContents"))
+
+    // localStorage.setItem('receiptContents', JSON.stringify(receiptContents));
+  //   console.log("receiptContents :", receiptContents)
+  // }, [receiptContents]
+  // );
 
   //주문하기 들어왔을때만 영수증에 들어가게 하기
   const [isOrderDone, setOrderDone] = useState(false);
@@ -99,14 +109,13 @@ const Menu = ({
     window.location.href = "http://localhost:3000/";
   };
 
+
   //버튼 보내는거
   const handleClickButton = (e, number) => {
     setContent(number);
   };
 
-  //버튼 보내는거
-  // const url = "https //13.124.151.184/test";
-  // const config = { "Content-Type": "application/json" };
+
 
   //볼륨 값이 있을때 주문이 영수증에 꽂힘
   useEffect(() => {
@@ -155,11 +164,6 @@ const Menu = ({
                 {" "}
                 {/* tableNum */}번 테이블
               </p>
-
-              {/* {userID ==="admin" && 
-
-              <button onclick="location.href='http://localhost:3000/admin'">Admin 페이지로 이동</button>} */}
-
               <a className="Logout-A">
                 <button
                   className="LogoutButton"
@@ -173,6 +177,7 @@ const Menu = ({
                   <FontAwesomeIcon
                     icon={faSignOut}
                     className="fontawesonicon"
+                    style={{color:"rgb(38 155 185)"}}
                   />
 
                   <h6 className="logoutText"> LOGOUT </h6>
@@ -184,7 +189,7 @@ const Menu = ({
                 receiptContents={receiptContents}
                 volume={volume}
                 bill={bill}
-                setReceiptContents={setReceiptContents}
+                forHyenoh={forHyenoh}
               />
             </>
           </Col>
@@ -338,8 +343,6 @@ const Menu = ({
               </form>
             </Col>
           </Col>
-
-          {/* <OrderButton isOrderDone={isOrderDone} setOrderDone={setOrderDone} /> */}
           <MenuCheckModal
             isOrderDone={isOrderDone}
             setOrderDone={setOrderDone}
@@ -350,8 +353,9 @@ const Menu = ({
             setBill={setBill}
             setMenuText={setMenuText}
             setVolume={setVolume}
-            setReceiptContents={setReceiptContents}
+            // setReceiptContents={setReceiptContents}
             setForHyenoh={setForHyenoh}
+            // forHyenoh={forHyenoh}
           />
         </Row>
       </Container>

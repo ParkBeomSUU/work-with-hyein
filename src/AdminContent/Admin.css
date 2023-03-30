@@ -545,6 +545,7 @@
 .OrderCheck {
   font-size: 1.5rem;
   list-style-type: disc;
+  border: none;
 }
 
 /* 주문확인 모달 안 보내기버튼 */
